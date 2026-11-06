@@ -123,6 +123,59 @@ def checkClassification (numbers : List String) : IO (Array String) := do
     | _ => errors := errors.push s!"{path}: {row.headD "?"}: expected 9 columns, got {row.length}"
   return errors
 
+/-- Lower-cased words of at least two letters (single letters such as `p`, `x` are the
+variables of formulas and are ignored). -/
+def textWords (t : String) : Array String := Id.run do
+  let mut out := #[]
+  let mut cur := ""
+  for c in t.toList ++ [' '] do
+    if c.isAlpha || "äöüÄÖÜß".contains c then
+      cur := cur.push c.toLower
+    else
+      if cur.length ≥ 2 then out := out.push cur
+      cur := ""
+  return out
+
+/-- Files tracked by git that we write ourselves (the generated source text and `out/`
+are not tracked and not scanned). -/
+def scannedFiles : IO (Array System.FilePath) := do
+  let mut files : Array System.FilePath := #[]
+  for dir in ["Tractatus", "tools", "correspondence", "analysis", "docs"] do
+    if ← System.FilePath.pathExists dir then
+      for p in ← System.FilePath.walkDir dir do
+        if !(← p.isDir) then files := files.push p
+  for f in ["CLAUDE.md", "README.md", "source/README.md", "Tractatus.lean"] do
+    if ← System.FilePath.pathExists f then files := files.push f
+  return files
+
+/-- The text must not be put on GitHub (source/README.md): committed files must not
+contain a run of 6 or more words of the source text, nor the whole text of a proposition
+of 4 or more words. -/
+def checkNoVerbatim (texts : Array String) : IO (Array String) := do
+  let n := 6
+  let mut grams : Std.HashSet String := {}
+  let mut wholes : Std.HashSet String := {}
+  for t in texts do
+    let ws := textWords t
+    if ws.size ≥ 4 && ws.size < n then wholes := wholes.insert (" ".intercalate ws.toList)
+    for i in [0:ws.size + 1 - n] do
+      grams := grams.insert (" ".intercalate (ws.extract i (i + n)).toList)
+  let mut errors := #[]
+  for f in ← scannedFiles do
+    let ws := textWords (← IO.FS.readFile f)
+    let mut hit : Option String := none
+    for i in [0:ws.size] do
+      if hit.isSome then break
+      for k in [4, 5, n] do
+        if i + k ≤ ws.size then
+          let g := " ".intercalate (ws.extract i (i + k)).toList
+          if (k == n && grams.contains g) || (k < n && wholes.contains g) then
+            hit := some g
+            break
+    if let some g := hit then
+      errors := errors.push s!"{f}: contains the source text verbatim (\"{g}\"); paraphrase it"
+  return errors
+
 def run (dir : String) : IO UInt32 := do
   let path := dir ++ "/tractatus.json"
   if !(← System.FilePath.pathExists path) then
@@ -175,6 +228,12 @@ def run (dir : String) : IO UInt32 := do
   -- the reading classification (phase B), if present
   let classErrors ← checkClassification (nums.toList.map toString)
   errors := errors ++ classErrors
+  -- no verbatim source text in the files we commit
+  let mut texts : Array String := #[]
+  for p in props do
+    for lang in ["en", "de"] do
+      if let .ok t := ((p.getObjValD lang).getObjValD "text").getStr? then texts := texts.push t
+  errors := errors ++ (← checkNoVerbatim texts)
   for e in errors do IO.eprintln s!"error: {e}"
   if errors.isEmpty then
     IO.println s!"ok: {nums.size} propositions, {orphans.size} numbering exceptions"

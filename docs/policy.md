@@ -69,7 +69,7 @@ variable (Atom : Type*) (Object : Type*)
 /-- 2.06: reality = which atomic facts exist and which do not (a truth-possibility, 4.3) -/
 abbrev TruthPossibility := Atom → Bool
 
-/-- 2.04: the world = the totality of existent atomic facts -/
+/-- 2.04: the world, as the set of atomic facts that obtain -/
 abbrev World := Set Atom
 
 /-- 4.2: the sense of a proposition = its agreement with truth-possibilities,
@@ -80,7 +80,7 @@ abbrev Sense := Set (TruthPossibility Atom)
 structure LogicalSpace where
   possible : Set (TruthPossibility Atom)
 
-/-- 2.061 (claim): atomic facts are independent of one another -/
+/-- 2.061 (claim): independence — every combination is possible -/
 def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 ```
 
@@ -134,6 +134,7 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 - 概念の名前は `analysis/reading/README.md` の概念 ID に従う。Ogden 訳の訳語の揺れ(「state of affairs」が Sachlage と Sachverhalt の両方に使われるなど)を避けるため
 - docstring には**論考の本文を引用しない**(本文を GitHub に上げない方針、`source/README.md`)。命題番号は attribute で付け、docstring には Lean の言明が何を表すかを自分の言葉で書く。ドイツ語原文と英訳が食い違う箇所(4.1252 の式など)では、どちらに従ったかを書く(短い式の断片は引用してよい)
 - 本文は、命題番号から手元の `source/tractatus.json` で引く
+- 本文との一致は `lake test` が検査する(本文と6語以上連続して一致する箇所、または4語以上の命題の全文があればエラー。`source/README.md`)
 - docstring とコメントは英語(CLAUDE.md の取り決め)
 
 ## 6. 整合性チェックの実装方式

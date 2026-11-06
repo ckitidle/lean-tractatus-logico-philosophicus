@@ -13,17 +13,16 @@ import Tractatus.LogicalSpace
 
 namespace Tractatus
 
-/-- The sense of a proposition: its agreement and disagreement with the possibilities of
-existence and non-existence of atomic facts, represented by the set of realities
-(truth-possibilities) with which it agrees. -/
+/-- The sense of a proposition, represented by the set of realities (truth-possibilities)
+with which it agrees; it disagrees with the rest. -/
 @[tlp "4.2"]
 abbrev Sense (Atom : Type*) := Set (Reality Atom)
 
 variable {Atom : Type*}
 
-/-- If atomic facts are independent, then for `n` atomic facts there are
-`K_n = ∑_{ν=0}^{n} (n choose ν)` possibilities of existence and non-existence
-(which equals `2 ^ n`): every combination is possible. -/
+/-- Under independence, a finite number `n` of atomic facts gives
+`K_n = ∑_{ν=0}^{n} (n choose ν)` possible realities (which equals `2 ^ n`), since every
+combination is possible. -/
 @[tlp "4.27"]
 theorem card_possible_of_independent [Finite Atom] {L : LogicalSpace Atom}
     (h : Independent L) :
@@ -49,15 +48,15 @@ arguments. -/
 @[tlp "5.101"]
 abbrev TruthFunction (n : ℕ) := (Fin n → Bool) → Bool
 
-/-- The truth-grounds of a truth-function: those truth-possibilities of its
-truth-arguments which verify it. -/
+/-- The truth-grounds of a truth-function: the rows (truth-possibilities of the
+arguments) at which it is true. -/
 @[tlp "5.101"]
 def truthGrounds {n : ℕ} (f : TruthFunction n) : Set (Fin n → Bool) :=
   {r | f r = true}
 
-/-- For `n` elementary propositions there are `L_n = ∑_{κ=0}^{K_n} (K_n choose κ)`
-ways for a proposition to agree and disagree with their truth-possibilities, where
-`K_n = 2 ^ n` (so `L_n = 2 ^ (2 ^ n)`). -/
+/-- The number of truth-functions of `n` elementary propositions is
+`L_n = ∑_{κ=0}^{K_n} (K_n choose κ)` with `K_n = 2 ^ n` (so `L_n = 2 ^ (2 ^ n)`): a
+truth-function is fixed by the set of rows at which it is true. -/
 @[tlp "4.42"]
 theorem card_truthFunction (n : ℕ) :
     Nat.card (TruthFunction n) = ∑ κ ∈ Finset.range (2 ^ n + 1), (2 ^ n).choose κ := by
