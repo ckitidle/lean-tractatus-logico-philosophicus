@@ -1,2 +1,7 @@
 /.lake
 .claude/settings.local.json
+
+# 本文データは public domain だが GitHub には上げない方針。手元で再生成する(source/README.md)
+/source/tractatus.json
+/source/tractatus-*.md
+/.cache

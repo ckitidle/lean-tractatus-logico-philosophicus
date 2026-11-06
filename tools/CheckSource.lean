@@ -90,7 +90,13 @@ def checkClassification (numbers : List String) : IO (Array String) := do
   return errors
 
 def run (dir : String) : IO UInt32 := do
-  let raw ← IO.FS.readFile (dir ++ "/tractatus.json")
+  let path := dir ++ "/tractatus.json"
+  if !(← System.FilePath.pathExists path) then
+    IO.eprintln s!"error: {path} not found. It is not tracked by git; regenerate it with"
+    IO.eprintln "  lake exe extract-source .cache/gutenberg/5740-t.tex source"
+    IO.eprintln "(see source/README.md for how to obtain 5740-t.tex)"
+    return 1
+  let raw ← IO.FS.readFile path
   let json ← IO.ofExcept (Json.parse raw)
   let props ← IO.ofExcept (json.getObjValAs? (Array Json) "propositions")
   let mut errors : Array String := #[]

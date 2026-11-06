@@ -1,6 +1,24 @@
 # source/ — 論考の本文データ
 
-フェーズ A(本文の整備)の成果物。以後の作業(読解ノート、Lean の docstring、整合性チェック)はすべてここを参照元にする。
+フェーズ A(本文の整備)の成果物。以後の作業(読解ノート、整合性チェック、対応記録)はすべてここを参照元にする。
+
+**本文データは git で管理しない**。public domain だが、本文そのものを GitHub に上げない方針(2026-11-06 にユーザーが決定)。git に入っているのはこの README だけで、`tractatus.json` などは手元で再生成する(`.gitignore` 済み)。過去のコミットからも取り除いてある。
+
+```bash
+# 1. Gutenberg の LaTeX ソースを、git 管理外の .cache/ に置く(初回だけ)
+mkdir -p .cache/gutenberg
+curl -fsSL -o .cache/gutenberg/5740-t.tex https://www.gutenberg.org/files/5740/5740-t/5740-t.tex
+shasum -a 256 .cache/gutenberg/5740-t.tex   # 下の SHA-256 と一致すること
+
+# 2. 本文データを生成して検査する
+lake exe extract-source .cache/gutenberg/5740-t.tex source
+lake test
+```
+
+本文の扱いの線引き:
+
+- 命題の本文を丸ごと、または長く引用するものは commit しない(本文データ、Lean の docstring、対応記録)
+- 私たちが書く解説の中の短い断片(`~~p=p` のような式や、一語・一句の引用)は残してよい
 
 ## ファイル
 
@@ -36,15 +54,9 @@
 - **含めていないもの**:Russell の序文(Russell は 1970 年没で日本では保護期間内)、Gutenberg の定型文
 - 元の `.tex` は Russell の序文を含むので、リポジトリには入れていない
 
-## 再生成と検査
+## 検査
 
-```bash
-# 5740-t.tex を取得してから(上の URL)
-lake exe extract-source path/to/5740-t.tex source   # 再生成
-lake test                                            # 検査(= lake exe check-source)
-```
-
-検査(`tools/CheckSource.lean`)の内容:
+`lake test`(= `lake exe check-source`)の内容(`tools/CheckSource.lean`):
 
 - すべての命題に、正しい書式の番号と、空でない英語・ドイツ語の本文がある
 - 番号に重複がなく、Wittgenstein の順序(`2 < 2.01 < 2.011 < 2.02 < 2.1`)で並んでいる

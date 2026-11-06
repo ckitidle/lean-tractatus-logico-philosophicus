@@ -113,7 +113,8 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 
 - 名前空間は `Tractatus`。識別子は内容を表す英語(例:`Tractatus.no_inference_between_atomic_facts`)。命題番号は名前に入れず、attribute で付ける(§6 レベル 1)
 - 概念の名前は `docs/reading/README.md` の概念 ID に従う。Ogden 訳の訳語の揺れ(「state of affairs」が Sachlage と Sachverhalt の両方に使われるなど)を避けるため
-- docstring には、その命題の Ogden 訳を `source/tractatus.json` の `text` から**一字一句そのまま**引用する。引用は命題の一部でもよい(真理表を含む命題など)。検査は「引用が `text` の部分文字列であること」で行う。ドイツ語原文と食い違う箇所(4.1252 の式など)ではドイツ語も引用し、どちらに従ったかを書く
+- docstring には**論考の本文を引用しない**(本文を GitHub に上げない方針、`source/README.md`)。命題番号は attribute で付け、docstring には Lean の言明が何を表すかを自分の言葉で書く。ドイツ語原文と英訳が食い違う箇所(4.1252 の式など)では、どちらに従ったかを書く(短い式の断片は引用してよい)
+- 本文は、命題番号から手元の `source/tractatus.json` で引く
 - docstring とコメントは英語(CLAUDE.md の取り決め)
 
 ## 6. 整合性チェックの実装方式
@@ -123,14 +124,13 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 作る時期:形式化の中身より検査の仕組みが先に膨らまないよう、フェーズ E では**最小限**だけ作る。
 
 - E で作るもの:attribute、番号の実在の確認、宣言の種類の照合、公理と `sorry` の検査
-- F の最初(段階 1 を広げるとき)に作るもの:docstring の引用の照合、カバレッジのレポート
+- F の最初(段階 1 を広げるとき)に作るもの:カバレッジのレポート、対応記録に原文を差し込んだ読む用の版の生成
 
 ### レベル 1:出典を追えるか(lake test)
 
 - 独自の attribute `@[tlp "2.062"]` を `Tractatus/Meta.lean` に定義する。宣言と命題番号の対応を環境拡張に記録する
 - 検査用の実行ファイル(仮称 `check-formalization`)が、ライブラリを読み込んで対応を取り出し、次を確認する
   - 付いている番号が `source/tractatus.json` に実在する
-  - docstring の中の引用(書式を決めて抜き出す)が `text` と一字一句同じ
 - カバレッジのレポート(命題ごとに「形式化した/対象外/未着手」)を `docs/coverage.md` に生成する。対象外の理由は `docs/reading/classification.tsv` の種別と §2 の一覧から引く
 
 ### レベル 2:種別と宣言の種類が合っているか(lake test)
@@ -143,13 +143,14 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 
 - この記録は、**Lean を読まない人が、形式化が論考に忠実かを判断するための主な窓口**になる。Lean の記号を使わず、日本語だけで読めるように書く
 - 段階ごとに `docs/correspondence/stage<N>.md` を作り、形式化した命題ごとに次を書く
-  - 原文(英語、必要ならドイツ語)
+  - 命題番号(原文は書かない。本文を GitHub に上げない方針のため)
   - Lean の言明(宣言名)
   - 逆翻訳:Lean の言明を日本語で読み直したもの
   - ずれ:形式化で失われたもの、付け加わったもの
   - 採った解釈(`docs/interpretation.md` の該当節)
   - 定理の性格:「定義の展開」か「中身あり」か(§3.4)
   - 1933 年の第2刷で本文に違いがあるか(わかる範囲で。形式化した命題についてだけ調べる)
+- 読むときは、命題番号の位置に原文(英語・ドイツ語)を差し込んだ版を手元で生成して読む。生成した版は git の管理外に置く
 - ブラインド逆翻訳:原文を見せずに Lean の言明だけを別のエージェントに渡し、日本語で読み直させて原文と比べる。全ての読み直しを Claude 一人が行うと、Lean が実際に何を言っているかを他の誰も確かめられないため
   - 対象は、形式化した全ての主張と定理
   - 時期は、各段階を形式化し終えたとき(段階を先に進める前)

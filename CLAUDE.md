@@ -10,6 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 その根拠は `docs/reading/`(全命題の分類)と `docs/interpretation.md`(解釈の分かれ目)。
 
 - 本文の出典はドイツ語原文と C. K. Ogden 英訳(1922)だけ。日本語訳・Pears/McGuinness 訳・Russell の序文は著作権があるので使わない
+- 本文は public domain だが GitHub に上げない。`source/tractatus.json` などの本文データは git 管理外で、`.cache/gutenberg/5740-t.tex` から手元で再生成する(`source/README.md`)。commit するファイル(Lean の docstring、対応記録など)にも本文を丸ごと・長く引用しない
 - Lean の実装(コード・docstring・識別子)は英語。ドキュメントと会話は日本語
 
 ## Toolchain
@@ -35,7 +36,7 @@ lake build                   # lean-toolchain の版を elan が自動で入れ�
 lake build                          # ライブラリ全体をビルド(型検査 = 証明の検査)
 lake env lean Tractatus/Basic.lean  # 1ファイルだけ検査
 lake test                           # 本文データ source/tractatus.json の検査(check-source)
-lake exe extract-source <5740-t.tex> source  # 本文データの再生成(source/README.md)
+lake exe extract-source .cache/gutenberg/5740-t.tex source  # 本文データの再生成(git 管理外。source/README.md)
 ```
 
 作成中に必要な検査は、ローカルの `lake build` と `lake test` だけで行う(CI は置いていない)。
