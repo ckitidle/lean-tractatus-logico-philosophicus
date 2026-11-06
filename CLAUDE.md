@@ -38,7 +38,7 @@ lake test                           # 本文データ source/tractatus.json の�
 lake exe extract-source <5740-t.tex> source  # 本文データの再生成(source/README.md)
 ```
 
-`.github/workflows/lean_action_ci.yml` が push と PR で `leanprover/lean-action` を走らせる(`lake build` と `lake test`)。
+作成中に必要な検査は、ローカルの `lake build` と `lake test` だけで行う(CI は置いていない)。
 
 Lake でハイフンを含む実行ファイル名を `testDriver` などから参照するときは `«check-source»` と書く。
 
