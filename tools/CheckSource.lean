@@ -55,6 +55,40 @@ def Num.parent (n : Num) : Option Num :=
     let ds := (n.digits.dropLast.reverse.dropWhile (· == '0')).reverse
     some { n with digits := ds }
 
+/-- Rows of a TSV file without its header line (empty lines dropped). -/
+def readTsv (path : String) : IO (List (List String)) := do
+  let lines := (← IO.FS.readFile path).splitOn "\n"
+  return (lines.drop 1).filter (· ≠ "") |>.map (·.splitOn "\t")
+
+def kinds : List String := ["def", "claim", "conseq", "notation", "elucid", "out"]
+def confidences : List String := ["high", "mid", "low"]
+
+/-- Validates `docs/reading/classification.tsv` against the proposition numbers:
+one row per proposition in the same order, 7 columns, known kind and confidence,
+and every contested topic listed in `docs/reading/contested.tsv`. -/
+def checkClassification (numbers : List String) : IO (Array String) := do
+  let path := "docs/reading/classification.tsv"
+  if !(← System.FilePath.pathExists path) then return #[]
+  let rows ← readTsv path
+  let topicsPath := "docs/reading/contested.tsv"
+  let topics : List String ←
+    if ← System.FilePath.pathExists topicsPath then
+      pure <| (← readTsv topicsPath).map (·.headD "")
+    else pure []
+  let mut errors : Array String := #[]
+  if rows.map (·.headD "") != numbers then
+    errors := errors.push s!"{path}: numbers differ from source/tractatus.json (must be one row per proposition, in order)"
+  for row in rows do
+    match row with
+    | [num, kind, conf, contested, _concepts, _related, rationale] =>
+      if !kinds.contains kind then errors := errors.push s!"{path}: {num}: unknown kind '{kind}'"
+      if !confidences.contains conf then errors := errors.push s!"{path}: {num}: unknown confidence '{conf}'"
+      if contested != "-" && !topics.contains contested then
+        errors := errors.push s!"{path}: {num}: contested topic '{contested}' is not listed in {topicsPath}"
+      if rationale.trimAscii.isEmpty then errors := errors.push s!"{path}: {num}: empty rationale"
+    | _ => errors := errors.push s!"{path}: {row.headD "?"}: expected 7 columns, got {row.length}"
+  return errors
+
 def run (dir : String) : IO UInt32 := do
   let raw ← IO.FS.readFile (dir ++ "/tractatus.json")
   let json ← IO.ofExcept (Json.parse raw)
@@ -98,6 +132,9 @@ def run (dir : String) : IO UInt32 := do
   for l in listed do
     if !orphanStrs.contains l then
       errors := errors.push s!"{l} is listed in numbering-exceptions.txt but is not an exception"
+  -- the reading classification (phase B), if present
+  let classErrors ← checkClassification (nums.toList.map toString)
+  errors := errors ++ classErrors
   for e in errors do IO.eprintln s!"error: {e}"
   if errors.isEmpty then
     IO.println s!"ok: {nums.size} propositions, {orphans.size} numbering exceptions"
