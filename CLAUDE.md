@@ -8,6 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 進め方は `docs/roadmap.md`(フェーズ A〜F と整合性チェック)。
 形式化の方針(範囲・表現・命名・検査)は `docs/policy.md`。
 その根拠は `analysis/reading/`(全命題の分類)と `analysis/interpretation.md`(解釈の分かれ目)。
+フェーズ・段階の区切りでは、`docs/roadmap.md` の「区切りの手順」(機械的検証、自己レビュー、ユーザーのレビュー、記録)を必ず行う。
 
 - 本文の出典はドイツ語原文と C. K. Ogden 英訳(1922)だけ。日本語訳・Pears/McGuinness 訳・Russell の序文は著作権があるので使わない
 - 本文は public domain だが GitHub に上げない。`source/tractatus.json` などの本文データは git 管理外で、`.cache/gutenberg/5740-t.tex` から手元で再生成する(`source/README.md`)。commit するファイル(Lean の docstring、対応記録など)にも本文を丸ごと・長く引用しない
