@@ -1,47 +1,47 @@
 number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 1	def	1	-	mid	-	world,fact	1.1,2.04	世界の特徴づけ。1.1 と合わせて「世界=成立している事実の全体」という定義として扱う。主張とも読める
 1.1	def	1	-	mid	-	world,fact,object	2.04	世界は事実の全体であり物の全体ではない。世界の型を事実(のちに事態)の集まりとして与える
-1.11	claim	1	-	mid	totality	world,fact	1.12	世界は事実と、それが「全て」であることによって決まる。全体性(これで全部という閉包条件)の主張
+1.11	conseq	1	-	mid	totality	world,fact	1.12	世界は事実と、それが「全て」であることによって決まる。全体性(これで全部という閉包条件)の主張。【段階 1 の形式化で種別を claim→conseq に変更】集合として与えた世界は、その事実の全体から一通りに復元できるので、定義から定理になる(全体性は集合に含まれる、interpretation の totality)
 1.12	conseq	1	-	mid	totality	world,fact	1.11,2.05	1.11 から:事実の全体は、成立していないことも決める。2.05 と並行
 1.13	def	1	-	mid	-	world,fact,logical_space	2.11,3.4	論理空間の中の事実が世界。論理空間という概念を導入する
-1.2	claim	1	-	high	-	world,fact	2.04	世界は事実に分かれる(原子的に分解できる)
+1.2	conseq	1	-	high	-	world,fact	2.04	世界は事実に分かれる(原子的に分解できる)。【段階 1 の形式化で種別を claim→conseq に変更】世界を事態の集合とする読みでは、世界が一つ一つの事態からなる事実に分かれることは定義から出る
 1.21	claim	1	-	high	independence	fact,independence	2.061,4.211	一つの事実は他の全てを変えずに成立・不成立になれる。厳密には要素的な事態についての独立性(2.061)
 2	def	1	-	high	-	fact,atomic_fact	2.06,4.2	事実を事態の成立として定義する
 2.01	def	1	-	high	simples	atomic_fact,object	2.0272	事態を対象の結合として定義する
 2.011	claim	1	-	high	-	object,atomic_fact	2.0141	事態の構成要素になりうることは対象の本質。対象の型に結合可能性が属する
-2.012	claim	1	-	mid	-	object,atomic_fact,form	2.0123	対象が事態に現れうるなら、その可能性は対象に先取りされている
+2.012	conseq	1	-	mid	-	object,atomic_fact,form	2.0123	対象が事態に現れうるなら、その可能性は対象に先取りされている。【段階 1 の形式化で種別を claim→conseq に変更】対象の形式を「可能な事態の中で占める場所」として定義したので、可能な事態がその対象の形式に先取りされていることは定義から出る
 2.0121	elucid	out	-	mid	-	object,atomic_fact	2.012	2.012 の理由づけと空間・時間の類比
 2.0122	elucid	out	-	mid	-	object,atomic_fact	2.012	対象の自立性は事態への依存の一形式だという注釈
 2.0123	claim	1	-	mid	object_form	object,form	2.0141,2.0124	対象を知ればその全ての結合可能性を知る。形式化では「対象の形式が可能な事態を決める」と読む
-2.01231	claim	1	-	low	-	object,internal_property	4.122	対象を知るには内的性質を全て知る必要がある。内的性質の概念は 4.122 以降で扱う
+2.01231	claim	3	内的性質の概念(4.122 以降)と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	low	-	object,internal_property	4.122	対象を知るには内的性質を全て知る必要がある。内的性質の概念は 4.122 以降で扱う
 2.0124	conseq	1	-	high	object_form	object,atomic_fact	2.0123,2.014	2.0123/2.014 から:全ての対象が与えられれば可能な事態も全て与えられる。定理の候補
 2.013	elucid	out	-	mid	-	object,logical_space	2.0131	可能な事態の空間の比喩
 2.0131	elucid	out	-	mid	colour	object,form	2.0251,6.3751	空間・色・音の例。色の排除問題(6.3751)と関わる
 2.014	claim	1	-	high	object_form	object,atomic_fact	2.0124	対象は全ての事態の可能性を含む
 2.0141	def	1	-	high	object_form	object,form	2.033	対象の形式=事態に現れる可能性
-2.02	claim	1	-	high	simples	object	2.021,3.24	対象は単純
-2.0201	claim	1	-	mid	analysis	complex,analysis	3.24,3.25	複合体についての言明は構成要素についての言明と記述に分析できる
+2.02	claim	basis	対象を構成要素を持たない原始的な型パラメータとして置く設計の根拠(Object を事態の組み合わせとして定義しない)(段階 1 の形式化で段階 1 から移した)	high	simples	object	2.021,3.24	対象は単純
+2.0201	claim	out	日常の命題・複合体から要素命題への分析は形式化しない(interpretation の elementary_forms / analysis)(段階 1 の形式化で段階 1 から移した)	mid	analysis	complex,analysis	3.24,3.25	複合体についての言明は構成要素についての言明と記述に分析できる
 2.021	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	object,substance	2.02,2.024	対象は世界の実体をなす。後半の「だから複合でない」は 2.02 と同じ内容の帰結
 2.0211	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,sense,truth	2.0212	実体がなければ命題の意味(Sinn)が他の命題の真偽に依存してしまう、という背理法の前提。条件文として形式化できる
 2.0212	conseq	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,picture	2.0211	2.0211 から:そのとき世界の像を作れない
-2.022	claim	1	-	mid	-	world,form	2.023	想像された世界も現実の世界と形式を共有する。可能世界が同じ対象領域を持つ
+2.022	claim	basis	一つの Frame(対象と可能な事態)を固定し、現実の世界も想像された世界もその上の割り当てとして扱う設計の根拠(段階 1 の形式化で段階 1 から移した)	mid	-	world,form	2.023	想像された世界も現実の世界と形式を共有する。可能世界が同じ対象領域を持つ
 2.023	claim	1	-	mid	-	form,object	2.022	固定した形式は対象からなる
-2.0231	claim	1	-	mid	-	substance,form	2.0232	実体は形式だけを決め、物質的性質は決めない
+2.0231	claim	basis	対象(実体)が決めるのは可能な事態の集合(Frame)だけで、どの事態が成立するかは割り当てが決める、という設計の根拠(段階 1 の形式化で段階 1 から移した)	mid	-	substance,form	2.0232	実体は形式だけを決め、物質的性質は決めない
 2.0232	elucid	out	-	mid	-	object	2.0231	対象は無色である(比喩)
 2.0233	claim	1	-	mid	identity	object,form,identity	2.02331,5.53	同じ論理形式の二つの対象は、異なるということ以外では区別されない
 2.02331	elucid	out	-	mid	identity	object,identity	2.0233	識別不能なものについての議論
 2.024	def	out	実体の議論の再構成は範囲外(interpretation の substance)	high	substance	substance	2.021	実体=何が成立しているかと独立に存在するもの
 2.025	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,form	2.024	実体は形式と内容である
-2.0251	claim	1	-	low	colour	form,object	2.0131	空間・時間・色は対象の形式
+2.0251	claim	3	色の問題(6.3751)と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	low	colour	form,object	2.0131	空間・時間・色は対象の形式
 2.026	conseq	1	-	mid	-	object,form	2.023	対象があるときにだけ世界の固定した形式がある
-2.027	claim	1	-	mid	-	object,substance	2.0271	固定したもの、存在するもの、対象は同一
-2.0271	claim	1	-	mid	-	object,configuration	2.0272	対象は固定・不変、配列は変化するもの。可能世界をまたいで対象は共通で、配列だけが変わる
+2.027	claim	basis	対象を全ての世界に共通の固定した型として置く設計の根拠(段階 1 の形式化で段階 1 から移した)	mid	-	object,substance	2.0271	固定したもの、存在するもの、対象は同一
+2.0271	claim	basis	対象を世界をまたいで固定し、世界ごとに変わるのは事態の成立・不成立(配列)だけとする設計の根拠(段階 1 の形式化で段階 1 から移した)	mid	-	object,configuration	2.0272	対象は固定・不変、配列は変化するもの。可能世界をまたいで対象は共通で、配列だけが変わる
 2.0272	def	1	-	high	-	configuration,atomic_fact	2.01	対象の配列が事態をなす
 2.03	elucid	out	-	mid	relations	atomic_fact,object	2.031	鎖の比喩。事態には対象をつなぐ別の構成要素(関係という対象)がない、という含意は解釈が分かれる
-2.031	claim	1	-	high	-	atomic_fact,object,structure	2.032	事態の中で対象は特定の仕方で結合している
+2.031	conseq	1	-	high	-	atomic_fact,object,structure	2.032	事態の中で対象は特定の仕方で結合している。【段階 1 の形式化で種別を claim→conseq に変更】事態を「結合の仕方+各場所の対象」として定義したので、事態がそれで一通りに決まることは定義から出る
 2.032	def	1	-	high	-	structure,atomic_fact	2.033	事態の構造=対象のつながり方
 2.033	def	1	-	high	-	form,structure	2.0141,2.151	形式=構造の可能性
-2.034	claim	1	-	mid	-	structure,fact,atomic_fact	2	事実の構造は事態の構造からなる
+2.034	def	1	-	mid	-	structure,fact,atomic_fact	2	事実の構造は事態の構造からなる。【段階 1 の形式化で種別を claim→def に変更】事実の構造を、その事実をなす事態の構造の集まりとして定義した
 2.04	def	1	-	high	-	world,atomic_fact	1.1,2.05	世界=成立している事態の全体。形式化の基本定義(世界は事態の集合)
 2.05	conseq	1	-	high	-	world,atomic_fact	2.04,1.12	2.04 から:成立している事態の全体が、成立していない事態も決める。補集合として定理になる
 2.06	def	1	-	high	-	reality,atomic_fact	2.063	現実=事態の成立と不成立。肯定的事実・否定的事実の定義
@@ -74,12 +74,12 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 2.181	def	3	-	high	-	logical_form,picture	2.182	写像形式が論理形式であるとき、像を論理的像と呼ぶ
 2.182	claim	3	-	high	-	logical_form,picture	2.181	全ての像は論理的像でもある
 2.19	claim	3	-	mid	-	logical_form,picture,world	3	論理的像は世界を写せる
-2.2	conseq	1	-	high	-	logical_form,picture	2.18,2.182	2.18 と 2.182 から:像は写されるものと論理的写像形式を共有する
-2.201	claim	1	-	high	-	picture,atomic_fact	2.11	像は事態の成立・不成立の可能性を表すことで現実を写す。像の意味(Sinn)を可能世界の集合として形式化する根拠
-2.202	claim	1	-	high	-	picture,situation,logical_space	2.11	像は論理空間の中の可能な状況を表す
+2.2	conseq	3	2.18・2.182(論理的写像形式)の帰結なので、像の構造と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	logical_form,picture	2.18,2.182	2.18 と 2.182 から:像は写されるものと論理的写像形式を共有する
+2.201	def	1	-	high	-	picture,atomic_fact	2.11	像は事態の成立・不成立の可能性を表すことで現実を写す。像の意味(Sinn)を可能世界の集合として形式化する根拠。【段階 1 の形式化で種別を claim→def に変更】像を「どの事態を成立・不成立として表すか」として定義する根拠にした(像の構造は段階 3)
+2.202	def	1	-	high	-	picture,situation,logical_space	2.11	像は論理空間の中の可能な状況を表す。【段階 1 の形式化で種別を claim→def に変更】像が論理空間の中で表す領域(像と一致する可能な現実の集合)として定義した
 2.203	claim	1	-	mid	-	picture,situation	2.202	像は自分が表す状況の可能性を含む
-2.21	claim	1	-	high	-	picture,truth	2.222	像は現実と一致するかしないか。真か偽(二値性)
-2.22	claim	1	-	high	-	picture,sense,truth	2.221	像はその真偽と独立に写像形式によって表す
+2.21	conseq	1	-	high	-	picture,truth	2.222	像は現実と一致するかしないか。真か偽(二値性)。【段階 1 の形式化で種別を claim→conseq に変更】像の真偽を現実が意味に入るかどうかで定義したので、真か偽のどちらか一方であることは定義から出る
+2.22	claim	basis	像の意味を現実と独立な集合として与え、真偽を現実との比較で決める設計の根拠(段階 1 の形式化で段階 1 から移した)	high	-	picture,sense,truth	2.221	像はその真偽と独立に写像形式によって表す
 2.221	def	1	-	high	-	sense,picture	2.222	像が表すものがその意味(Sinn)
 2.222	def	1	-	high	-	truth,sense,reality	2.21	真偽=意味と現実の一致・不一致
 2.223	conseq	1	-	mid	-	truth,picture	2.222	2.222 から:真偽を知るには現実と比べなければならない
@@ -197,7 +197,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.063	elucid	out	-	high	-	truth,sense	4.064	白い紙の黒い点の比喩。Frege の真理値の考え方への批判
 4.064	claim	3	-	mid	-	proposition,sense,assertion	4.063	全ての命題は既に意味(Sinn)を持つ。主張が意味を与えるのではない
 4.0641	claim	3	-	mid	-	negation,logical_place	3.42	否定は否定される命題の論理的場所の外にある場所を決める。否定を補集合として形式化する根拠
-4.1	claim	1	-	high	-	proposition,atomic_fact	2.11,4.2	命題は事態の成立と不成立を表す
+4.1	claim	basis	命題の意味を事態の成立・不成立の割り当ての集合として表す設計(4.2)の根拠(段階 1 の形式化で段階 1 から移した)	high	-	proposition,atomic_fact	2.11,4.2	命題は事態の成立と不成立を表す
 4.11	claim	out	自然科学についての主張で、範囲外	mid	-	proposition,truth,natural_science	6.53	真な命題の全体が自然科学の全体
 4.111	elucid	out	-	high	-	philosophy,natural_science	4.112	哲学は自然科学の一つではない
 4.112	elucid	out	-	high	-	philosophy	6.54	哲学は理論でなく活動。哲学の著作は本質的に解明からなる
@@ -231,38 +231,38 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.2	def	1	-	high	-	sense,proposition,atomic_fact	2.201,4.4	命題の意味(Sinn)=事態の成立・不成立の可能性との一致・不一致。意味を可能世界の集合(真理条件)として定義する中心命題
 4.21	def	1	-	high	-	elementary_proposition,atomic_fact	4.25	要素命題=事態の成立を主張する最も単純な命題
 4.211	claim	1	-	high	independence	elementary_proposition,independence	2.061,6.3751	要素命題はどれも他の要素命題と矛盾しない。2.061 の言語側の対応物
-4.22	claim	1	-	high	-	elementary_proposition,name	4.221	要素命題は名前の連鎖(結合)
-4.221	claim	1	-	mid	analysis	analysis,elementary_proposition,name	3.25	分析すれば名前の直接の結合からなる要素命題に行き着く
-4.2211	claim	1	-	mid	infinity	world,object,atomic_fact	4.463,5.535	世界が無限に複雑でも対象と事態はなければならない。形式化で対象や事態を有限に限るかどうかに関わる
-4.23	claim	1	-	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる
-4.24	notation	1	-	high	-	name,elementary_proposition,notation	4.241	名前を x, y, z、要素命題を fx, φ(x, y) や p, q, r で書く記法
-4.241	notation	1	-	high	identity	identity,definition,notation	4.242,5.53	「a=b」は記号 a を b で置き換えられること。定義は記号の規則
-4.242	claim	1	-	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない
-4.243	claim	1	-	mid	identity	identity,name,meaning	5.53,5.5303	二つの名前が同じものを指すかを知らずに理解することはできない。「a=a」などは要素命題でも意味のある記号でもない
-4.25	claim	1	-	high	-	elementary_proposition,atomic_fact,truth	4.21	要素命題が真なら事態は成立し、偽なら成立しない。要素命題の真理を事態の成立として定義する
-4.26	claim	1	-	high	-	elementary_proposition,world,truth	2.04,4.25	全ての真な要素命題を挙げれば世界は完全に記述される。世界=要素命題への真理値割り当てと同一視する根拠
+4.22	claim	3	名前と対象の対応という構文論が要るので、像の構造と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	elementary_proposition,name	4.221	要素命題は名前の連鎖(結合)
+4.221	claim	3	名前の結合としての要素命題は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	analysis	analysis,elementary_proposition,name	3.25	分析すれば名前の直接の結合からなる要素命題に行き着く
+4.2211	claim	basis	事態の型に有限性を課さない設計の根拠(interpretation の infinity)。数え上げの定理だけで有限性を仮定する(段階 1 の形式化で段階 1 から移した)	mid	infinity	world,object,atomic_fact	4.463,5.535	世界が無限に複雑でも対象と事態はなければならない。形式化で対象や事態を有限に限るかどうかに関わる
+4.23	claim	3	名前と要素命題の関係は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる
+4.24	notation	3	名前と要素命題の記法は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	name,elementary_proposition,notation	4.241	名前を x, y, z、要素命題を fx, φ(x, y) や p, q, r で書く記法
+4.241	notation	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	high	identity	identity,definition,notation	4.242,5.53	「a=b」は記号 a を b で置き換えられること。定義は記号の規則
+4.242	claim	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない
+4.243	claim	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity,name,meaning	5.53,5.5303	二つの名前が同じものを指すかを知らずに理解することはできない。「a=a」などは要素命題でも意味のある記号でもない
+4.25	conseq	1	-	high	-	elementary_proposition,atomic_fact,truth	4.21	要素命題が真なら事態は成立し、偽なら成立しない。要素命題の真理を事態の成立として定義する。【段階 1 の形式化で種別を claim→conseq に変更】要素命題の真を事態の成立として定義した(4.21)ので、定義から出る
+4.26	conseq	1	-	high	-	elementary_proposition,world,truth	2.04,4.25	全ての真な要素命題を挙げれば世界は完全に記述される。世界=要素命題への真理値割り当てと同一視する根拠。【段階 1 の形式化で種別を claim→conseq に変更】現実を事態の真偽の割り当てとしたので、真な要素命題の一覧で現実が決まることは定義から出る
 4.27	conseq	1	-	high	independence	atomic_fact,truth_possibility	2.061,4.28	n 個の事態の成立について K_n=Σ C(n,ν) 通りの可能性がある(=2^n)。どの組み合わせも成立しうる。数え上げの定理の候補
 4.28	conseq	1	-	high	-	truth_possibility,elementary_proposition	4.27	4.27 から:それらの組み合わせに、n 個の要素命題の真偽の可能性が同数対応する
 4.3	def	1	-	high	-	truth_possibility,elementary_proposition,atomic_fact	4.31	要素命題の真理可能性=事態の成立・不成立の可能性
 4.31	notation	1	-	high	-	truth_possibility,truth_table	4.3	真理可能性を T/F の表で表す記法
 4.4	def	1	-	high	-	proposition,truth_possibility	4.2,4.431	命題=要素命題の真理可能性との一致・不一致の表現
-4.41	claim	1	-	high	-	truth_possibility,truth_condition	4.4	要素命題の真理可能性が命題の真偽の条件
+4.41	conseq	1	-	high	-	truth_possibility,truth_condition	4.4	要素命題の真理可能性が命題の真偽の条件。【段階 1 の形式化で種別を claim→conseq に変更】命題を要素命題の真理関数として表すと、その真偽が真理項の真偽だけで決まることは定義から出る
 4.411	elucid	out	-	mid	-	elementary_proposition,generality	4.4	要素命題の導入は他の命題の理解に基本的
 4.42	conseq	1	-	high	-	truth_condition,truth_possibility	4.27,4.45	一致・不一致の仕方は L_n=Σ C(K_n,κ) 通り(=2^(2^n))。数え上げの定理の候補
 4.43	notation	1	-	high	-	truth_condition,truth_table	4.44	一致を T の印で表し、印がないことで不一致を表す
-4.431	claim	1	-	high	-	truth_condition,proposition	4.024,4.4	命題は真理条件の表現。Frege の真理概念の説明は誤り
-4.44	claim	1	-	mid	-	truth_table,propositional_sign	4.442	T の印と真理可能性の対応から生じる記号は命題記号
-4.441	claim	1	-	high	logical_constants	truth_table,logical_object	4.0312	T と F の記号の複合体に対応する対象はない。「論理的対象」はない
+4.431	claim	basis	命題=真理条件の表現という読みは 4.4 と同じく設計に織り込んだ。Frege の真理概念への批判は形式化しない(段階 1 の形式化で段階 1 から移した)	high	-	truth_condition,proposition	4.024,4.4	命題は真理条件の表現。Frege の真理概念の説明は誤り
+4.44	conseq	1	-	mid	-	truth_table,propositional_sign	4.442	T の印と真理可能性の対応から生じる記号は命題記号。【段階 1 の形式化で種別を claim→conseq に変更】真理表の列(T の印)から真理関数を読み戻せること(往復で元に戻る)を定理にした
+4.441	claim	basis	論理結合子を対象としてでなく意味(集合)の上の演算として扱う設計の根拠(policy §3.1)(段階 1 の形式化で段階 1 から移した)	high	logical_constants	truth_table,logical_object	4.0312	T と F の記号の複合体に対応する対象はない。「論理的対象」はない
 4.442	notation	1	-	high	-	truth_table,propositional_sign,notation	5.101	真理表の例と「(TTFT)(p, q)」の記法。Frege の判断線は論理的に無意味
 4.45	conseq	1	-	high	-	truth_condition	4.42	n 個の要素命題に対して真理条件のグループは L_n 通りあり、列に並べられる
 4.46	def	1	-	high	-	tautology,contradiction,truth_condition	4.461,6.1	トートロジーと矛盾の定義(全ての真理可能性で真/偽)。定義として直接形式化できる
 4.461	claim	1	-	high	-	tautology,contradiction,sense	4.4611,6.11	トートロジーと矛盾は何も語らない。真理条件を持たず、意味を欠く(sinnlos)
-4.4611	claim	1	-	high	-	tautology,contradiction,nonsense	4.461	トートロジーと矛盾は無意味(unsinnig)ではない。記号法の一部(算術の 0 のように)。sinnlos と unsinnig の区別は形式化でも型として分ける
+4.4611	conseq	1	-	high	-	tautology,contradiction,nonsense	4.461	トートロジーと矛盾は無意味(unsinnig)ではない。記号法の一部(算術の 0 のように)。sinnlos と unsinnig の区別は形式化でも型として分ける。【段階 1 の形式化で種別を claim→conseq に変更】トートロジーと矛盾も(真理項 0 個の)真理関数であることを定理にした
 4.462	conseq	1	-	high	-	tautology,contradiction,picture	4.46	4.46 から:トートロジーと矛盾は現実の像ではない。全ての状況を許すか、どれも許さない
-4.463	claim	1	-	mid	-	truth_condition,logical_space,tautology	4.462	真理条件は命題が事実に残す範囲を決める。トートロジーは論理空間全体を、矛盾は何も残さない。命題を論理空間の部分集合として形式化する根拠
+4.463	conseq	1	-	mid	-	truth_condition,logical_space,tautology	4.462	真理条件は命題が事実に残す範囲を決める。トートロジーは論理空間全体を、矛盾は何も残さない。命題を論理空間の部分集合として形式化する根拠。【段階 1 の形式化で種別を claim→conseq に変更】トートロジーは論理空間全体を、矛盾は何も残さないことを定理にした
 4.464	claim	1	-	mid	-	tautology,contradiction,probability	5.15	トートロジーの真は確実、命題の真は可能、矛盾の真は不可能
 4.465	conseq	1	-	high	-	tautology,logical_product,sense	4.46	トートロジーと命題の論理積は命題と同じことを言う。定理の候補(p ∧ ⊤ ≡ p)
-4.466	claim	1	-	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
+4.466	claim	3	記号の結合と対象の結合の対応は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
 4.4661	elucid	out	-	mid	-	tautology,symbol	4.466	トートロジーの中の記号の関係はシンボルにとって本質的でない
 4.5	claim	2	-	mid	general_form	general_form,proposition	4.53,6	命題の最も一般的な形式を与えられそう。一般形式は「事情はかくかくである」
 4.51	claim	2	-	high	general_form	elementary_proposition,proposition	4.52,5	全ての要素命題が与えられれば、そこから作れる命題が全ての命題。命題の全体を要素命題からの生成として形式化する根拠
@@ -271,7 +271,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5	claim	1	-	high	extensionality	proposition,truth_function,elementary_proposition	4.4,5.3	命題は要素命題の真理関数(外延性のテーゼ)。要素命題はそれ自身の真理関数。形式化の中心となる主張
 5.01	def	1	-	high	-	elementary_proposition,truth_argument	5	要素命題は命題の真理項
 5.02	elucid	out	-	mid	-	argument,index	5.2341	関数の項と名前の指標の混同についての Frege 批判
-5.1	claim	1	-	mid	-	truth_function,probability	5.101,5.15	真理関数は列に並べられる。確率論の基礎
+5.1	conseq	1	-	mid	-	truth_function,probability	5.101,5.15	真理関数は列に並べられる。確率論の基礎。【段階 1 の形式化で種別を claim→conseq に変更】真理関数を通し番号で並べられること(有限集合との一対一対応)を定理にした。確率論の基礎という部分は段階 3 で扱う
 5.101	notation	1	-	high	-	truth_function,truth_ground,notation	4.442	2 変数の 16 個の真理関数の表と、真理根拠(命題を真にする真理可能性)の定義。「16 個」は数え上げの定理の候補
 5.11	def	1	-	high	-	consequence,truth_ground	5.12	帰結関係の定義:いくつかの命題に共通の真理根拠が全てある命題の真理根拠なら、その命題はそれらから帰結する
 5.12	def	1	-	high	-	consequence,truth_ground	5.11	5.11 の特殊な場合:q の真理根拠が全て p の真理根拠なら p は q から帰結する
@@ -280,11 +280,11 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.123	elucid	out	-	mid	-	consequence,world,object	5.12	神が世界を作る比喩。後半の「命題の対象を全て作らずに命題を真にできない」は対象の存在についての含意を持つ
 5.124	conseq	1	-	high	-	consequence,assertion	5.12	命題はそれから帰結する全ての命題を主張する
 5.1241	conseq	1	-	high	-	consequence,logical_product,contradiction	5.124	「p . q」は p も q も主張する。二つを同時に主張する意味のある命題がなければ対立する。矛盾する命題は否定する
-5.13	claim	1	-	high	-	consequence,structure	4.1211,5.131	帰結関係は命題の構造から見て取れる。帰結の判定は真理条件から計算できる(決定可能)
-5.131	claim	1	-	mid	say_show	consequence,internal_relation	5.13	帰結関係は命題の形式の内的関係として表れ、命題で結びつける必要はない
+5.13	conseq	1	-	high	-	consequence,structure	4.1211,5.131	帰結関係は命題の構造から見て取れる。帰結の判定は真理条件から計算できる(決定可能)。【段階 1 の形式化で種別を claim→conseq に変更】独立性のもとで、帰結関係が真理関数の表の有限個の行の確認で決まる(決定可能)ことを定理にした
+5.131	claim	basis	帰結関係を命題の意味だけから決まる関係として定義する設計の根拠。関係が内的であること自体は語れない(say_show)(段階 1 の形式化で段階 1 から移した)	mid	say_show	consequence,internal_relation	5.13	帰結関係は命題の形式の内的関係として表れ、命題で結びつける必要はない
 5.1311	elucid	out	-	high	-	consequence,notation,sheffer_stroke	5.13	p∨q と ~p から q を推論する例を、Sheffer の棒(p|q=p でも q でもない)で書き直すと内的な結びつきが明らかになる
-5.132	claim	1	-	mid	-	consequence,inference	5.13	推論の正しさは二つの命題だけから理解される。Frege・Russell の推論規則は無意味で余計
-5.133	claim	1	-	high	-	inference	5.132	全ての推論はア・プリオリに行われる
+5.132	claim	basis	帰結関係を二つの命題の意味だけから定義し、推論規則(証明体系)を置かない設計の根拠(interpretation の logic_tautology)(段階 1 の形式化で段階 1 から移した)	mid	-	consequence,inference	5.13	推論の正しさは二つの命題だけから理解される。Frege・Russell の推論規則は無意味で余計
+5.133	claim	basis	帰結関係を現実に依らず意味だけで定義する設計の根拠(段階 1 の形式化で段階 1 から移した)	high	-	inference	5.132	全ての推論はア・プリオリに行われる
 5.134	conseq	1	-	high	independence	elementary_proposition,inference,independence	4.211,2.062	要素命題からは他の要素命題を推論できない。2.062・4.211 の帰結として定理の候補
 5.135	conseq	1	-	high	independence	situation,inference,independence	5.134	ある状況の存在から全く別の状況の存在は推論できない
 5.136	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	causality	causality,inference	5.135	推論を正当化する因果連関はない
@@ -294,7 +294,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.14	conseq	1	-	high	-	consequence	5.12	p が q から帰結するなら q は p より多くを語る。意味の包含関係から
 5.141	conseq	1	-	high	-	consequence,identity	5.12	p と q が互いに帰結するなら同じ命題。命題を真理条件で同一視することの帰結(外延性)
 5.142	conseq	1	-	high	-	tautology,consequence	4.46,5.12	トートロジーは全ての命題から帰結し、何も語らない。定理の候補
-5.143	claim	1	-	mid	-	tautology,contradiction	5.142	矛盾は命題の外の限界、トートロジーは中心。束の上端・下端として形式化できる
+5.143	conseq	1	-	mid	-	tautology,contradiction	5.142	矛盾は命題の外の限界、トートロジーは中心。束の上端・下端として形式化できる。【段階 1 の形式化で種別を claim→conseq に変更】矛盾は全ての命題より下、トートロジーは上にあること(包含の順序の両端)を定理にした
 5.15	def	3	-	high	-	probability,truth_ground	5.151	確率の定義:T_rs:T_r を r が s に与える確率とする
 5.151	conseq	3	-	high	-	probability,truth_table	5.15	5.101 の表での確率の数え方。5.15 の言い換え
 5.1511	claim	3	-	mid	-	probability	5.15	確率命題に固有の対象はない

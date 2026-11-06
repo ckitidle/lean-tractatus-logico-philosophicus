@@ -56,7 +56,8 @@ lake exe render-correspondence 1     # correspondence/stage1.md に原文を差�
 
 - `lakefile.toml` — Lake の設定。ライブラリ名は `Tractatus`
 - `Tractatus.lean` — ライブラリのルート。新しいモジュールはここで import する
-- `Tractatus/` — 本体。`Meta.lean`(命題番号の札)、`LogicalSpace.lean`、`TruthPossibility.lean`、`Models/`(モデルと反例)
+- `Tractatus/` — 本体。`Meta.lean`(命題番号の札)、`LogicalSpace.lean`(世界・現実・論理空間)、`Facts.lean`(事実)、`Objects.lean`(対象と事態)、`TruthPossibility.lean`(真理可能性・真理関数)、`Picture.lean`(像の意味と真偽)、`Consequence.lean`(帰結)、`Models/`(モデルと反例)
+- Mathlib の `Set.sUnion`(記法 `⋃₀`)などは、`Mathlib.Order.SetNotation` を直接 import しないと見えないことがある(モジュール方式の影響)
 - `tools/` — 補助ツール(`extract-source`、`tlp-test`(= lake test)、`render-review`、`render-correspondence`)。ライブラリとは別の実行ファイル
 - `source/` — 論考の本文データ(英独対訳)。出典と変換の決まりは `source/README.md`
 - `docs/` — 方針だけ(`roadmap.md` 進め方、`policy.md` 形式化の方針)
