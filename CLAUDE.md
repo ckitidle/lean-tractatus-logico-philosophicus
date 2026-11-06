@@ -33,12 +33,19 @@ lake build                   # lean-toolchain の版を elan が自動で入れ�
 ```bash
 lake build                          # ライブラリ全体をビルド(型検査 = 証明の検査)
 lake env lean Tractatus/Basic.lean  # 1ファイルだけ検査
+lake test                           # 本文データ source/tractatus.json の検査(check-source)
+lake exe extract-source <5740-t.tex> source  # 本文データの再生成(source/README.md)
 ```
 
-`.github/workflows/lean_action_ci.yml` が push と PR で `leanprover/lean-action` を走らせる。
+`.github/workflows/lean_action_ci.yml` が push と PR で `leanprover/lean-action` を走らせる(`lake build` と `lake test`)。
+
+Lake でハイフンを含む実行ファイル名を `testDriver` などから参照するときは `«check-source»` と書く。
 
 ## Layout
 
 - `lakefile.toml` — Lake の設定。ライブラリ名は `Tractatus`
 - `Tractatus.lean` — ライブラリのルート。新しいモジュールはここで import する
 - `Tractatus/` — 本体
+- `tools/` — 補助ツール(`extract-source`、`check-source`)。ライブラリとは別の実行ファイル
+- `source/` — 論考の本文データ(英独対訳)。出典と変換の決まりは `source/README.md`
+- `docs/` — ロードマップ、読解ノート、方針メモ

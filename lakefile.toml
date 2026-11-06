@@ -1,6 +1,19 @@
 name = "Tractatus"
 version = "0.1.0"
 defaultTargets = ["Tractatus"]
+testDriver = "«check-source»"
 
 [[lean_lib]]
 name = "Tractatus"
+
+# Extracts source/tractatus.json from the Project Gutenberg LaTeX source (see source/README.md)
+[[lean_exe]]
+name = "extract-source"
+srcDir = "tools"
+root = "ExtractSource"
+
+# Validates source/tractatus.json (run by `lake test`)
+[[lean_exe]]
+name = "check-source"
+srcDir = "tools"
+root = "CheckSource"
