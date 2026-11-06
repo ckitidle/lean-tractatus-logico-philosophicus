@@ -56,7 +56,7 @@ lake exe render-correspondence 1     # correspondence/stage1.md に原文を差�
 
 - `lakefile.toml` — Lake の設定。ライブラリ名は `Tractatus`
 - `Tractatus.lean` — ライブラリのルート。新しいモジュールはここで import する
-- `Tractatus/` — 本体。`Meta.lean`(命題番号の札)、`LogicalSpace.lean`(世界・現実・論理空間)、`Facts.lean`(事実)、`Objects.lean`(対象と事態)、`TruthPossibility.lean`(真理可能性・真理関数)、`Picture.lean`(像の意味と真偽)、`Consequence.lean`(帰結)、`Operation.lean`(操作・形式列・数)、`GeneralForm.lean`(N 演算子と命題の一般形式)、`Logic.lean`(論理の命題)、`Names.lean`(名前・像の構造・命題記号・思考)、`Internal.lean`(内的性質)、`Probability.lean`(確率)、`Colour.lean`(色の排除)、`Models/`(モデルと反例)
+- `Tractatus/` — 本体。`Meta.lean`(命題番号の札)、`LogicalSpace.lean`(世界・現実・論理空間)、`Facts.lean`(事実)、`Objects.lean`(対象と事態)、`TruthPossibility.lean`(真理可能性・真理関数)、`Picture.lean`(像の意味と真偽)、`Consequence.lean`(帰結)、`Operation.lean`(操作・形式列・数)、`GeneralForm.lean`(N 演算子と命題の一般形式)、`Logic.lean`(論理の命題)、`Names.lean`(名前・像の構造・命題記号・思考)、`Internal.lean`(内的性質)、`Probability.lean`(確率)、`Colour.lean`(色の排除)、`Generality.lean`(量化と N による翻訳)、`Models/`(モデルと反例)
 - Mathlib の `Set.sUnion`(記法 `⋃₀`)などは、`Mathlib.Order.SetNotation` を直接 import しないと見えないことがある(モジュール方式の影響)
 - `tools/` — 補助ツール(`extract-source`、`tlp-test`(= lake test)、`render-review`、`render-correspondence`)。ライブラリとは別の実行ファイル
 - `source/` — 論考の本文データ(英独対訳)。出典と変換の決まりは `source/README.md`
