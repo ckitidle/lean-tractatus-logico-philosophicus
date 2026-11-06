@@ -64,9 +64,11 @@ def kinds : List String := ["def", "claim", "conseq", "notation", "elucid", "out
 /-- Kinds that can be formalized (the others are never formalized). -/
 def formalizableKinds : List String := ["def", "claim", "conseq", "notation"]
 def confidences : List String := ["high", "mid", "low"]
-/-- `1`–`4`: the stage of docs/policy.md §2; `out`: not formalized; `basis`: used as a
-design rationale rather than formalized. -/
-def stages : List String := ["1", "2", "3", "4", "out", "basis"]
+/-- `1`–`3`, `4a`–`4d`: the stage of docs/policy.md §2; `out`: not formalized; `basis`: used
+as a design rationale rather than formalized. -/
+def stages : List String := ["1", "2", "3", "4a", "4b", "4c", "4d", "out", "basis"]
+/-- Stages that are deferred: their propositions must say why in `scope_note`. -/
+def deferredStages : List String := ["4c", "4d"]
 
 /-- Validates `analysis/reading/classification.tsv` against the proposition numbers:
 one row per proposition in the same order, 9 columns, known kind, stage and confidence,
@@ -92,6 +94,8 @@ def checkClassification (numbers : List String) : IO (Array String) := do
       if formalizableKinds.contains kind then
         if (stage == "out" || stage == "basis") && scopeNote == "-" then
           errors := errors.push s!"{path}: {num}: {kind} with stage '{stage}' needs a scope_note (why it is not formalized)"
+        if deferredStages.contains stage && scopeNote == "-" then
+          errors := errors.push s!"{path}: {num}: stage '{stage}' is deferred and needs a scope_note (why)"
       else if stage != "out" then
         errors := errors.push s!"{path}: {num}: kind '{kind}' is never formalized, so its stage must be 'out'"
       if !confidences.contains conf then errors := errors.push s!"{path}: {num}: unknown confidence '{conf}'"

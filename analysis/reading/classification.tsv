@@ -365,25 +365,25 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.514	claim	2	-	mid	-	notation,sense	5.513	記法が決まれば、p を否定する全ての命題を作る規則などがあり、それらは記号と同値
 5.515	claim	2	-	mid	-	proposition,logical_sum	5.514	「∨」などで結ばれるものが命題でなければならないことが記号に表れていなければならない
 5.5151	claim	2	-	low	-	negation,negative_fact	5.515	否定命題を否定的事実で表せないか。肯定命題と否定命題は互いの存在を前提する
-5.52	notation	4	-	high	n_operator	n_operator,generality	5.502,5.501	ξ の値が関数 fx の全ての値なら N(ξ̄)=~(∃x) . fx。量化を N で表す仕方。対象の領域が無限なら無限個の命題の否定になる
-5.521	claim	4	-	mid	-	generality,truth_function	5.52	「全て」の概念を真理関数から切り離す。Frege・Russell は一般性を論理積・論理和と結びつけた
-5.522	claim	4	-	low	-	generality	5.521	一般性の記号法の特徴は論理的原型への言及と、定項を際立たせること
-5.523	claim	4	-	low	-	generality	5.522	一般性の記号は項として現れる
-5.524	claim	4	-	mid	-	object,elementary_proposition	2.0124	対象が与えられれば全ての対象も与えられる。要素命題が与えられれば全ての要素命題も与えられる
-5.525	claim	4	-	mid	-	modality,tautology,generality	4.464	「(∃x) . fx」を「fx は可能」と読むのは誤り。確実・可能・不可能は命題で表されず、表現がトートロジー・意味のある命題・矛盾であることで表される
-5.526	claim	4	-	mid	-	generality,world,description	5.5262	世界は完全に一般化された命題で完全に記述できる
-5.5261	claim	4	-	low	-	generality,symbol	5.526	完全に一般化された命題も複合的
-5.5262	claim	4	-	mid	-	generality,elementary_proposition,world	5.526	どの命題の真偽も世界の一般的構造を何か変える。要素命題の全体が構造に許す範囲は、完全に一般的な命題が区切る範囲と同じ
-5.53	notation	4	-	high	identity	identity,notation	5.531	対象の同一性を記号の同一性で表し、同一性の記号を使わない。対象の違いを記号の違いで表す(排他的解釈の変項)。D で採否を決める論点
-5.5301	claim	4	-	mid	identity	identity	5.53	同一性は対象の間の関係ではない
-5.5302	claim	4	-	mid	identity	identity	5.5301	Russell の「=」の定義(全ての性質の共有)は使えない。二つの対象が全ての性質を共有するという命題は(偽でも)意味を持つ
-5.5303	claim	4	-	mid	identity	identity,nonsense	4.243	二つのものが同一だと言うのは無意味、一つのものが自分と同一だと言うのは何も言わない
-5.531	notation	4	-	high	identity	identity,notation	5.53	「f(a, b) . a=b」でなく「f(a, a)」と書く、など
-5.532	notation	4	-	high	identity	identity,generality,notation	5.531	「(∃x, y) . f(x, y) . x=y」でなく「(∃x) . f(x, x)」と書く、など。排他的解釈の量化の翻訳規則として形式化できる
-5.5321	notation	4	-	high	identity	identity,generality,notation	5.532	「(x):fx ⊃ x=a」や「ただ一つの x が f を満たす」の書き換え
-5.533	conseq	4	-	high	identity	identity	5.53,5.532	同一性の記号は論理的記法の本質的な構成要素ではない。排他的解釈の表現力が通常の同一性付きの論理と同等という定理の候補(Wehmeier の研究)
-5.534	claim	4	-	mid	identity	identity,nonsense	5.533	「a=a」「(x) . x=x」などは正しい記法では書けない
-5.535	claim	4	-	mid	infinity	identity,infinity,name	4.2211	これで擬似命題に関わる問題が消える。無限公理が言おうとすることは、異なる意味を持つ名前が無限にあることで言語に表される
+5.52	notation	4a	-	high	n_operator	n_operator,generality	5.502,5.501	ξ の値が関数 fx の全ての値なら N(ξ̄)=~(∃x) . fx。量化を N で表す仕方。対象の領域が無限なら無限個の命題の否定になる
+5.521	claim	4a	-	mid	-	generality,truth_function	5.52	「全て」の概念を真理関数から切り離す。Frege・Russell は一般性を論理積・論理和と結びつけた
+5.522	claim	out	一般性の記号法の性質についての述べ方が漠然としていて、形式化の対象として定まらない	low	-	generality	5.521	一般性の記号法の特徴は論理的原型への言及と、定項を際立たせること
+5.523	claim	4a	-	low	-	generality	5.522	一般性の記号は項として現れる
+5.524	claim	4a	-	mid	-	object,elementary_proposition	2.0124	対象が与えられれば全ての対象も与えられる。要素命題が与えられれば全ての要素命題も与えられる
+5.525	claim	4a	-	mid	-	modality,tautology,generality	4.464	「(∃x) . fx」を「fx は可能」と読むのは誤り。確実・可能・不可能は命題で表されず、表現がトートロジー・意味のある命題・矛盾であることで表される
+5.526	claim	4a	-	mid	-	generality,world,description	5.5262	世界は完全に一般化された命題で完全に記述できる
+5.5261	claim	out	一般性の記号法の性質についての述べ方が漠然としていて、形式化の対象として定まらない	low	-	generality,symbol	5.526	完全に一般化された命題も複合的
+5.5262	claim	4a	-	mid	-	generality,elementary_proposition,world	5.526	どの命題の真偽も世界の一般的構造を何か変える。要素命題の全体が構造に許す範囲は、完全に一般的な命題が区切る範囲と同じ
+5.53	notation	4b	-	high	identity	identity,notation	5.531	対象の同一性を記号の同一性で表し、同一性の記号を使わない。対象の違いを記号の違いで表す(排他的解釈の変項)。D で採否を決める論点
+5.5301	claim	4c	証明が重いので保留(段階 4c)	mid	identity	identity	5.53	同一性は対象の間の関係ではない
+5.5302	claim	4b	-	mid	identity	identity	5.5301	Russell の「=」の定義(全ての性質の共有)は使えない。二つの対象が全ての性質を共有するという命題は(偽でも)意味を持つ
+5.5303	claim	4c	証明が重いので保留(段階 4c)	mid	identity	identity,nonsense	4.243	二つのものが同一だと言うのは無意味、一つのものが自分と同一だと言うのは何も言わない
+5.531	notation	4b	-	high	identity	identity,notation	5.53	「f(a, b) . a=b」でなく「f(a, a)」と書く、など
+5.532	notation	4c	証明が重いので保留(段階 4c)	high	identity	identity,generality,notation	5.531	「(∃x, y) . f(x, y) . x=y」でなく「(∃x) . f(x, x)」と書く、など。排他的解釈の量化の翻訳規則として形式化できる
+5.5321	notation	4c	証明が重いので保留(段階 4c)	high	identity	identity,generality,notation	5.532	「(x):fx ⊃ x=a」や「ただ一つの x が f を満たす」の書き換え
+5.533	conseq	4c	証明が重いので保留(段階 4c)	high	identity	identity	5.53,5.532	同一性の記号は論理的記法の本質的な構成要素ではない。排他的解釈の表現力が通常の同一性付きの論理と同等という定理の候補(Wehmeier の研究)
+5.534	claim	4c	証明が重いので保留(段階 4c)	mid	identity	identity,nonsense	5.533	「a=a」「(x) . x=x」などは正しい記法では書けない
+5.535	claim	4d	元の記述が形式的に曖昧で、どの読み方でも別の主張が崩れるので保留(段階 4d)	mid	infinity	identity,infinity,name	4.2211	これで擬似命題に関わる問題が消える。無限公理が言おうとすることは、異なる意味を持つ名前が無限にあることで言語に表される
 5.5351	elucid	out	-	mid	-	identity,nonsense	5.535	Russell が「p は命題である」を「p ⊃ p」で表した誤り
 5.5352	elucid	out	-	mid	-	identity,nonsense	5.535	「物はない」を「~(∃x) . x=x」で表す提案の誤り
 5.54	claim	2	-	high	extensionality	proposition,truth_operation,general_form	5.3	一般命題形式では、命題は真理操作の基底としてだけ他の命題に現れる(外延性)
