@@ -123,8 +123,8 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 
 作る時期:形式化の中身より検査の仕組みが先に膨らまないよう、フェーズ E では**最小限**だけ作る。
 
-- E で作るもの:attribute、番号の実在の確認、宣言の種類の照合、公理と `sorry` の検査
-- F の最初(段階 1 を広げるとき)に作るもの:カバレッジのレポート、対応記録に原文を差し込んだ読む用の版の生成
+- E で作るもの:attribute、番号の実在の確認、宣言の種類の照合、公理と `sorry` の検査、対応記録に原文を差し込んだ読む用の版の生成(パイロットの記録をユーザーが読むのに要るため)
+- F の最初(段階 1 を広げるとき)に作るもの:カバレッジのレポート
 
 ### レベル 1:出典を追えるか(lake test)
 
@@ -166,8 +166,13 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 ## 7. Mathlib
 
 - **入れる**。段階 1 から `Set`、`Finset`、`Fintype.card`、`Function` の補題、ブール代数を使う
-- 入れるとき `lean-toolchain` を Mathlib の版に揃える(現在の v4.35.0 から変わる可能性がある)。`lake exe cache get` でビルド済みのキャッシュを取る
-- 時期はフェーズ E の最初
+- **版は、今の `lean-toolchain`(v4.35.0)に対応する Mathlib のリリース版に固定する**。Mathlib の最新版(master)は Lean の開発版(2026-11-06 時点で v4.36.0-rc2)を前提にしているので使わない。リリース版のタグ(例:`v4.35.0`)を `lakefile.toml` の `rev` に指定する
+- `lake exe cache get` でビルド済みのキャッシュを取る
+- 時期はフェーズ E の最初。Mathlib 本体とキャッシュの取得(数 GB)はダウンロードを伴い、この環境では Claude の側から止められる可能性が高い。そのときはユーザーに `!` で実行してもらう
+
+### 補助ツール
+
+- `lean-lsp-mcp`(Lean の証明の途中の状態を Claude が直接見られるようにする MCP サーバ)は**入れない**。外部のコード(Python のパッケージ)を実行することになり、`~/programs` 配下の mise の python が壊れているため今は動かない可能性が高い。毎回 `lake build` で確かめれば書ける。証明を書くのが辛くなったら改めて検討する
 
 ## 8. 論考と Lean のずれ(既知のもの)
 
@@ -189,7 +194,7 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 - **完了条件**:
   - 上の命題が §4 の対応に従って形式化され、`lake build` が通る
   - レベル 1・2 の最小限の検査(§6)が、ローカルの `lake build` / `lake test` で通る
-  - `correspondence/stage1.md` に上の命題の記録がある
+  - `correspondence/stage1.md` に上の命題の記録があり、原文を差し込んだ読む用の版(`out/correspondence/`)を生成できる
   - 独立性を満たすモデルと、2.062 の反例モデルがある
 - やってみて方針が回らなければ、この文書を直す
 
