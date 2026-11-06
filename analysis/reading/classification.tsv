@@ -225,7 +225,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.1271	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	-	formal_concept,variable	4.127	全ての変項は形式的概念の記号
 4.1272	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	formal_concepts	formal_concept,object,variable,nonsense	4.1274,5.535	「対象」は擬似概念で、変項名「x」で表される。「対象がある」「対象は100個ある」「全ての対象の数」は無意味。Lean では型(Sort)として扱うことになり、この主張との関係は D で検討する
 4.12721	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	formal_concepts	formal_concept	4.1272	形式的概念とそれに属する対象を、両方とも原始概念として導入できない
-4.1273	claim	2	-	mid	-	formal_series,variable,operation	4.1252,5.2522,6.02	形式列の一般項は変項でだけ表せる。最初の項と、前の項から次の項を作る操作の一般形式で決まる。Frege・Russell の「後続者」の表し方は循環を含む。形式化では帰納的定義(閉包)として表せる
+4.1273	conseq	2	-	mid	-	formal_series,variable,operation	4.1252,5.2522,6.02	形式列の一般項は変項でだけ表せる。最初の項と、前の項から次の項を作る操作の一般形式で決まる。Frege・Russell の「後続者」の表し方は循環を含む。形式化では帰納的定義(閉包)として表せる。【段階 2 の形式化で種別を claim→conseq に変更】形式列の一般項(操作の継続的適用)と Frege 流の「後続者」(閉じたクラスの共通部分)が同じ項を取り出すことを定理にした
 4.1274	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	formal_concepts	formal_concept,nonsense	4.1272	形式的概念の存在についての問いは無意味
 4.128	claim	out	論理形式は数を持たないという主張で、形式化の対象として定まらない	low	-	logical_form	4.1272	論理形式は数を持たない。論理に特別な数はない
 4.2	def	1	-	high	-	sense,proposition,atomic_fact	2.201,4.4	命題の意味(Sinn)=事態の成立・不成立の可能性との一致・不一致。意味を可能世界の集合(真理条件)として定義する中心命題
@@ -264,10 +264,10 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.465	conseq	1	-	high	-	tautology,logical_product,sense	4.46	トートロジーと命題の論理積は命題と同じことを言う。定理の候補(p ∧ ⊤ ≡ p)
 4.466	claim	3	記号の結合と対象の結合の対応は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
 4.4661	elucid	out	-	mid	-	tautology,symbol	4.466	トートロジーの中の記号の関係はシンボルにとって本質的でない
-4.5	claim	2	-	mid	general_form	general_form,proposition	4.53,6	命題の最も一般的な形式を与えられそう。一般形式は「事情はかくかくである」
+4.5	conseq	2	-	mid	general_form	general_form,proposition	4.53,6	命題の最も一般的な形式を与えられそう。一般形式は「事情はかくかくである」。【段階 2 の形式化で種別を claim→conseq に変更】N で作った記号の意味がちょうど要素命題の真理関数になること(一般形式が与えられること)を定理にした
 4.51	claim	2	-	high	general_form	elementary_proposition,proposition	4.52,5	全ての要素命題が与えられれば、そこから作れる命題が全ての命題。命題の全体を要素命題からの生成として形式化する根拠
 4.52	claim	2	-	mid	general_form	elementary_proposition,proposition	4.51	命題は全ての要素命題の全体から(それが全体であることも含めて)帰結するもの全て
-4.53	claim	2	-	mid	general_form	general_form,variable	6	命題の一般形式は変項
+4.53	claim	basis	命題の一般形式を一つの帰納的な型(Formula)として与える設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	general_form	general_form,variable	6	命題の一般形式は変項
 5	claim	1	-	high	extensionality	proposition,truth_function,elementary_proposition	4.4,5.3	命題は要素命題の真理関数(外延性のテーゼ)。要素命題はそれ自身の真理関数。形式化の中心となる主張
 5.01	def	1	-	high	-	elementary_proposition,truth_argument	5	要素命題は命題の真理項
 5.02	elucid	out	-	mid	-	argument,index	5.2341	関数の項と名前の指標の混同についての Frege 批判
@@ -303,68 +303,68 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.154	elucid	out	-	high	-	probability	5.155	壺から玉を取り出す例
 5.155	claim	3	-	low	-	probability	5.154	確率命題の単位
 5.156	claim	3	-	low	-	probability,generality	5.155	確率は一般化。確率命題は他の命題からの抜粋
-5.2	claim	2	-	mid	-	structure,internal_relation	5.21	命題の構造は互いに内的関係に立つ
-5.21	claim	2	-	mid	-	operation,internal_relation	5.22	内的関係は、命題を他の命題(基底)からの操作の結果として表すことで示せる
+5.2	claim	basis	命題の構造の内的関係を、操作(写像)で表す設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	structure,internal_relation	5.21	命題の構造は互いに内的関係に立つ
+5.21	claim	basis	内的関係を操作の結果として表すという設計の根拠(Formula を操作 N の結果として定義する)(段階 2 の形式化で段階 2 から移した)	mid	-	operation,internal_relation	5.22	内的関係は、命題を他の命題(基底)からの操作の結果として表すことで示せる
 5.22	def	2	-	mid	-	operation	5.23	操作=結果と基底の構造の関係の表現
 5.23	def	2	-	mid	-	operation	5.22	操作=命題から別の命題を作るために起きなければならないこと
-5.231	claim	2	-	mid	-	operation,formal_property	5.23	操作は形式的性質と形式の内的な類似に依存する
-5.232	claim	2	-	mid	-	operation,formal_series	4.1252	列を順序づける内的関係は、項から項を生む操作と同値
-5.233	claim	2	-	low	-	operation	5.234	操作が現れうる最初の場所は、命題の論理的構成が始まるところ
+5.231	claim	basis	操作が形式的性質に依存するという注意。操作を記号の型の上の写像とする設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	operation,formal_property	5.23	操作は形式的性質と形式の内的な類似に依存する
+5.232	conseq	2	-	mid	-	operation,formal_series	4.1252	列を順序づける内的関係は、項から項を生む操作と同値。【段階 2 の形式化で種別を claim→conseq に変更】列を順序づける内的関係と、操作の継続的適用が同じ項を与えることを定理にした(4.1273 と同じ定理)
+5.233	claim	out	確信度が低く、形式的な内容が定まらない(段階 2 の形式化で段階 2 から移した)	low	-	operation	5.234	操作が現れうる最初の場所は、命題の論理的構成が始まるところ
 5.234	def	2	-	high	-	truth_operation,truth_function,elementary_proposition	5.3	要素命題の真理関数は、要素命題を基底とする操作の結果。その操作を真理操作と呼ぶ
-5.2341	claim	2	-	high	-	truth_function,sense,negation	5.234	p の真理関数の意味は p の意味の関数(合成性)。否定・論理和・論理積は操作。否定は意味を逆にする
-5.24	claim	2	-	mid	-	operation,variable	5.241	操作は変項の中で示され、形式の違いを表す
-5.241	claim	2	-	mid	-	operation,form	5.24	操作は形式ではなく形式の違いを特徴づける
-5.242	claim	2	-	mid	-	operation,variable	5.2522	p から q を作る操作が q から r を作る。p, q, r が変項であることでだけ表せる
-5.25	claim	2	-	high	-	operation,function,sense	5.251	操作が現れることは命題の意味を特徴づけない。操作と関数を混同してはならない
-5.251	claim	2	-	high	-	operation,function	3.333	関数は自分自身の引数になれないが、操作の結果はその操作の基底になれる。形式化では操作を同じ型上の写像(自己写像)として扱う根拠
-5.252	claim	2	-	mid	type_theory	operation,formal_series	5.251	これによってだけ形式列の項から項への前進(型階層の型から型への前進)が可能
+5.2341	conseq	2	-	high	-	truth_function,sense,negation	5.234	p の真理関数の意味は p の意味の関数(合成性)。否定・論理和・論理積は操作。否定は意味を逆にする。【段階 2 の形式化で種別を claim→conseq に変更】N で作った命題の意味が構成要素の意味だけで決まること(合成性)と、否定が意味を逆にすることを定理にした
+5.24	claim	basis	操作を写像として扱う設計の根拠。変項の中で示されるという点は語れない(say_show)(段階 2 の形式化で段階 2 から移した)	mid	-	operation,variable	5.241	操作は変項の中で示され、形式の違いを表す
+5.241	claim	basis	操作を形式そのものではなく形式から形式への写像として扱う設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	operation,form	5.24	操作は形式ではなく形式の違いを特徴づける
+5.242	conseq	2	-	mid	-	operation,variable	5.2522	p から q を作る操作が q から r を作る。p, q, r が変項であることでだけ表せる。【段階 2 の形式化で種別を claim→conseq に変更】同じ操作が各項から次の項を作ることを、継続的適用の性質として定理にした
+5.25	conseq	2	-	high	-	operation,function,sense	5.251	操作が現れることは命題の意味を特徴づけない。操作と関数を混同してはならない。【段階 2 の形式化で種別を claim→conseq に変更】~~p と p は記号として別だが意味は同じ(操作が現れても意味を特徴づけない)ことを定理にした
+5.251	conseq	2	-	high	-	operation,function	3.333	関数は自分自身の引数になれないが、操作の結果はその操作の基底になれる。形式化では操作を同じ型上の写像(自己写像)として扱う根拠。【段階 2 の形式化で種別を claim→conseq に変更】操作を同じ種類の上の写像とし、その結果に再び操作を適用できることを定理にした
+5.252	claim	basis	型理論との関係(interpretation の type_theory)。Lean の型をメタ言語の道具として使う前提に含める(段階 2 の形式化で段階 2 から移した)	mid	type_theory	operation,formal_series	5.251	これによってだけ形式列の項から項への前進(型階層の型から型への前進)が可能
 5.2521	def	2	-	high	-	operation,successive_application	5.2522	操作をその結果に繰り返し適用することを継続的適用と呼ぶ
 5.2522	notation	2	-	high	-	formal_series,operation,notation	4.1273,6.02	形式列の一般項の記法「[a, x, O’x]」。初項・任意の項・その次の項。帰納的に生成される集合として形式化できる
-5.2523	claim	2	-	mid	-	successive_application	5.2522	操作の継続的適用の概念は「など」の概念と同値
-5.253	claim	2	-	mid	-	operation	5.254	操作は他の操作の効果を逆にでき、打ち消し合える
+5.2523	conseq	2	-	mid	-	successive_application	5.2522	操作の継続的適用の概念は「など」の概念と同値。【段階 2 の形式化で種別を claim→conseq に変更】継続的適用と「など」(閉じたクラス)が同じ項を与えることを定理にした(4.1273 と同じ定理)
+5.253	conseq	2	-	mid	-	operation	5.254	操作は他の操作の効果を逆にでき、打ち消し合える。【段階 2 の形式化で種別を claim→conseq に変更】否定を二度施すと元に戻る(操作が打ち消し合う)ことを定理にした
 5.254	conseq	2	-	high	-	operation,negation	4.0621	操作は消えうる(~~p=p)。二重否定の除去として定理の候補
 5.3	claim	2	-	high	general_form	proposition,truth_operation,elementary_proposition	5,5.32	全ての命題は要素命題に真理操作を施した結果。真理操作の結果に真理操作を施した結果も、要素命題に一つの真理操作を施した結果。形式化の中心となる主張
-5.31	claim	2	-	mid	-	truth_table,truth_function	4.31,4.442	4.31 の表は p, q, r が要素命題でなくても意味を持つ
+5.31	conseq	2	-	mid	-	truth_table,truth_function	4.31,4.442	4.31 の表は p, q, r が要素命題でなくても意味を持つ。【段階 2 の形式化で種別を claim→conseq に変更】真理操作を要素命題でない命題(真理関数)に施しても要素命題の真理関数になることを定理にした
 5.32	claim	2	-	high	general_form	truth_function,truth_operation,successive_application	5.3,6.001	全ての真理関数は有限個の真理操作を要素命題に継続的に適用した結果。帰納的に定義された命題の型として形式化できる。有限性の条件が N 演算子の議論に関わる
 5.4	conseq	2	-	high	logical_constants	logical_constant,logical_object	4.0312,4.441	5.3 から:Frege・Russell の意味での「論理的対象」「論理定項」はない
 5.41	conseq	2	-	high	extensionality	truth_function,truth_operation	5.3	同じ真理関数になる真理操作の結果は全て同一。命題を真理関数として同一視することの帰結
-5.42	claim	2	-	mid	logical_constants	logical_constant,definition	5.4	∨ や ⊃ は関係ではない。Frege・Russell の原始記号が互いに定義し合えることがそれを示す
-5.43	claim	2	-	mid	-	tautology,logic	6.1	p から ~~p などの無限の命題が帰結するのは驚くべきことに見えるが、論理の命題は全て同じこと、つまり何も言わない。論理の命題がトートロジーとして全て同値という定理の候補
-5.44	claim	2	-	high	logical_constants	truth_function,negation	4.0621	真理関数は実質的な関数ではない。「~~p」は否定を対象として扱わない。「~」という対象があれば ~~p は p と別のことを言うことになる
-5.441	claim	2	-	mid	logical_constants	generality,identity	5.47	見かけの論理定項の消滅は「~(∃x) . ~fx」と「(x) . fx」、「(∃x) . fx . x=a」と「fa」でも起きる
-5.442	claim	2	-	mid	-	truth_operation,proposition	3.42	命題が与えられれば、それを基底とする全ての真理操作の結果も与えられる
+5.42	conseq	2	-	mid	logical_constants	logical_constant,definition	5.4	∨ や ⊃ は関係ではない。Frege・Russell の原始記号が互いに定義し合えることがそれを示す。【段階 2 の形式化で種別を claim→conseq に変更】論理和・論理積・含意が互いに定義し合えることを定理にした
+5.43	conseq	2	-	mid	-	tautology,logic	6.1	p から ~~p などの無限の命題が帰結するのは驚くべきことに見えるが、論理の命題は全て同じこと、つまり何も言わない。論理の命題がトートロジーとして全て同値という定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】トートロジーはすべて同じ命題であること、p から出る ~~p などはすべて p と同じことを定理にした
+5.44	conseq	2	-	high	logical_constants	truth_function,negation	4.0621	真理関数は実質的な関数ではない。「~~p」は否定を対象として扱わない。「~」という対象があれば ~~p は p と別のことを言うことになる。【段階 2 の形式化で種別を claim→conseq に変更】~~p は p と意味が同じで、否定を含むことを語らないことを定理にした
+5.441	claim	4a	量化子を含む例なので段階 4a で扱う(段階 2 の形式化で段階 2 から移した)	mid	logical_constants	generality,identity	5.47	見かけの論理定項の消滅は「~(∃x) . ~fx」と「(x) . fx」、「(∃x) . fx . x=a」と「fa」でも起きる
+5.442	conseq	2	-	mid	-	truth_operation,proposition	3.42	命題が与えられれば、それを基底とする全ての真理操作の結果も与えられる。【段階 2 の形式化で種別を claim→conseq に変更】一つの命題を基底とする真理操作の結果はちょうど四つ(矛盾、その命題、否定、トートロジー)であることを定理にした
 5.45	elucid	out	-	mid	-	primitive_sign,logic	5.451	論理の原始記号があるなら、その相互の位置と存在を正当化しなければならない
-5.451	claim	2	-	mid	-	primitive_sign	5.45	原始概念は互いに独立で、現れる全ての脈絡で一度に導入されなければならない
+5.451	claim	basis	原始記号を N 一つにする設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	primitive_sign	5.45	原始概念は互いに独立で、現れる全ての脈絡で一度に導入されなければならない
 5.452	elucid	out	-	mid	-	notation	5.451	新しい記号法の導入は重大な出来事。Principia の言葉による定義の批判
-5.453	claim	2	-	low	-	logic,number	4.128	論理の中の数は全て正当化できなければならない。むしろ論理には数がない
-5.454	claim	2	-	low	-	logic	5.4541	論理には並列も分類もない。より一般的なものとより特殊なものはない
+5.453	claim	out	論理の中に数はないという注意で、形式的な内容が定まらない(段階 2 の形式化で段階 2 から移した)	low	-	logic,number	4.128	論理の中の数は全て正当化できなければならない。むしろ論理には数がない
+5.454	claim	out	論理には分類がないという注意で、形式的な内容が定まらない(段階 2 の形式化で段階 2 から移した)	low	-	logic	5.4541	論理には並列も分類もない。より一般的なものとより特殊なものはない
 5.4541	elucid	out	-	mid	-	logic	5.454	論理の問題の解決は単純でなければならない
-5.46	claim	2	-	mid	general_form	logical_constant,general_form	5.47	論理記号を正しく導入すれば、その全ての組み合わせの意味も導入されている。本当の原始記号は組み合わせの最も一般的な形式
+5.46	conseq	2	-	mid	general_form	logical_constant,general_form	5.47	論理記号を正しく導入すれば、その全ての組み合わせの意味も導入されている。本当の原始記号は組み合わせの最も一般的な形式。【段階 2 の形式化で種別を claim→conseq に変更】記号を導入すると、その全ての組み合わせの意味も構成要素の意味から決まることを定理にした(5.54 と同じ定理)
 5.461	elucid	out	-	mid	logical_constants	logical_constant	5.4611	∨ や ⊃ が括弧を必要とすることは、それらが本当の原始記号でないことを示す
-5.4611	claim	2	-	mid	logical_constants	logical_constant	5.461	論理的操作の記号は句読点
-5.47	claim	2	-	mid	general_form	general_form,elementary_proposition	5.471	全ての命題の形式について前もって言えることは一度に言える。全ての論理操作は既に要素命題に含まれている(「fa」=「(∃x) . fx . x=a」)
-5.471	claim	2	-	mid	general_form	general_form,proposition	5.47	命題の一般形式は命題の本質
+5.4611	claim	basis	論理結合子を対象でなく構文上の組み立て方として扱う設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	logical_constants	logical_constant	5.461	論理的操作の記号は句読点
+5.47	claim	basis	論理操作は要素命題に含まれているという主張。量化子の例(fa=(∃x).fx.x=a)は段階 4a・4b の範囲(段階 2 の形式化で段階 2 から移した)	mid	general_form	general_form,elementary_proposition	5.471	全ての命題の形式について前もって言えることは一度に言える。全ての論理操作は既に要素命題に含まれている(「fa」=「(∃x) . fx . x=a」)
+5.471	claim	basis	命題の一般形式を命題の本質とする主張。一般形式を型 Formula として与える設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	general_form	general_form,proposition	5.47	命題の一般形式は命題の本質
 5.4711	elucid	out	-	mid	-	general_form,world	5.471	命題の本質を与えることは全ての記述の本質、世界の本質を与えること
-5.472	claim	2	-	mid	general_form	general_form,primitive_sign	5.47	最も一般的な命題形式の記述は、論理の唯一の一般的な原始記号の記述
-5.473	claim	2	-	mid	-	logic,sign,nonsense	5.4733	論理は自分の面倒を自分で見る。可能な記号は意味することもできる。ある意味で論理で誤ることはできない
+5.472	conseq	2	-	mid	general_form	general_form,primitive_sign	5.47	最も一般的な命題形式の記述は、論理の唯一の一般的な原始記号の記述。【段階 2 の形式化で種別を claim→conseq に変更】N が唯一の一般的な原始記号であること(N だけで全ての真理関数が作れる)を定理にした(5.5 と同じ定理)
+5.473	claim	out	記号に意味を与えることについての主張(名前の意味)で、形式化しない(段階 2 の形式化で段階 2 から移した)	mid	-	logic,sign,nonsense	5.4733	論理は自分の面倒を自分で見る。可能な記号は意味することもできる。ある意味で論理で誤ることはできない
 5.4731	elucid	out	-	mid	-	logic	5.473	自明性は言語が論理的誤りを防ぐことで不要になる。論理がア・プリオリなのは非論理的に考えられないから
-5.4732	claim	2	-	mid	-	sign,sense	5.473	記号に誤った意味を与えることはできない
-5.47321	claim	2	-	mid	-	sign,meaning	3.328	オッカムの剃刀:記号法の不要な要素は何も意味しない。一つの目的に役立つ記号は論理的に同値
-5.4733	claim	2	-	mid	-	proposition,sense,meaning,nonsense	5.473	可能な命題は全て正しく作られている。意味(Sinn)を持たないのは構成要素に意味(Bedeutung)を与えていないから。「ソクラテスは同一である」の例
-5.474	claim	2	-	mid	-	truth_operation,notation	5.475	必要な基本操作の数は記法だけに依存する。関数的完全性(どの完全な結合子の集合でもよい)の主張
-5.475	claim	2	-	mid	-	notation,multiplicity	5.474	問題は特定の次元(数学的多様性)を持つ記号体系を作ることだけ
-5.476	claim	2	-	mid	-	primitive_sign	5.475	問題は原始概念の数ではなく規則の表現
-5.5	claim	2	-	high	n_operator	n_operator,truth_function,successive_application	5.502,6	全ての真理関数は操作 (– – – – –T)(ξ, ....)(=N)の要素命題への継続的適用の結果。N 演算子の表現的完全性。形式化の目玉となる定理の候補
+5.4732	claim	out	記号に誤った意味を与えられないという主張(名前の意味)で、形式化しない(段階 2 の形式化で段階 2 から移した)	mid	-	sign,sense	5.473	記号に誤った意味を与えることはできない
+5.47321	conseq	2	-	mid	-	sign,meaning	3.328	オッカムの剃刀:記号法の不要な要素は何も意味しない。一つの目的に役立つ記号は論理的に同値。【段階 2 の形式化で種別を claim→conseq に変更】同じ意味の記号どうしの双条件がトートロジーになる(論理的に同値)ことを定理にした。「不要な要素は何も意味しない」の部分は形式化していない
+5.4733	claim	out	「ソクラテスは同一である」の例など、名前に意味を与えることについての主張で、形式化しない(段階 2 の形式化で段階 2 から移した)	mid	-	proposition,sense,meaning,nonsense	5.473	可能な命題は全て正しく作られている。意味(Sinn)を持たないのは構成要素に意味(Bedeutung)を与えていないから。「ソクラテスは同一である」の例
+5.474	conseq	2	-	mid	-	truth_operation,notation	5.475	必要な基本操作の数は記法だけに依存する。関数的完全性(どの完全な結合子の集合でもよい)の主張。【段階 2 の形式化で種別を claim→conseq に変更】N と(否定・論理積)が互いに定義し合えること(基本操作の数は記法次第)を定理にした
+5.475	claim	basis	記号体系の多様性についての注意。N と他の結合子の相互定義(5.474)で扱った内容に含める(段階 2 の形式化で段階 2 から移した)	mid	-	notation,multiplicity	5.474	問題は特定の次元(数学的多様性)を持つ記号体系を作ることだけ
+5.476	claim	basis	原始概念の数ではなく規則の表現が問題だという注意。N による帰納的定義の設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	primitive_sign	5.475	問題は原始概念の数ではなく規則の表現
+5.5	conseq	2	-	high	n_operator	n_operator,truth_function,successive_application	5.502,6	全ての真理関数は操作 (– – – – –T)(ξ, ....)(=N)の要素命題への継続的適用の結果。N 演算子の表現的完全性。形式化の目玉となる定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】要素命題が有限個の場合に、全ての真理関数が N の継続的適用で作れることを定理にした(段階 2 の中心の定理)
 5.501	notation	2	-	high	n_operator	propositional_variable,notation	5.502	(ξ̄) の記法。値の決め方は 3 通り:直接の列挙、関数 fx の全ての値、形式的法則(形式列の全ての項)。2・3 番目は無限の場合を含みうる
 5.502	notation	2	-	high	n_operator	n_operator,notation	5.5	N(ξ̄) は命題変項 ξ の全ての値の否定
-5.503	claim	2	-	mid	n_operator	n_operator	5.5	この操作で命題をどう作れるかは厳密に表せるはず
+5.503	claim	basis	N で命題をどう作れるかを厳密に表せるという主張。帰納的な型 Formula そのものがその表現で、設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	n_operator	n_operator	5.5	この操作で命題をどう作れるかは厳密に表せるはず
 5.51	conseq	2	-	high	n_operator	n_operator,negation	5.502	ξ の値が一つなら N(ξ̄)=~p、二つなら ~p . ~q。定義からの計算として定理の候補
 5.511	elucid	out	-	mid	-	logic,world	5.51	論理は無限に細かい網で世界を映す大きな鏡
-5.512	claim	2	-	mid	logical_constants	negation,notation	5.513	~p で否定しているのは「~」ではなく、p を否定するこの記法の全ての記号に共通なもの
-5.513	claim	2	-	mid	-	logical_product,logical_sum,negation	5.512	p と q を共に主張する全ての記号に共通なものが「p . q」。命題の否定はただ一つ。「q:p ∨ ~p」は「q」と同じことを言う。否定の一意性は定理の候補
-5.514	claim	2	-	mid	-	notation,sense	5.513	記法が決まれば、p を否定する全ての命題を作る規則などがあり、それらは記号と同値
-5.515	claim	2	-	mid	-	proposition,logical_sum	5.514	「∨」などで結ばれるものが命題でなければならないことが記号に表れていなければならない
-5.5151	claim	2	-	low	-	negation,negative_fact	5.515	否定命題を否定的事実で表せないか。肯定命題と否定命題は互いの存在を前提する
+5.512	conseq	2	-	mid	logical_constants	negation,notation	5.513	~p で否定しているのは「~」ではなく、p を否定するこの記法の全ての記号に共通なもの。【段階 2 の形式化で種別を claim→conseq に変更】p の否定はただ一つ(p を否定する命題はすべて同じ意味)であることを定理にした
+5.513	conseq	2	-	mid	-	logical_product,logical_sum,negation	5.512	p と q を共に主張する全ての記号に共通なものが「p . q」。命題の否定はただ一つ。「q:p ∨ ~p」は「q」と同じことを言う。否定の一意性は定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】否定の一意性と、「q:p ∨ ~p」が q と同じことを言うことを定理にした
+5.514	claim	basis	記法を決めれば否定などを作る規則があるという注意。帰納的な記号の定義の設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	notation,sense	5.513	記法が決まれば、p を否定する全ての命題を作る規則などがあり、それらは記号と同値
+5.515	claim	basis	結合子で結ばれるものが命題であることを、型(Formula の引数が Formula であること)で表す設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	proposition,logical_sum	5.514	「∨」などで結ばれるものが命題でなければならないことが記号に表れていなければならない
+5.5151	claim	out	否定的事実で否定命題を表せないかという問いで、形式化する内容がない(段階 2 の形式化で段階 2 から移した)	low	-	negation,negative_fact	5.515	否定命題を否定的事実で表せないか。肯定命題と否定命題は互いの存在を前提する
 5.52	notation	4a	-	high	n_operator	n_operator,generality	5.502,5.501	ξ の値が関数 fx の全ての値なら N(ξ̄)=~(∃x) . fx。量化を N で表す仕方。対象の領域が無限なら無限個の命題の否定になる
 5.521	claim	4a	-	mid	-	generality,truth_function	5.52	「全て」の概念を真理関数から切り離す。Frege・Russell は一般性を論理積・論理和と結びつけた
 5.522	claim	out	一般性の記号法の性質についての述べ方が漠然としていて、形式化の対象として定まらない	low	-	generality	5.521	一般性の記号法の特徴は論理的原型への言及と、定項を際立たせること
@@ -386,7 +386,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.535	claim	4d	元の記述が形式的に曖昧で、どの読み方でも別の主張が崩れるので保留(段階 4d)	mid	infinity	identity,infinity,name	4.2211	これで擬似命題に関わる問題が消える。無限公理が言おうとすることは、異なる意味を持つ名前が無限にあることで言語に表される
 5.5351	elucid	out	-	mid	-	identity,nonsense	5.535	Russell が「p は命題である」を「p ⊃ p」で表した誤り
 5.5352	elucid	out	-	mid	-	identity,nonsense	5.535	「物はない」を「~(∃x) . x=x」で表す提案の誤り
-5.54	claim	2	-	high	extensionality	proposition,truth_operation,general_form	5.3	一般命題形式では、命題は真理操作の基底としてだけ他の命題に現れる(外延性)
+5.54	conseq	2	-	high	extensionality	proposition,truth_operation,general_form	5.3	一般命題形式では、命題は真理操作の基底としてだけ他の命題に現れる(外延性)。【段階 2 の形式化で種別を claim→conseq に変更】命題は真理操作の基底としてだけ他の命題に現れる(意味が構成要素の意味だけで決まる)ことを定理にした
 5.541	elucid	out	-	mid	extensionality	propositional_attitude	5.542	「A は p と思う」のような心理学の命題形式は外延性の反例に見える
 5.542	claim	out	命題的態度(「A は p と信じる」)は範囲外(interpretation の extensionality)	low	extensionality	propositional_attitude,fact	5.541	「A は p と信じる」は「『p』は p を語る」の形。事実と対象の対応ではなく、対象の対応による事実どうしの対応
 5.5421	out	out	-	mid	-	subject,soul	5.542	現代の表面的な心理学が考えるような魂(主体)はない
@@ -421,42 +421,42 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.641	out	out	-	high	solipsism	subject	5.64	哲学的な私は形而上学的主体であり、世界の部分ではなく限界
 6	notation	2	-	high	n_operator	general_form,n_operator,notation	5.5,6.001	真理関数の一般形式 [p̄, ξ̄, N(ξ̄)]。これが命題の一般形式。要素命題から N で帰納的に生成される命題の型として形式化する中心命題
 6.001	claim	2	-	high	n_operator	n_operator,successive_application,elementary_proposition	6,5.32	6 の言い換え:全ての命題は要素命題への N’(ξ̄) の継続的適用の結果。5.5 と合わせて表現的完全性の定理の候補
-6.002	claim	2	-	mid	-	operation,general_form	6.01	命題の作り方の一般形式が与えられれば、操作で命題から命題を作る一般形式も与えられる
+6.002	conseq	2	-	mid	-	operation,general_form	6.01	命題の作り方の一般形式が与えられれば、操作で命題から命題を作る一般形式も与えられる。【段階 2 の形式化で種別を claim→conseq に変更】命題の作り方の一般形式が、一般的な操作 [η̄, ξ̄, N(ξ̄)] を要素命題に施したものと一致することを定理にした
 6.01	notation	2	-	high	n_operator	operation,n_operator,notation	6.002	操作 Ω’(η̄) の一般形式 [ξ̄, N(ξ̄)]’(η̄)(=[η̄, ξ̄, N(ξ̄)])。命題から命題への最も一般的な移行
 6.02	notation	2	-	high	number	number,operation,notation	6.021,5.2522	数の定義:x=Ω^0’x、Ω’Ω^ν’x=Ω^(ν+1)’x。操作の反復回数としての自然数。Lean の Nat.iterate に当たり、定義として形式化できる
 6.021	def	2	-	high	number	number,operation	6.02	数は操作の指数
-6.022	claim	2	-	mid	number	number,formal_concept	4.1272	数の概念は全ての数に共通なもの、数の一般形式。数の概念は変項としての数
+6.022	claim	basis	数を操作の指数として定義する設計(6.021)の根拠(段階 2 の形式化で段階 2 から移した)	mid	number	number,formal_concept	4.1272	数の概念は全ての数に共通なもの、数の一般形式。数の概念は変項としての数
 6.03	notation	2	-	high	number	number,notation	6.02	基数の一般形式 [0, ξ, ξ+1]。自然数の帰納的定義に当たる
-6.031	claim	2	-	low	-	class,mathematics	6.03	数学ではクラスの理論は全く不要
-6.1	claim	2	-	high	logic_tautology	tautology,logic	5.43,6.11	論理の命題はトートロジー。形式化では「論理の命題=トートロジー」を定義と見るか、証明可能性との一致(完全性)を定理と見るかを D で決める
+6.031	claim	out	数学におけるクラスの理論への言及で、形式化しない(段階 2 の形式化で段階 2 から移した)	low	-	class,mathematics	6.03	数学ではクラスの理論は全く不要
+6.1	def	2	-	high	logic_tautology	tautology,logic	5.43,6.11	論理の命題はトートロジー。形式化では「論理の命題=トートロジー」を定義と見るか、証明可能性との一致(完全性)を定理と見るかを D で決める。【段階 2 の形式化で種別を claim→def に変更】論理の命題を「意味がトートロジーである記号」として定義した(interpretation の logic_tautology)
 6.11	conseq	2	-	high	logic_tautology	tautology,logic,sense	6.1,4.461	6.1 から:論理の命題は何も語らない(分析的命題)
 6.111	elucid	out	-	mid	-	logic,truth	6.112	論理の命題を内容のあるものに見せる理論は常に誤り
-6.112	claim	2	-	mid	-	logic	6.113	論理の命題の正しい説明は、それに全命題の中で特別な位置を与えなければならない
-6.113	claim	2	-	high	-	logic,tautology,truth	2.224,6.1	論理の命題は記号だけから真とわかる。論理でない命題の真偽は命題だけからはわからない。トートロジー性の判定可能性(真理表)と、偶然的命題の真偽の非決定性として定理の候補
-6.12	claim	2	-	mid	say_show	tautology,logical_form	6.121	論理の命題がトートロジーであることが、言語と世界の形式的・論理的性質を示す
-6.1201	claim	2	-	high	-	tautology,contradiction,consequence	6.1221	~(p . ~p) がトートロジーであることは p と ~p が矛盾することを示す。(p ⊃ q) . (p): ⊃ :(q) がトートロジーであることは q が p と p ⊃ q から帰結することを示す。帰結と条件文のトートロジー性の対応(演繹定理)として定理の候補
-6.1202	claim	2	-	mid	-	contradiction,tautology	6.1201	トートロジーの代わりに矛盾を使うこともできた。双対性として示せる
+6.112	claim	basis	論理の命題を全命題の中で特別なもの(トートロジー)として定義する設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	logic	6.113	論理の命題の正しい説明は、それに全命題の中で特別な位置を与えなければならない
+6.113	conseq	2	-	high	-	logic,tautology,truth	2.224,6.1	論理の命題は記号だけから真とわかる。論理でない命題の真偽は命題だけからはわからない。トートロジー性の判定可能性(真理表)と、偶然的命題の真偽の非決定性として定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】トートロジーかどうかが記号の計算だけで決まること、そうでない命題は真にも偽にもなりうることを定理にした
+6.12	claim	basis	示すことについての主張で、語れない(say_show)。トートロジーの定義と判定の設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	say_show	tautology,logical_form	6.121	論理の命題がトートロジーであることが、言語と世界の形式的・論理的性質を示す
+6.1201	conseq	2	-	high	-	tautology,contradiction,consequence	6.1221	~(p . ~p) がトートロジーであることは p と ~p が矛盾することを示す。(p ⊃ q) . (p): ⊃ :(q) がトートロジーであることは q が p と p ⊃ q から帰結することを示す。帰結と条件文のトートロジー性の対応(演繹定理)として定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】~(p . ~p) がトートロジーであること、矛盾とトートロジーの関係、含意がトートロジーなら帰結することを定理にした
+6.1202	conseq	2	-	mid	-	contradiction,tautology	6.1201	トートロジーの代わりに矛盾を使うこともできた。双対性として示せる。【段階 2 の形式化で種別を claim→conseq に変更】トートロジーの代わりに矛盾を使っても帰結関係を表せることを定理にした
 6.1203	notation	2	-	high	-	tautology,notation	6.1201	一般性の記号を含まないトートロジーを見分ける直観的な方法(TpF の括弧の図式)。真理表による判定と同等であることを示せる
-6.121	claim	2	-	mid	-	tautology,logical_property	6.12	論理の命題は、命題を何も語らない命題に結合することで論理的性質を示す(ゼロ法)
+6.121	conseq	2	-	mid	-	tautology,logical_property	6.12	論理の命題は、命題を何も語らない命題に結合することで論理的性質を示す(ゼロ法)。【段階 2 の形式化で種別を claim→conseq に変更】二つの命題が矛盾することと、その積の否定がトートロジーであることの同値を定理にした(ゼロ法)
 6.122	conseq	2	-	mid	-	logical_property,notation	6.121	適切な記法があれば、論理の命題なしで、見るだけで命題の形式的性質がわかる
-6.1221	claim	2	-	high	-	consequence,tautology	6.1201	「p ⊃ q」がトートロジーなら q は p から帰結する。演繹定理として定理の候補
+6.1221	conseq	2	-	high	-	consequence,tautology	6.1201	「p ⊃ q」がトートロジーなら q は p から帰結する。演繹定理として定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】独立性のもとで、p ⊃ q がトートロジーであることと q が p から帰結することの同値を定理にした
 6.1222	conseq	2	-	mid	-	logic,experience	6.1221	論理の命題は経験で確立も反駁もできない
 6.1223	elucid	out	-	mid	-	logic	6.1222	論理的真理を「要請」するように感じる理由
 6.1224	elucid	out	-	mid	-	logic	6.1223	論理が形式と推論の理論と呼ばれてきた理由
-6.123	claim	2	-	mid	type_theory	logic	6.1231	論理法則がさらに論理法則に従うことはない。型ごとに矛盾律があるわけではない
-6.1231	claim	2	-	mid	-	logic,generality	6.1232	論理の命題の目印は一般的妥当性ではない。一般化されていない命題もトートロジーでありうる
-6.1232	claim	2	-	mid	-	logic,generality	6.1231	本質的な一般的妥当性と偶然的な一般的妥当性。還元公理は論理の命題ではない
+6.123	claim	basis	型理論との関係(type_theory)。型ごとの矛盾律を置かない設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	type_theory	logic	6.1231	論理法則がさらに論理法則に従うことはない。型ごとに矛盾律があるわけではない
+6.1231	claim	4a	一般性(量化)の話なので段階 4a で扱う(段階 2 の形式化で段階 2 から移した)	mid	-	logic,generality	6.1232	論理の命題の目印は一般的妥当性ではない。一般化されていない命題もトートロジーでありうる
+6.1232	claim	out	Russell の還元公理への言及で、形式化しない(段階 2 の形式化で段階 2 から移した)	mid	-	logic,generality	6.1231	本質的な一般的妥当性と偶然的な一般的妥当性。還元公理は論理の命題ではない
 6.1233	elucid	out	-	mid	-	logic	6.1232	還元公理が成り立たない世界を想像できる
-6.124	claim	2	-	mid	say_show	logic,tautology,world	6.13	論理の命題は世界の足場を描く(表す)。名前が意味を持ち要素命題が意味を持つことを前提する。記号言語の論理的構文論がわかれば論理の命題は全て与えられている
-6.125	claim	2	-	high	-	logic,tautology	6.1251	古い論理でも、全ての「真な」論理的命題を最初に記述できる。トートロジー全体の集合が決定可能という定理の候補
+6.124	claim	basis	論理の命題は世界の足場を表すという主張で、語れない(say_show)(段階 2 の形式化で段階 2 から移した)	mid	say_show	logic,tautology,world	6.13	論理の命題は世界の足場を描く(表す)。名前が意味を持ち要素命題が意味を持つことを前提する。記号言語の論理的構文論がわかれば論理の命題は全て与えられている
+6.125	conseq	2	-	high	-	logic,tautology	6.1251	古い論理でも、全ての「真な」論理的命題を最初に記述できる。トートロジー全体の集合が決定可能という定理の候補。【段階 2 の形式化で種別を claim→conseq に変更】トートロジーの全体が計算で判定できる(最初に記述できる)ことを定理にした
 6.1251	conseq	2	-	high	-	logic	6.125	だから論理に驚きはない
-6.126	claim	2	-	mid	-	logic,proof,tautology	6.1262	命題が論理に属するかはシンボルの論理的性質で決まる。証明は記号規則による変形で、トートロジーからはトートロジーしか帰結しない(健全性)。証明は論理にとって本質的でない
-6.1261	claim	2	-	mid	-	logic,proof	6.126	論理では過程と結果が同値
-6.1262	claim	2	-	mid	-	proof,tautology	6.126	論理の証明は、複雑なときにトートロジーを見分けやすくする機械的な手段にすぎない
-6.1263	claim	2	-	mid	-	proof,logic	6.1264	意味のある命題の論理的証明と論理の中の証明は全く別物
-6.1264	claim	2	-	low	-	proof,modus_ponens	6.1263	論理の命題は全て記号で示された modus ponens。modus ponens は命題で表せない
-6.1265	claim	2	-	low	-	logic,proof	6.1264	論理の命題は全て自分自身の証明と考えられる
-6.127	claim	2	-	mid	-	logic,tautology	6.1271	論理の命題は全て同格。原始的なものと導かれたものはない。トートロジーは自分がトートロジーであることを示す
+6.126	conseq	2	-	mid	-	logic,proof,tautology	6.1262	命題が論理に属するかはシンボルの論理的性質で決まる。証明は記号規則による変形で、トートロジーからはトートロジーしか帰結しない(健全性)。証明は論理にとって本質的でない。【段階 2 の形式化で種別を claim→conseq に変更】独立性のもとで、トートロジーからはトートロジーしか帰結しないことを定理にした
+6.1261	claim	basis	論理では過程と結果が同値という注意。証明体系を置かない設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	logic,proof	6.126	論理では過程と結果が同値
+6.1262	claim	basis	証明はトートロジーを見分ける機械的な手段にすぎないという注意。証明体系を置かず判定の計算(6.1203)で扱う設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	proof,tautology	6.126	論理の証明は、複雑なときにトートロジーを見分けやすくする機械的な手段にすぎない
+6.1263	claim	basis	意味のある命題の証明と論理の証明の区別。証明体系を置かない設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	proof,logic	6.1264	意味のある命題の論理的証明と論理の中の証明は全く別物
+6.1264	conseq	2	-	low	-	proof,modus_ponens	6.1263	論理の命題は全て記号で示された modus ponens。modus ponens は命題で表せない。【段階 2 の形式化で種別を claim→conseq に変更】modus ponens の形の命題がトートロジーであることを定理にした
+6.1265	claim	basis	論理の命題は自分自身の証明という注意。証明体系を置かない設計の根拠(段階 2 の形式化で段階 2 から移した)	low	-	logic,proof	6.1264	論理の命題は全て自分自身の証明と考えられる
+6.127	conseq	2	-	mid	-	logic,tautology	6.1271	論理の命題は全て同格。原始的なものと導かれたものはない。トートロジーは自分がトートロジーであることを示す。【段階 2 の形式化で種別を claim→conseq に変更】トートロジーはすべて同じ命題である(同格である)ことを定理にした
 6.1271	elucid	out	-	mid	-	logic	6.127	論理の原始命題の数は恣意的。Frege の原始命題の論理積を一つの原始命題にできる。Frege の自明性の基準への批判
 6.13	out	out	-	mid	-	logic,world	6.12	論理は理論ではなく世界の鏡像。論理は超越論的
 6.2	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,equation	6.21	数学は論理的方法。数学の命題は等式で、擬似命題
@@ -474,7 +474,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 6.234	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,logic	6.2	数学は論理の方法
 6.2341	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	mathematics,equation	6.234	数学の方法の本質は等式を扱うこと
 6.24	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,equation,substitution	6.241	数学が等式に至る方法は代入
-6.241	notation	2	-	high	number	number,operation,notation	6.02,6.24	2×2=4 の証明。(Ω^ν)^μ’x=Ω^(ν×μ)’x の定義と代入による計算。操作の反復としての数で定理として再現できる
+6.241	conseq	2	-	high	number	number,operation,notation	6.02,6.24	2×2=4 の証明。(Ω^ν)^μ’x=Ω^(ν×μ)’x の定義と代入による計算。操作の反復としての数で定理として再現できる。【段階 2 の形式化で種別を notation→conseq に変更】2×2=4 の計算を、操作の継続的適用の性質(指数の積)として定理にした
 6.3	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	-	logic,regularity	6.31	論理の探究は全ての規則性の探究。論理の外は全て偶然
 6.31	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	induction	induction,logic	6.3,6.363	いわゆる帰納法則は意味のある命題なので論理法則でもア・プリオリな法則でもない
 6.32	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	causality	causality,law	6.321	因果律は法則ではなく法則の形式

@@ -6,3 +6,7 @@ import Tractatus.TruthPossibility
 import Tractatus.Picture
 import Tractatus.Consequence
 import Tractatus.Models.Stage1
+import Tractatus.Operation
+import Tractatus.GeneralForm
+import Tractatus.Logic
+import Tractatus.Models.Stage2
