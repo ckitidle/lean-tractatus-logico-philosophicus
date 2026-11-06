@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ウィトゲンシュタイン『論理哲学論考』を Lean 4 で形式化する。
 進め方は `docs/roadmap.md`(フェーズ A〜F と整合性チェック)。
-形式化の方針(範囲・表現・命名・検査)は `docs/policy.md`(案、ユーザーのレビュー待ち)。
+形式化の方針(範囲・表現・命名・検査)は `docs/policy.md`。
 その根拠は `docs/reading/`(全命題の分類)と `docs/interpretation.md`(解釈の分かれ目)。
 
 - 本文の出典はドイツ語原文と C. K. Ogden 英訳(1922)だけ。日本語訳・Pears/McGuinness 訳・Russell の序文は著作権があるので使わない
