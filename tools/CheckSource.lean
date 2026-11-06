@@ -63,14 +63,14 @@ def readTsv (path : String) : IO (List (List String)) := do
 def kinds : List String := ["def", "claim", "conseq", "notation", "elucid", "out"]
 def confidences : List String := ["high", "mid", "low"]
 
-/-- Validates `docs/reading/classification.tsv` against the proposition numbers:
+/-- Validates `analysis/reading/classification.tsv` against the proposition numbers:
 one row per proposition in the same order, 7 columns, known kind and confidence,
-and every contested topic listed in `docs/reading/contested.tsv`. -/
+and every contested topic listed in `analysis/reading/contested.tsv`. -/
 def checkClassification (numbers : List String) : IO (Array String) := do
-  let path := "docs/reading/classification.tsv"
+  let path := "analysis/reading/classification.tsv"
   if !(← System.FilePath.pathExists path) then return #[]
   let rows ← readTsv path
-  let topicsPath := "docs/reading/contested.tsv"
+  let topicsPath := "analysis/reading/contested.tsv"
   let topics : List String ←
     if ← System.FilePath.pathExists topicsPath then
       pure <| (← readTsv topicsPath).map (·.headD "")

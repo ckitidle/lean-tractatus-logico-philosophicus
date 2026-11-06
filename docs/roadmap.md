@@ -27,7 +27,7 @@
 
 ### B. 通読と分類 ★
 
-- 読解ノートを `docs/reading/` に作る。下読みは Claude が行い、ユーザーはレビューする
+- 読解ノートを `analysis/reading/` に作る。下読みは Claude が行い、ユーザーはレビューする
   - 命題ごとの分類は機械可読な `classification.tsv` に(整合性チェックのレベル 2 が参照する)。形式は `lake test` で検査する
   - 解釈が分かれる論点の一覧は `contested.tsv`(C の作業リスト)
   - 節ごとの要約や気づいたことは `README.md`

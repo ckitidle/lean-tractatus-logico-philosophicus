@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ウィトゲンシュタイン『論理哲学論考』を Lean 4 で形式化する。
 進め方は `docs/roadmap.md`(フェーズ A〜F と整合性チェック)。
 形式化の方針(範囲・表現・命名・検査)は `docs/policy.md`。
-その根拠は `docs/reading/`(全命題の分類)と `docs/interpretation.md`(解釈の分かれ目)。
+その根拠は `analysis/reading/`(全命題の分類)と `analysis/interpretation.md`(解釈の分かれ目)。
 
 - 本文の出典はドイツ語原文と C. K. Ogden 英訳(1922)だけ。日本語訳・Pears/McGuinness 訳・Russell の序文は著作権があるので使わない
 - 本文は public domain だが GitHub に上げない。`source/tractatus.json` などの本文データは git 管理外で、`.cache/gutenberg/5740-t.tex` から手元で再生成する(`source/README.md`)。commit するファイル(Lean の docstring、対応記録など)にも本文を丸ごと・長く引用しない
@@ -50,4 +50,7 @@ Lake でハイフンを含む実行ファイル名を `testDriver` などから�
 - `Tractatus/` — 本体
 - `tools/` — 補助ツール(`extract-source`、`check-source`)。ライブラリとは別の実行ファイル
 - `source/` — 論考の本文データ(英独対訳)。出典と変換の決まりは `source/README.md`
-- `docs/` — ロードマップ、読解ノート、方針メモ
+- `docs/` — 方針だけ(`roadmap.md` 進め方、`policy.md` 形式化の方針)
+- `analysis/` — 読んで調べた結果。手書きで作り直せないので git で管理する(分類表、解釈の記録、本文の突き合わせ)
+- `correspondence/` — 日本語の対応記録(成果物。パイロット以降に作る)
+- `out/` — スクリプトで作り直せる生成物(git 管理外)

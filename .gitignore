@@ -5,3 +5,4 @@
 /source/tractatus.json
 /source/tractatus-*.md
 /.cache
+/out
