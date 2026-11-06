@@ -1,527 +1,527 @@
-number	kind	confidence	contested	concepts	related	rationale
-1	def	mid	-	world,fact	1.1,2.04	世界の特徴づけ。1.1 と合わせて「世界=成立している事実の全体」という定義として扱う。主張とも読める
-1.1	def	mid	-	world,fact,object	2.04	世界は事実の全体であり物の全体ではない。世界の型を事実(のちに事態)の集まりとして与える
-1.11	claim	mid	totality	world,fact	1.12	世界は事実と、それが「全て」であることによって決まる。全体性(これで全部という閉包条件)の主張
-1.12	conseq	mid	totality	world,fact	1.11,2.05	1.11 から:事実の全体は、成立していないことも決める。2.05 と並行
-1.13	def	mid	-	world,fact,logical_space	2.11,3.4	論理空間の中の事実が世界。論理空間という概念を導入する
-1.2	claim	high	-	world,fact	2.04	世界は事実に分かれる(原子的に分解できる)
-1.21	claim	high	independence	fact,independence	2.061,4.211	一つの事実は他の全てを変えずに成立・不成立になれる。厳密には要素的な事態についての独立性(2.061)
-2	def	high	-	fact,atomic_fact	2.06,4.2	事実を事態の成立として定義する
-2.01	def	high	simples	atomic_fact,object	2.0272	事態を対象の結合として定義する
-2.011	claim	high	-	object,atomic_fact	2.0141	事態の構成要素になりうることは対象の本質。対象の型に結合可能性が属する
-2.012	claim	mid	-	object,atomic_fact,form	2.0123	対象が事態に現れうるなら、その可能性は対象に先取りされている
-2.0121	elucid	mid	-	object,atomic_fact	2.012	2.012 の理由づけと空間・時間の類比
-2.0122	elucid	mid	-	object,atomic_fact	2.012	対象の自立性は事態への依存の一形式だという注釈
-2.0123	claim	mid	object_form	object,form	2.0141,2.0124	対象を知ればその全ての結合可能性を知る。形式化では「対象の形式が可能な事態を決める」と読む
-2.01231	claim	low	-	object,internal_property	4.122	対象を知るには内的性質を全て知る必要がある。内的性質の概念は 4.122 以降で扱う
-2.0124	conseq	high	object_form	object,atomic_fact	2.0123,2.014	2.0123/2.014 から:全ての対象が与えられれば可能な事態も全て与えられる。定理の候補
-2.013	elucid	mid	-	object,logical_space	2.0131	可能な事態の空間の比喩
-2.0131	elucid	mid	colour	object,form	2.0251,6.3751	空間・色・音の例。色の排除問題(6.3751)と関わる
-2.014	claim	high	object_form	object,atomic_fact	2.0124	対象は全ての事態の可能性を含む
-2.0141	def	high	object_form	object,form	2.033	対象の形式=事態に現れる可能性
-2.02	claim	high	simples	object	2.021,3.24	対象は単純
-2.0201	claim	mid	analysis	complex,analysis	3.24,3.25	複合体についての言明は構成要素についての言明と記述に分析できる
-2.021	claim	mid	substance	object,substance	2.02,2.024	対象は世界の実体をなす。後半の「だから複合でない」は 2.02 と同じ内容の帰結
-2.0211	claim	mid	substance	substance,sense,truth	2.0212	実体がなければ命題の意味(Sinn)が他の命題の真偽に依存してしまう、という背理法の前提。条件文として形式化できる
-2.0212	conseq	mid	substance	substance,picture	2.0211	2.0211 から:そのとき世界の像を作れない
-2.022	claim	mid	-	world,form	2.023	想像された世界も現実の世界と形式を共有する。可能世界が同じ対象領域を持つ
-2.023	claim	mid	-	form,object	2.022	固定した形式は対象からなる
-2.0231	claim	mid	-	substance,form	2.0232	実体は形式だけを決め、物質的性質は決めない
-2.0232	elucid	mid	-	object	2.0231	対象は無色である(比喩)
-2.0233	claim	mid	identity	object,form,identity	2.02331,5.53	同じ論理形式の二つの対象は、異なるということ以外では区別されない
-2.02331	elucid	mid	identity	object,identity	2.0233	識別不能なものについての議論
-2.024	def	high	substance	substance	2.021	実体=何が成立しているかと独立に存在するもの
-2.025	claim	mid	substance	substance,form	2.024	実体は形式と内容である
-2.0251	claim	low	colour	form,object	2.0131	空間・時間・色は対象の形式
-2.026	conseq	mid	-	object,form	2.023	対象があるときにだけ世界の固定した形式がある
-2.027	claim	mid	-	object,substance	2.0271	固定したもの、存在するもの、対象は同一
-2.0271	claim	mid	-	object,configuration	2.0272	対象は固定・不変、配列は変化するもの。可能世界をまたいで対象は共通で、配列だけが変わる
-2.0272	def	high	-	configuration,atomic_fact	2.01	対象の配列が事態をなす
-2.03	elucid	mid	relations	atomic_fact,object	2.031	鎖の比喩。事態には対象をつなぐ別の構成要素(関係という対象)がない、という含意は解釈が分かれる
-2.031	claim	high	-	atomic_fact,object,structure	2.032	事態の中で対象は特定の仕方で結合している
-2.032	def	high	-	structure,atomic_fact	2.033	事態の構造=対象のつながり方
-2.033	def	high	-	form,structure	2.0141,2.151	形式=構造の可能性
-2.034	claim	mid	-	structure,fact,atomic_fact	2	事実の構造は事態の構造からなる
-2.04	def	high	-	world,atomic_fact	1.1,2.05	世界=成立している事態の全体。形式化の基本定義(世界は事態の集合)
-2.05	conseq	high	-	world,atomic_fact	2.04,1.12	2.04 から:成立している事態の全体が、成立していない事態も決める。補集合として定理になる
-2.06	def	high	-	reality,atomic_fact	2.063	現実=事態の成立と不成立。肯定的事実・否定的事実の定義
-2.061	claim	high	independence	atomic_fact,independence	2.062,4.211,6.3751	事態は互いに独立。論理空間が全ての割り当てからなるという中心的な主張
-2.062	conseq	high	independence	atomic_fact,independence	2.061	2.061 から:一つの事態の成立・不成立から他の事態の成立・不成立は推論できない。反例モデルで示す定理の候補
-2.063	conseq	mid	world_reality	world,reality	2.04,2.05,2.06	全体としての現実が世界。2.05 により成立の全体と成立・不成立の全体が互いを決めることからの帰結と読む
-2.1	elucid	mid	-	picture,fact	2.11	我々は事実の像を作る(導入的な言明)
-2.11	claim	high	-	picture,logical_space,atomic_fact	2.201	像は論理空間の中の状況(事態の成立・不成立)を表す
-2.12	def	mid	-	picture,reality	2.11	像は現実のモデル
-2.13	claim	high	-	picture,picture_element,object	2.131	像の要素が対象に対応する
-2.131	claim	high	-	picture_element,object	3.22	像の要素は対象の代わりになる
-2.14	def	high	-	picture,picture_element	2.15	像は要素の特定の結合からなる
-2.141	claim	high	-	picture,fact	3.14	像は事実である
-2.15	def	high	-	structure,form_of_representation	2.151	像の構造と写像形式の定義
-2.151	def	high	-	form_of_representation	2.15	写像形式=物が像の要素と同じように結合している可能性
-2.1511	elucid	mid	-	picture,reality	2.1512	像は現実と結びついている(比喩)
-2.1512	elucid	high	-	picture,reality	2.15121	物差しの比喩
-2.15121	elucid	high	-	picture	2.1512	物差しの比喩の続き
-2.1513	claim	mid	-	picture,representing_relation	2.1514	写像関係も像に属する。像を「事実+対応づけ」の組として形式化する根拠
-2.1514	def	high	-	representing_relation	2.1513	写像関係=像の要素と物との対応づけ
-2.1515	elucid	high	-	representing_relation	2.1514	触角の比喩
-2.16	claim	high	-	picture	2.161	像であるには写されるものと何かを共有しなければならない
-2.161	claim	high	-	picture	2.17	像と写されるものの間には同一のものがある
-2.17	claim	high	-	form_of_representation,picture	2.18	共有されるものが写像形式
-2.171	claim	mid	-	picture,form_of_representation	2.17	像は自分の形式を持つ全ての現実を写せる
-2.172	claim	low	say_show	form_of_representation	4.12,4.121	像は自分の写像形式を写せず、示す。語る/示すの区別。形式化するならメタ定理(体系内の命題では表せない)として
-2.173	claim	mid	-	picture,truth	2.174	像は外から対象を写すので、正しくも誤ってもありうる
-2.174	claim	mid	say_show	picture,form_of_representation	2.172	像は自分の写像形式の外に立てない
-2.18	claim	high	-	logical_form,picture,reality	2.2	全ての像が現実と共有するのが論理形式
-2.181	def	high	-	logical_form,picture	2.182	写像形式が論理形式であるとき、像を論理的像と呼ぶ
-2.182	claim	high	-	logical_form,picture	2.181	全ての像は論理的像でもある
-2.19	claim	mid	-	logical_form,picture,world	3	論理的像は世界を写せる
-2.2	conseq	high	-	logical_form,picture	2.18,2.182	2.18 と 2.182 から:像は写されるものと論理的写像形式を共有する
-2.201	claim	high	-	picture,atomic_fact	2.11	像は事態の成立・不成立の可能性を表すことで現実を写す。像の意味(Sinn)を可能世界の集合として形式化する根拠
-2.202	claim	high	-	picture,situation,logical_space	2.11	像は論理空間の中の可能な状況を表す
-2.203	claim	mid	-	picture,situation	2.202	像は自分が表す状況の可能性を含む
-2.21	claim	high	-	picture,truth	2.222	像は現実と一致するかしないか。真か偽(二値性)
-2.22	claim	high	-	picture,sense,truth	2.221	像はその真偽と独立に写像形式によって表す
-2.221	def	high	-	sense,picture	2.222	像が表すものがその意味(Sinn)
-2.222	def	high	-	truth,sense,reality	2.21	真偽=意味と現実の一致・不一致
-2.223	conseq	mid	-	truth,picture	2.222	2.222 から:真偽を知るには現実と比べなければならない
-2.224	conseq	high	-	truth,picture	2.225	像だけからは真偽はわからない。独立性のもとで、意味のある像には真になる世界と偽になる世界があるという定理の候補
-2.225	conseq	high	-	truth,picture	2.224,6.31	ア・プリオリに真な像はない。定理の候補(像は偶然的)
-3	def	high	-	thought,picture,fact	2.181,3.5	思考=事実の論理的像
-3.001	def	mid	-	atomic_fact,thought	3	「事態が思考可能」=それを想像できる
-3.01	claim	mid	-	thought,truth,world	2.04	真な思考の全体は世界の像
-3.02	claim	high	-	thought,situation	2.203	思考は思考する状況の可能性を含む。思考可能なものは可能
-3.03	claim	high	-	thought,logic	3.031	非論理的なものは思考できない
-3.031	elucid	high	-	logic	3.03	神と論理法則の例
-3.032	elucid	high	-	logic,language	3.0321	幾何学との類比
-3.0321	elucid	high	-	logic	3.032	物理法則と幾何学法則の類比
-3.04	def	mid	-	thought,truth	3.05	ア・プリオリに真な思考=その可能性が真を保証する思考
-3.05	claim	mid	-	thought,truth	2.225,3.04	思考がア・プリオリに真と知れるのは、比較対象なしに思考そのものから真がわかる場合だけ
-3.1	claim	mid	-	proposition,thought	3.11	命題において思考は感覚的に知覚できる形で表される
-3.11	claim	mid	-	propositional_sign,situation,sense	3.12	命題記号は可能な状況の射影として使われる。射影の方法は命題の意味(Sinn)を考えること
-3.12	def	high	-	propositional_sign,proposition	3.11	命題記号の定義。命題=世界との射影関係にある命題記号
-3.13	claim	mid	-	proposition,sense	3.12	命題には意味(Sinn)の内容ではなく形式と、表す可能性が含まれる
-3.14	claim	high	-	propositional_sign,fact	2.141	命題記号は語が特定の仕方で結合した事実
-3.141	claim	mid	-	proposition	3.14	命題は語の混合ではなく分節されている
-3.142	claim	high	-	fact,sense,name	3.144	事実だけが意味(Sinn)を表せる。名前の集まりはできない
-3.143	elucid	mid	-	propositional_sign,fact	3.1431	命題記号が事実であることは通常の書き方では隠されている。Frege 批判
-3.1431	elucid	high	-	propositional_sign	3.143	机や椅子で命題記号を作る例
-3.1432	claim	mid	relations	propositional_sign,name	3.14	「aRb」については、「a」と「b」がある関係に立つことが aRb を語る。関係は名前でなく名前の配置で表される
-3.144	claim	high	-	situation,name,proposition	3.221	状況は記述できるが名指せない。名前は点、命題は矢印
-3.2	claim	high	-	thought,proposition,object,simple_sign	3.201	思考の対象に命題記号の要素が対応するように表現できる
-3.201	def	high	analysis	simple_sign,analysis	3.25	単純記号と完全に分析された命題の定義
-3.202	def	high	-	name,simple_sign	3.203	名前=命題で使われる単純記号
-3.203	def	high	-	name,object,meaning	3.22	名前は対象を意味する。対象が名前の意味(Bedeutung)。形式化では名前から対象への解釈関数
-3.21	claim	high	-	name,configuration,situation	2.15	命題記号の中の単純記号の配置に、状況の中の対象の配置が対応する
-3.22	claim	high	-	name,object	3.203	命題の中で名前は対象の代わりになる
-3.221	claim	mid	say_show	object,name,proposition	3.144	対象は名指せるだけで、言明できない。命題は物がどうあるかを語り、何であるかは語れない
-3.23	claim	mid	analysis	simple_sign,sense	3.24,3.25	単純記号の可能性の要請は、意味(Sinn)の確定性の要請
-3.24	claim	mid	analysis	complex,analysis,proposition	2.0201,3.3442	複合体についての命題は構成要素についての命題と内的関係にある。複合体が存在しなければ偽(無意味ではない)
-3.25	claim	high	analysis	analysis,proposition	3.201	命題の完全な分析はただ一つ。形式化では分析を関数として扱える
-3.251	claim	mid	-	proposition	3.141	命題は確定した仕方で表す。命題は分節されている
-3.26	claim	high	-	name	3.261	名前は定義でさらに分析できない原始記号
-3.261	claim	mid	-	name,definition	3.26	定義された記号は定義を通じて意味する。原始記号とは意味の仕方が違う
-3.262	claim	low	say_show	sign	3.26	記号に表れないものは使用が示す
-3.263	elucid	mid	-	name,meaning	3.26	原始記号の意味は解明(Erläuterung)で説明される。6.54 とつながる方法論的な注釈
-3.3	claim	high	-	proposition,sense,name,meaning	3.314	文脈原理:命題だけが意味(Sinn)を持ち、名前は命題の脈絡でだけ意味(Bedeutung)を持つ
-3.31	def	high	-	expression,proposition,sense	3.311	表現(シンボル)の定義
-3.311	claim	mid	-	expression,proposition	3.31	表現は自分が現れうる全ての命題の形式を前提する
-3.312	conseq	mid	-	expression,propositional_variable	3.311	3.311 から:表現はそれが特徴づける命題の一般形式で表される
-3.313	def	high	-	expression,propositional_variable	3.312	表現は変項で表される。命題変項の定義
-3.314	claim	mid	-	expression,propositional_variable	3.3	表現は命題の中でだけ意味を持つ。全ての変項は命題変項とみなせる
-3.315	claim	mid	-	propositional_variable,logical_form	3.313	恣意的に決めた記号を全て変項に変えても残る命題のクラスは、論理形式に対応する
-3.316	claim	mid	-	propositional_variable	3.317	命題変項がとる値は確定している。値の確定が変項そのもの
-3.317	claim	mid	-	propositional_variable,symbol	3.316,5.501	値の確定は命題の記述であり、記号だけを扱う
-3.318	claim	mid	-	proposition,expression	5.47	命題を、それが含む表現の関数とみなす(Frege・Russell と同じく)
-3.32	def	high	-	sign,symbol	3.321	記号(Zeichen)=シンボルの感覚的に知覚できる部分
-3.321	conseq	mid	-	sign,symbol	3.32	3.32 から:二つのシンボルが記号を共有しうる
-3.322	claim	mid	-	sign,symbol	3.321	同じ記号を違う方法で使っても二つの対象の共通点は示せない。記号は恣意的
-3.323	elucid	high	-	sign,symbol	3.324	日常言語での「is」などの多義性の例
-3.324	elucid	mid	-	symbol	3.323	ここから哲学の根本的な混乱が生じる
-3.325	claim	mid	-	logical_syntax	3.33	誤りを避けるには論理的文法(論理的構文論)に従う記号法を使う
-3.326	claim	mid	-	sign,symbol	3.327	記号の中のシンボルを見分けるには意味のある使用を見る
-3.327	claim	mid	-	sign,logical_form,logical_syntax	3.326	記号は論理的構文論上の使用と一緒になって初めて論理形式を決める
-3.328	claim	mid	-	sign,meaning	5.47321	必要でない記号は意味を持たない(オッカムの剃刀)
-3.33	claim	high	type_theory	logical_syntax,meaning	3.331	論理的構文論では記号の意味が役割を演じてはならない
-3.331	elucid	mid	type_theory	logical_syntax	3.33	Russell の型理論への批判
-3.332	claim	mid	type_theory	proposition,self_reference	3.333	命題は自分自身について何も語れない(「型理論の全て」)
-3.333	claim	mid	type_theory	function,self_reference	3.332	関数は自分の引数になれない。Russell のパラドックスの解消。Lean の型理論とは別の理由づけ
-3.334	claim	mid	-	logical_syntax	3.33	個々の記号の意味の仕方がわかれば、論理的構文論の規則はおのずと出てくる
-3.34	def	mid	-	proposition,sense	3.341	命題の本質的な特徴と偶然的な特徴の定義
-3.341	conseq	mid	-	proposition,sense,symbol	3.34	3.34 から:命題の本質は同じ意味(Sinn)を表せる全ての命題に共通なもの。意味の同値類として形式化できる
-3.3411	elucid	mid	-	name,symbol	3.341	本当の名前は対象を意味する全てのシンボルに共通なもの
-3.342	claim	mid	-	notation	3.3421	記法には恣意的な部分があるが、何かを恣意的に決めれば別の何かが必然的に決まる
-3.3421	elucid	mid	-	notation	3.342	個々のものより、その可能性が世界の本質を明かす
-3.343	claim	mid	-	definition,notation	3.344	定義はある言語から別の言語への翻訳規則。正しい記号法は全て互いに翻訳できる
-3.344	claim	mid	-	symbol,logical_syntax	3.343	シンボルの中で意味するのは、論理的構文論の規則で置き換えうる全てのシンボルに共通なもの
-3.3441	elucid	high	-	truth_function,notation	5.5	真理関数の記法は全て「~p」と「p ∨ q」で置き換えられる。関数的完全性の例示(定理として示せる)
-3.3442	claim	mid	analysis	complex,analysis	3.25	複合体の記号は分析で恣意的に分解されない
-3.4	claim	mid	-	proposition,logical_place,logical_space	3.41	命題は論理空間の中の場所を決める。その存在は構成要素の存在だけで保証される
-3.41	def	mid	-	logical_place,propositional_sign	3.4	命題記号と論理座標=論理的場所
-3.411	elucid	mid	-	logical_place	3.41	幾何学的場所と論理的場所の類比
-3.42	claim	high	-	proposition,logical_space	5.44	命題は論理空間の一つの場所しか決めないが、論理空間全体が既に与えられていなければならない。否定や論理和が新しい要素を持ち込まない
-3.5	def	mid	-	thought,propositional_sign	3	使用され思考された命題記号が思考
-4	def	high	-	thought,proposition,sense	3,3.5	思考=意味(Sinn)を持つ命題
-4.001	def	high	-	proposition,language	5.6	言語=命題の全体
-4.002	elucid	high	-	language	4.003	日常言語は思考を覆い隠す、という注釈
-4.003	elucid	mid	-	philosophy,nonsense	4.0031,6.53	哲学の問いの多くは偽ではなく無意味(unsinnig)。方法論の主張で、形式化の対象ではない
-4.0031	elucid	high	-	philosophy	4.003	哲学は言語批判。Russell の功績
-4.01	claim	high	-	proposition,picture,reality	2.12	命題は現実の像、現実のモデル
-4.011	elucid	high	-	proposition,picture	4.01	楽譜や表音文字の例
-4.012	elucid	high	-	proposition,picture	4.01	aRb の形の命題は明らかに像
-4.013	elucid	high	-	proposition,picture	4.012	楽譜の♯♭のような見かけの不規則性も写像性を乱さない
-4.014	elucid	high	-	picture,logical_structure	4.0141	レコード・楽譜・音波の内的な写像関係
-4.0141	elucid	high	-	picture,projection	4.014	射影の法則は翻訳規則
-4.015	elucid	mid	-	picture	4.014	比喩の可能性は写像の論理に基づく
-4.016	elucid	high	-	proposition,picture	4.015	象形文字の例
-4.02	claim	mid	-	proposition,sense	4.021	説明されなくても命題記号の意味(Sinn)がわかる
-4.021	claim	mid	-	proposition,picture,sense	4.02	命題を理解すれば、それが表す状況を知る。説明なしに理解する
-4.022	claim	mid	say_show	proposition,sense,truth	4.1212	命題は意味(Sinn)を示し、それが真ならどうなっているかを示し、そうなっていると語る
-4.023	claim	mid	-	proposition,reality,description	4.024	命題は Yes/No だけで現実と一致するまで現実を確定する。命題は事実の記述。偽の命題からも推論できる
-4.024	claim	high	-	proposition,sense,truth	4.431	命題を理解する=それが真なら何が成立しているかを知る(真理条件意味論)。構成要素を理解すれば命題を理解できる(合成性)
-4.025	claim	mid	-	language,translation	3.343	翻訳は命題単位ではなく構成要素単位
-4.026	claim	mid	-	name,meaning	3.263	単純記号の意味(Bedeutung)は説明されなければならない
-4.027	claim	mid	-	proposition,sense	4.03	命題は新しい意味(Sinn)を伝えられることが本質
-4.03	claim	high	-	proposition,picture,situation	4.027	命題は古い語で新しい意味を伝える。命題は状況の論理的像である限りで何かを主張する
-4.031	elucid	mid	-	proposition,situation	4.03	命題の中で状況が試験的に組み立てられる
-4.0311	elucid	high	-	name,object,atomic_fact	3.21	名前が物の代わりに結合して事態を表す
-4.0312	claim	high	logical_constants	logical_constant,representation	5.4,5.44	「論理定項」は何も代表しない(根本思想)。形式化では論理結合子を対象や名前として扱わず、真理関数として扱う根拠
-4.032	claim	mid	-	proposition,picture	3.141	命題は論理的に分節されている限りで状況の像
-4.04	claim	high	-	proposition,situation,multiplicity	4.041	命題と状況は同じ論理的(数学的)多様性を持つ
-4.041	claim	mid	say_show	multiplicity	4.04	数学的多様性そのものは表せない
-4.0411	elucid	high	-	generality,notation,multiplicity	4.04	一般性を指標で表す試みが失敗する例
-4.0412	elucid	high	-	multiplicity	4.04	観念論の「空間の眼鏡」批判
-4.05	claim	mid	-	reality,proposition	2.223	現実が命題と比べられる
-4.06	claim	high	-	proposition,truth,picture	2.21	命題は現実の像であることによってだけ真か偽になりうる
-4.061	elucid	mid	-	truth,sense	4.062	真偽を記号と事物の対等な二つの関係とみなす誤り
-4.062	elucid	mid	-	truth	4.061	偽の命題で意思疎通できないことの説明
-4.0621	claim	high	logical_constants	negation,sense	4.0312,5.44	「p」と「~p」は同じことを言いうる。「~」は現実の何にも対応しない。~~p=p。p と ~p は逆の意味を持つが対応する現実は同じ。二重否定の除去は定理として示せる
-4.063	elucid	high	-	truth,sense	4.064	白い紙の黒い点の比喩。Frege の真理値の考え方への批判
-4.064	claim	mid	-	proposition,sense,assertion	4.063	全ての命題は既に意味(Sinn)を持つ。主張が意味を与えるのではない
-4.0641	claim	mid	-	negation,logical_place	3.42	否定は否定される命題の論理的場所の外にある場所を決める。否定を補集合として形式化する根拠
-4.1	claim	high	-	proposition,atomic_fact	2.11,4.2	命題は事態の成立と不成立を表す
-4.11	claim	mid	-	proposition,truth,natural_science	6.53	真な命題の全体が自然科学の全体
-4.111	elucid	high	-	philosophy,natural_science	4.112	哲学は自然科学の一つではない
-4.112	elucid	high	-	philosophy	6.54	哲学は理論でなく活動。哲学の著作は本質的に解明からなる
-4.1121	elucid	high	-	philosophy	4.112	心理学と認識論について
-4.1122	elucid	high	-	philosophy	4.112	ダーウィンの理論と哲学
-4.113	elucid	high	-	philosophy,natural_science	4.114	哲学は自然科学の議論可能な領域を限る
-4.114	elucid	high	-	philosophy	4.115	考えうるものを限ることで考えられないものを限る
-4.115	elucid	high	-	philosophy	4.114	語りうるものを明示することで語りえないものを意味する
-4.116	claim	mid	-	thought,proposition	序文	考えうることは全て明晰に考えられ、語りうることは全て明晰に語れる
-4.12	claim	mid	say_show	proposition,logical_form	4.121	命題は現実全体を表せるが、論理形式は表せない。表すには論理の外=世界の外に出る必要がある
-4.121	claim	mid	say_show	proposition,logical_form	4.12,4.1212	論理形式は命題に自らを映す。言語は自らを映すものを表せない。命題は論理形式を示す
-4.1211	elucid	mid	say_show	proposition,logical_form,object	4.121	「fa」は対象 a が現れることを示す。矛盾や帰結は構造が示す。帰結関係を構造(真理条件)から計算できるという形式化の根拠にもなる
-4.1212	claim	mid	say_show	-	4.121	示されうるものは語られえない。語る/示すの区別の中心命題。形式化の限界として記録する
-4.1213	elucid	mid	say_show	-	4.1212	記号法が全て正しければ正しい論理的理解を持っているという感覚の説明
-4.122	def	mid	say_show	internal_property,internal_relation	4.123	形式的(内的)性質・関係の導入。その成立は命題で主張できず、命題に示される
-4.1221	def	high	-	internal_property,fact	4.122	事実の内的性質を事実の「特徴」とも呼ぶ
-4.123	def	high	-	internal_property	4.122	内的性質=対象がそれを持たないことが考えられない性質。形式化では「全ての可能世界で成り立つ」性質と読める
-4.124	claim	mid	say_show	internal_property,proposition	4.122	内的性質の存在は命題で表されず、命題の内的性質で表される
-4.1241	elucid	mid	-	logical_form	4.124	形式どうしを性質で区別できない
-4.125	claim	mid	-	internal_relation,proposition	4.1211	可能な状況の間の内的関係は、命題の間の内的関係として表れる
-4.1251	elucid	mid	-	internal_relation	4.125	関係は全て内的か外的かという論争が消える
-4.1252	def	high	-	formal_series,internal_relation	4.1273,5.2522	内的関係で順序づけられた列を形式列と呼ぶ。後続者の定義。※英訳(1922)の式「(∃x, y):aRx . aRy . yRb」はドイツ語原文の「aRx . xRy . yRb」と食い違う。英訳側の誤りと考え、形式化はドイツ語に従う
-4.126	def	mid	say_show	formal_concept,propositional_variable	4.127	形式的概念の導入。それに属することは命題で表せず記号そのものに示される。形式的概念は関数では表せず、命題変項で表される
-4.127	claim	mid	-	formal_concept,propositional_variable	4.126	命題変項が形式的概念を意味し、その値が概念に属する対象を意味する
-4.1271	claim	mid	-	formal_concept,variable	4.127	全ての変項は形式的概念の記号
-4.1272	claim	mid	formal_concepts	formal_concept,object,variable,nonsense	4.1274,5.535	「対象」は擬似概念で、変項名「x」で表される。「対象がある」「対象は100個ある」「全ての対象の数」は無意味。Lean では型(Sort)として扱うことになり、この主張との関係は D で検討する
-4.12721	claim	mid	formal_concepts	formal_concept	4.1272	形式的概念とそれに属する対象を、両方とも原始概念として導入できない
-4.1273	claim	mid	-	formal_series,variable,operation	4.1252,5.2522,6.02	形式列の一般項は変項でだけ表せる。最初の項と、前の項から次の項を作る操作の一般形式で決まる。Frege・Russell の「後続者」の表し方は循環を含む。形式化では帰納的定義(閉包)として表せる
-4.1274	claim	mid	formal_concepts	formal_concept,nonsense	4.1272	形式的概念の存在についての問いは無意味
-4.128	claim	low	-	logical_form	4.1272	論理形式は数を持たない。論理に特別な数はない
-4.2	def	high	-	sense,proposition,atomic_fact	2.201,4.4	命題の意味(Sinn)=事態の成立・不成立の可能性との一致・不一致。意味を可能世界の集合(真理条件)として定義する中心命題
-4.21	def	high	-	elementary_proposition,atomic_fact	4.25	要素命題=事態の成立を主張する最も単純な命題
-4.211	claim	high	independence	elementary_proposition,independence	2.061,6.3751	要素命題はどれも他の要素命題と矛盾しない。2.061 の言語側の対応物
-4.22	claim	high	-	elementary_proposition,name	4.221	要素命題は名前の連鎖(結合)
-4.221	claim	mid	analysis	analysis,elementary_proposition,name	3.25	分析すれば名前の直接の結合からなる要素命題に行き着く
-4.2211	claim	mid	infinity	world,object,atomic_fact	4.463,5.535	世界が無限に複雑でも対象と事態はなければならない。形式化で対象や事態を有限に限るかどうかに関わる
-4.23	claim	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる
-4.24	notation	high	-	name,elementary_proposition,notation	4.241	名前を x, y, z、要素命題を fx, φ(x, y) や p, q, r で書く記法
-4.241	notation	high	identity	identity,definition,notation	4.242,5.53	「a=b」は記号 a を b で置き換えられること。定義は記号の規則
-4.242	claim	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない
-4.243	claim	mid	identity	identity,name,meaning	5.53,5.5303	二つの名前が同じものを指すかを知らずに理解することはできない。「a=a」などは要素命題でも意味のある記号でもない
-4.25	claim	high	-	elementary_proposition,atomic_fact,truth	4.21	要素命題が真なら事態は成立し、偽なら成立しない。要素命題の真理を事態の成立として定義する
-4.26	claim	high	-	elementary_proposition,world,truth	2.04,4.25	全ての真な要素命題を挙げれば世界は完全に記述される。世界=要素命題への真理値割り当てと同一視する根拠
-4.27	conseq	high	independence	atomic_fact,truth_possibility	2.061,4.28	n 個の事態の成立について K_n=Σ C(n,ν) 通りの可能性がある(=2^n)。どの組み合わせも成立しうる。数え上げの定理の候補
-4.28	conseq	high	-	truth_possibility,elementary_proposition	4.27	4.27 から:それらの組み合わせに、n 個の要素命題の真偽の可能性が同数対応する
-4.3	def	high	-	truth_possibility,elementary_proposition,atomic_fact	4.31	要素命題の真理可能性=事態の成立・不成立の可能性
-4.31	notation	high	-	truth_possibility,truth_table	4.3	真理可能性を T/F の表で表す記法
-4.4	def	high	-	proposition,truth_possibility	4.2,4.431	命題=要素命題の真理可能性との一致・不一致の表現
-4.41	claim	high	-	truth_possibility,truth_condition	4.4	要素命題の真理可能性が命題の真偽の条件
-4.411	elucid	mid	-	elementary_proposition,generality	4.4	要素命題の導入は他の命題の理解に基本的
-4.42	conseq	high	-	truth_condition,truth_possibility	4.27,4.45	一致・不一致の仕方は L_n=Σ C(K_n,κ) 通り(=2^(2^n))。数え上げの定理の候補
-4.43	notation	high	-	truth_condition,truth_table	4.44	一致を T の印で表し、印がないことで不一致を表す
-4.431	claim	high	-	truth_condition,proposition	4.024,4.4	命題は真理条件の表現。Frege の真理概念の説明は誤り
-4.44	claim	mid	-	truth_table,propositional_sign	4.442	T の印と真理可能性の対応から生じる記号は命題記号
-4.441	claim	high	logical_constants	truth_table,logical_object	4.0312	T と F の記号の複合体に対応する対象はない。「論理的対象」はない
-4.442	notation	high	-	truth_table,propositional_sign,notation	5.101	真理表の例と「(TTFT)(p, q)」の記法。Frege の判断線は論理的に無意味
-4.45	conseq	high	-	truth_condition	4.42	n 個の要素命題に対して真理条件のグループは L_n 通りあり、列に並べられる
-4.46	def	high	-	tautology,contradiction,truth_condition	4.461,6.1	トートロジーと矛盾の定義(全ての真理可能性で真/偽)。定義として直接形式化できる
-4.461	claim	high	-	tautology,contradiction,sense	4.4611,6.11	トートロジーと矛盾は何も語らない。真理条件を持たず、意味を欠く(sinnlos)
-4.4611	claim	high	-	tautology,contradiction,nonsense	4.461	トートロジーと矛盾は無意味(unsinnig)ではない。記号法の一部(算術の 0 のように)。sinnlos と unsinnig の区別は形式化でも型として分ける
-4.462	conseq	high	-	tautology,contradiction,picture	4.46	4.46 から:トートロジーと矛盾は現実の像ではない。全ての状況を許すか、どれも許さない
-4.463	claim	mid	-	truth_condition,logical_space,tautology	4.462	真理条件は命題が事実に残す範囲を決める。トートロジーは論理空間全体を、矛盾は何も残さない。命題を論理空間の部分集合として形式化する根拠
-4.464	claim	mid	-	tautology,contradiction,probability	5.15	トートロジーの真は確実、命題の真は可能、矛盾の真は不可能
-4.465	conseq	high	-	tautology,logical_product,sense	4.46	トートロジーと命題の論理積は命題と同じことを言う。定理の候補(p ∧ ⊤ ≡ p)
-4.466	claim	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
-4.4661	elucid	mid	-	tautology,symbol	4.466	トートロジーの中の記号の関係はシンボルにとって本質的でない
-4.5	claim	mid	general_form	general_form,proposition	4.53,6	命題の最も一般的な形式を与えられそう。一般形式は「事情はかくかくである」
-4.51	claim	high	general_form	elementary_proposition,proposition	4.52,5	全ての要素命題が与えられれば、そこから作れる命題が全ての命題。命題の全体を要素命題からの生成として形式化する根拠
-4.52	claim	mid	general_form	elementary_proposition,proposition	4.51	命題は全ての要素命題の全体から(それが全体であることも含めて)帰結するもの全て
-4.53	claim	mid	general_form	general_form,variable	6	命題の一般形式は変項
-5	claim	high	extensionality	proposition,truth_function,elementary_proposition	4.4,5.3	命題は要素命題の真理関数(外延性のテーゼ)。要素命題はそれ自身の真理関数。形式化の中心となる主張
-5.01	def	high	-	elementary_proposition,truth_argument	5	要素命題は命題の真理項
-5.02	elucid	mid	-	argument,index	5.2341	関数の項と名前の指標の混同についての Frege 批判
-5.1	claim	mid	-	truth_function,probability	5.101,5.15	真理関数は列に並べられる。確率論の基礎
-5.101	notation	high	-	truth_function,truth_ground,notation	4.442	2 変数の 16 個の真理関数の表と、真理根拠(命題を真にする真理可能性)の定義。「16 個」は数え上げの定理の候補
-5.11	def	high	-	consequence,truth_ground	5.12	帰結関係の定義:いくつかの命題に共通の真理根拠が全てある命題の真理根拠なら、その命題はそれらから帰結する
-5.12	def	high	-	consequence,truth_ground	5.11	5.11 の特殊な場合:q の真理根拠が全て p の真理根拠なら p は q から帰結する
-5.121	conseq	high	-	consequence,truth_ground	5.12	5.12 の言い換え
-5.122	conseq	high	-	consequence,sense	5.12	5.12 から:p が q から帰結するなら p の意味(Sinn)は q の意味に含まれる。意味を真理根拠の集合とすれば包含関係になる
-5.123	elucid	mid	-	consequence,world,object	5.12	神が世界を作る比喩。後半の「命題の対象を全て作らずに命題を真にできない」は対象の存在についての含意を持つ
-5.124	conseq	high	-	consequence,assertion	5.12	命題はそれから帰結する全ての命題を主張する
-5.1241	conseq	high	-	consequence,logical_product,contradiction	5.124	「p . q」は p も q も主張する。二つを同時に主張する意味のある命題がなければ対立する。矛盾する命題は否定する
-5.13	claim	high	-	consequence,structure	4.1211,5.131	帰結関係は命題の構造から見て取れる。帰結の判定は真理条件から計算できる(決定可能)
-5.131	claim	mid	say_show	consequence,internal_relation	5.13	帰結関係は命題の形式の内的関係として表れ、命題で結びつける必要はない
-5.1311	elucid	high	-	consequence,notation,sheffer_stroke	5.13	p∨q と ~p から q を推論する例を、Sheffer の棒(p|q=p でも q でもない)で書き直すと内的な結びつきが明らかになる
-5.132	claim	mid	-	consequence,inference	5.13	推論の正しさは二つの命題だけから理解される。Frege・Russell の推論規則は無意味で余計
-5.133	claim	high	-	inference	5.132	全ての推論はア・プリオリに行われる
-5.134	conseq	high	independence	elementary_proposition,inference,independence	4.211,2.062	要素命題からは他の要素命題を推論できない。2.062・4.211 の帰結として定理の候補
-5.135	conseq	high	independence	situation,inference,independence	5.134	ある状況の存在から全く別の状況の存在は推論できない
-5.136	claim	mid	causality	causality,inference	5.135	推論を正当化する因果連関はない
-5.1361	claim	mid	causality	causality,inference	5.136	未来の出来事を現在の出来事から推論できない。迷信は因果連関への信仰
-5.1362	out	mid	-	will,knowledge	5.136	意志の自由は未来の行為が今知られないことにある。知ることと知られることの関係は論理的必然性。認識についての主張で形式化の対象外
-5.1363	elucid	mid	-	knowledge,truth	5.1362	自明さは真理の正当化ではない
-5.14	conseq	high	-	consequence	5.12	p が q から帰結するなら q は p より多くを語る。意味の包含関係から
-5.141	conseq	high	-	consequence,identity	5.12	p と q が互いに帰結するなら同じ命題。命題を真理条件で同一視することの帰結(外延性)
-5.142	conseq	high	-	tautology,consequence	4.46,5.12	トートロジーは全ての命題から帰結し、何も語らない。定理の候補
-5.143	claim	mid	-	tautology,contradiction	5.142	矛盾は命題の外の限界、トートロジーは中心。束の上端・下端として形式化できる
-5.15	def	high	-	probability,truth_ground	5.151	確率の定義:T_rs:T_r を r が s に与える確率とする
-5.151	conseq	high	-	probability,truth_table	5.15	5.101 の表での確率の数え方。5.15 の言い換え
-5.1511	claim	mid	-	probability	5.15	確率命題に固有の対象はない
-5.152	conseq	high	independence	probability,independence,elementary_proposition	5.15	真理項を共有しない命題は独立で、互いに確率 1/2 を与える。帰結なら確率 1。定理の候補
-5.153	claim	mid	-	probability	5.15	命題はそれ自体では確からしくもなく、確からしくなくもない
-5.154	elucid	high	-	probability	5.155	壺から玉を取り出す例
-5.155	claim	low	-	probability	5.154	確率命題の単位
-5.156	claim	low	-	probability,generality	5.155	確率は一般化。確率命題は他の命題からの抜粋
-5.2	claim	mid	-	structure,internal_relation	5.21	命題の構造は互いに内的関係に立つ
-5.21	claim	mid	-	operation,internal_relation	5.22	内的関係は、命題を他の命題(基底)からの操作の結果として表すことで示せる
-5.22	def	mid	-	operation	5.23	操作=結果と基底の構造の関係の表現
-5.23	def	mid	-	operation	5.22	操作=命題から別の命題を作るために起きなければならないこと
-5.231	claim	mid	-	operation,formal_property	5.23	操作は形式的性質と形式の内的な類似に依存する
-5.232	claim	mid	-	operation,formal_series	4.1252	列を順序づける内的関係は、項から項を生む操作と同値
-5.233	claim	low	-	operation	5.234	操作が現れうる最初の場所は、命題の論理的構成が始まるところ
-5.234	def	high	-	truth_operation,truth_function,elementary_proposition	5.3	要素命題の真理関数は、要素命題を基底とする操作の結果。その操作を真理操作と呼ぶ
-5.2341	claim	high	-	truth_function,sense,negation	5.234	p の真理関数の意味は p の意味の関数(合成性)。否定・論理和・論理積は操作。否定は意味を逆にする
-5.24	claim	mid	-	operation,variable	5.241	操作は変項の中で示され、形式の違いを表す
-5.241	claim	mid	-	operation,form	5.24	操作は形式ではなく形式の違いを特徴づける
-5.242	claim	mid	-	operation,variable	5.2522	p から q を作る操作が q から r を作る。p, q, r が変項であることでだけ表せる
-5.25	claim	high	-	operation,function,sense	5.251	操作が現れることは命題の意味を特徴づけない。操作と関数を混同してはならない
-5.251	claim	high	-	operation,function	3.333	関数は自分自身の引数になれないが、操作の結果はその操作の基底になれる。形式化では操作を同じ型上の写像(自己写像)として扱う根拠
-5.252	claim	mid	type_theory	operation,formal_series	5.251	これによってだけ形式列の項から項への前進(型階層の型から型への前進)が可能
-5.2521	def	high	-	operation,successive_application	5.2522	操作をその結果に繰り返し適用することを継続的適用と呼ぶ
-5.2522	notation	high	-	formal_series,operation,notation	4.1273,6.02	形式列の一般項の記法「[a, x, O’x]」。初項・任意の項・その次の項。帰納的に生成される集合として形式化できる
-5.2523	claim	mid	-	successive_application	5.2522	操作の継続的適用の概念は「など」の概念と同値
-5.253	claim	mid	-	operation	5.254	操作は他の操作の効果を逆にでき、打ち消し合える
-5.254	conseq	high	-	operation,negation	4.0621	操作は消えうる(~~p=p)。二重否定の除去として定理の候補
-5.3	claim	high	general_form	proposition,truth_operation,elementary_proposition	5,5.32	全ての命題は要素命題に真理操作を施した結果。真理操作の結果に真理操作を施した結果も、要素命題に一つの真理操作を施した結果。形式化の中心となる主張
-5.31	claim	mid	-	truth_table,truth_function	4.31,4.442	4.31 の表は p, q, r が要素命題でなくても意味を持つ
-5.32	claim	high	general_form	truth_function,truth_operation,successive_application	5.3,6.001	全ての真理関数は有限個の真理操作を要素命題に継続的に適用した結果。帰納的に定義された命題の型として形式化できる。有限性の条件が N 演算子の議論に関わる
-5.4	conseq	high	logical_constants	logical_constant,logical_object	4.0312,4.441	5.3 から:Frege・Russell の意味での「論理的対象」「論理定項」はない
-5.41	conseq	high	extensionality	truth_function,truth_operation	5.3	同じ真理関数になる真理操作の結果は全て同一。命題を真理関数として同一視することの帰結
-5.42	claim	mid	logical_constants	logical_constant,definition	5.4	∨ や ⊃ は関係ではない。Frege・Russell の原始記号が互いに定義し合えることがそれを示す
-5.43	claim	mid	-	tautology,logic	6.1	p から ~~p などの無限の命題が帰結するのは驚くべきことに見えるが、論理の命題は全て同じこと、つまり何も言わない。論理の命題がトートロジーとして全て同値という定理の候補
-5.44	claim	high	logical_constants	truth_function,negation	4.0621	真理関数は実質的な関数ではない。「~~p」は否定を対象として扱わない。「~」という対象があれば ~~p は p と別のことを言うことになる
-5.441	claim	mid	logical_constants	generality,identity	5.47	見かけの論理定項の消滅は「~(∃x) . ~fx」と「(x) . fx」、「(∃x) . fx . x=a」と「fa」でも起きる
-5.442	claim	mid	-	truth_operation,proposition	3.42	命題が与えられれば、それを基底とする全ての真理操作の結果も与えられる
-5.45	elucid	mid	-	primitive_sign,logic	5.451	論理の原始記号があるなら、その相互の位置と存在を正当化しなければならない
-5.451	claim	mid	-	primitive_sign	5.45	原始概念は互いに独立で、現れる全ての脈絡で一度に導入されなければならない
-5.452	elucid	mid	-	notation	5.451	新しい記号法の導入は重大な出来事。Principia の言葉による定義の批判
-5.453	claim	low	-	logic,number	4.128	論理の中の数は全て正当化できなければならない。むしろ論理には数がない
-5.454	claim	low	-	logic	5.4541	論理には並列も分類もない。より一般的なものとより特殊なものはない
-5.4541	elucid	mid	-	logic	5.454	論理の問題の解決は単純でなければならない
-5.46	claim	mid	general_form	logical_constant,general_form	5.47	論理記号を正しく導入すれば、その全ての組み合わせの意味も導入されている。本当の原始記号は組み合わせの最も一般的な形式
-5.461	elucid	mid	logical_constants	logical_constant	5.4611	∨ や ⊃ が括弧を必要とすることは、それらが本当の原始記号でないことを示す
-5.4611	claim	mid	logical_constants	logical_constant	5.461	論理的操作の記号は句読点
-5.47	claim	mid	general_form	general_form,elementary_proposition	5.471	全ての命題の形式について前もって言えることは一度に言える。全ての論理操作は既に要素命題に含まれている(「fa」=「(∃x) . fx . x=a」)
-5.471	claim	mid	general_form	general_form,proposition	5.47	命題の一般形式は命題の本質
-5.4711	elucid	mid	-	general_form,world	5.471	命題の本質を与えることは全ての記述の本質、世界の本質を与えること
-5.472	claim	mid	general_form	general_form,primitive_sign	5.47	最も一般的な命題形式の記述は、論理の唯一の一般的な原始記号の記述
-5.473	claim	mid	-	logic,sign,nonsense	5.4733	論理は自分の面倒を自分で見る。可能な記号は意味することもできる。ある意味で論理で誤ることはできない
-5.4731	elucid	mid	-	logic	5.473	自明性は言語が論理的誤りを防ぐことで不要になる。論理がア・プリオリなのは非論理的に考えられないから
-5.4732	claim	mid	-	sign,sense	5.473	記号に誤った意味を与えることはできない
-5.47321	claim	mid	-	sign,meaning	3.328	オッカムの剃刀:記号法の不要な要素は何も意味しない。一つの目的に役立つ記号は論理的に同値
-5.4733	claim	mid	-	proposition,sense,meaning,nonsense	5.473	可能な命題は全て正しく作られている。意味(Sinn)を持たないのは構成要素に意味(Bedeutung)を与えていないから。「ソクラテスは同一である」の例
-5.474	claim	mid	-	truth_operation,notation	5.475	必要な基本操作の数は記法だけに依存する。関数的完全性(どの完全な結合子の集合でもよい)の主張
-5.475	claim	mid	-	notation,multiplicity	5.474	問題は特定の次元(数学的多様性)を持つ記号体系を作ることだけ
-5.476	claim	mid	-	primitive_sign	5.475	問題は原始概念の数ではなく規則の表現
-5.5	claim	high	n_operator	n_operator,truth_function,successive_application	5.502,6	全ての真理関数は操作 (– – – – –T)(ξ, ....)(=N)の要素命題への継続的適用の結果。N 演算子の表現的完全性。形式化の目玉となる定理の候補
-5.501	notation	high	n_operator	propositional_variable,notation	5.502	(ξ̄) の記法。値の決め方は 3 通り:直接の列挙、関数 fx の全ての値、形式的法則(形式列の全ての項)。2・3 番目は無限の場合を含みうる
-5.502	notation	high	n_operator	n_operator,notation	5.5	N(ξ̄) は命題変項 ξ の全ての値の否定
-5.503	claim	mid	n_operator	n_operator	5.5	この操作で命題をどう作れるかは厳密に表せるはず
-5.51	conseq	high	n_operator	n_operator,negation	5.502	ξ の値が一つなら N(ξ̄)=~p、二つなら ~p . ~q。定義からの計算として定理の候補
-5.511	elucid	mid	-	logic,world	5.51	論理は無限に細かい網で世界を映す大きな鏡
-5.512	claim	mid	logical_constants	negation,notation	5.513	~p で否定しているのは「~」ではなく、p を否定するこの記法の全ての記号に共通なもの
-5.513	claim	mid	-	logical_product,logical_sum,negation	5.512	p と q を共に主張する全ての記号に共通なものが「p . q」。命題の否定はただ一つ。「q:p ∨ ~p」は「q」と同じことを言う。否定の一意性は定理の候補
-5.514	claim	mid	-	notation,sense	5.513	記法が決まれば、p を否定する全ての命題を作る規則などがあり、それらは記号と同値
-5.515	claim	mid	-	proposition,logical_sum	5.514	「∨」などで結ばれるものが命題でなければならないことが記号に表れていなければならない
-5.5151	claim	low	-	negation,negative_fact	5.515	否定命題を否定的事実で表せないか。肯定命題と否定命題は互いの存在を前提する
-5.52	notation	high	n_operator	n_operator,generality	5.502,5.501	ξ の値が関数 fx の全ての値なら N(ξ̄)=~(∃x) . fx。量化を N で表す仕方。対象の領域が無限なら無限個の命題の否定になる
-5.521	claim	mid	-	generality,truth_function	5.52	「全て」の概念を真理関数から切り離す。Frege・Russell は一般性を論理積・論理和と結びつけた
-5.522	claim	low	-	generality	5.521	一般性の記号法の特徴は論理的原型への言及と、定項を際立たせること
-5.523	claim	low	-	generality	5.522	一般性の記号は項として現れる
-5.524	claim	mid	-	object,elementary_proposition	2.0124	対象が与えられれば全ての対象も与えられる。要素命題が与えられれば全ての要素命題も与えられる
-5.525	claim	mid	-	modality,tautology,generality	4.464	「(∃x) . fx」を「fx は可能」と読むのは誤り。確実・可能・不可能は命題で表されず、表現がトートロジー・意味のある命題・矛盾であることで表される
-5.526	claim	mid	-	generality,world,description	5.5262	世界は完全に一般化された命題で完全に記述できる
-5.5261	claim	low	-	generality,symbol	5.526	完全に一般化された命題も複合的
-5.5262	claim	mid	-	generality,elementary_proposition,world	5.526	どの命題の真偽も世界の一般的構造を何か変える。要素命題の全体が構造に許す範囲は、完全に一般的な命題が区切る範囲と同じ
-5.53	notation	high	identity	identity,notation	5.531	対象の同一性を記号の同一性で表し、同一性の記号を使わない。対象の違いを記号の違いで表す(排他的解釈の変項)。D で採否を決める論点
-5.5301	claim	mid	identity	identity	5.53	同一性は対象の間の関係ではない
-5.5302	claim	mid	identity	identity	5.5301	Russell の「=」の定義(全ての性質の共有)は使えない。二つの対象が全ての性質を共有するという命題は(偽でも)意味を持つ
-5.5303	claim	mid	identity	identity,nonsense	4.243	二つのものが同一だと言うのは無意味、一つのものが自分と同一だと言うのは何も言わない
-5.531	notation	high	identity	identity,notation	5.53	「f(a, b) . a=b」でなく「f(a, a)」と書く、など
-5.532	notation	high	identity	identity,generality,notation	5.531	「(∃x, y) . f(x, y) . x=y」でなく「(∃x) . f(x, x)」と書く、など。排他的解釈の量化の翻訳規則として形式化できる
-5.5321	notation	high	identity	identity,generality,notation	5.532	「(x):fx ⊃ x=a」や「ただ一つの x が f を満たす」の書き換え
-5.533	conseq	high	identity	identity	5.53,5.532	同一性の記号は論理的記法の本質的な構成要素ではない。排他的解釈の表現力が通常の同一性付きの論理と同等という定理の候補(Wehmeier の研究)
-5.534	claim	mid	identity	identity,nonsense	5.533	「a=a」「(x) . x=x」などは正しい記法では書けない
-5.535	claim	mid	infinity	identity,infinity,name	4.2211	これで擬似命題に関わる問題が消える。無限公理が言おうとすることは、異なる意味を持つ名前が無限にあることで言語に表される
-5.5351	elucid	mid	-	identity,nonsense	5.535	Russell が「p は命題である」を「p ⊃ p」で表した誤り
-5.5352	elucid	mid	-	identity,nonsense	5.535	「物はない」を「~(∃x) . x=x」で表す提案の誤り
-5.54	claim	high	extensionality	proposition,truth_operation,general_form	5.3	一般命題形式では、命題は真理操作の基底としてだけ他の命題に現れる(外延性)
-5.541	elucid	mid	extensionality	propositional_attitude	5.542	「A は p と思う」のような心理学の命題形式は外延性の反例に見える
-5.542	claim	low	extensionality	propositional_attitude,fact	5.541	「A は p と信じる」は「『p』は p を語る」の形。事実と対象の対応ではなく、対象の対応による事実どうしの対応
-5.5421	out	mid	-	subject,soul	5.542	現代の表面的な心理学が考えるような魂(主体)はない
-5.5422	claim	low	-	judgement,nonsense	5.542	「A は p と判断する」の正しい説明は、無意味なことを判断できないことを示さなければならない
-5.5423	elucid	high	-	complex,perception	5.5422	複合体を知覚することは構成要素の結合を知覚すること。ネッカーの立方体の例
-5.55	claim	mid	elementary_forms	elementary_proposition,name	5.551	要素命題の全ての可能な形式にア・プリオリに答えなければならない。名前の数が言えないので要素命題の構成も言えない
-5.551	elucid	mid	-	logic	5.55	論理で決められる問いは全て、それ以上の手間なしに決められる(根本原則)
-5.552	claim	low	-	logic,experience	5.5521	論理の理解に必要な「経験」は、何かがあるということで、経験ではない。論理は全ての経験に先立つ
-5.5521	elucid	mid	-	logic,world	5.552	論理がもし世界と無関係なら、どうして適用できるのか
-5.553	elucid	mid	elementary_forms	relation,number	5.554	Russell の個体間の単純な関係の数についての批判
-5.554	claim	mid	elementary_forms	elementary_proposition	5.553	特別な形式を列挙するのは全く恣意的
-5.5541	elucid	mid	elementary_forms	elementary_proposition	5.554	27 項関係の記号が必要かをア・プリオリに決められるはず
-5.5542	elucid	mid	-	logic	5.5541	何かが成立しうるために何がなければならないかという問いに意味があるか
-5.555	claim	mid	elementary_forms	elementary_proposition,logical_form	5.556	特定の論理形式と別に要素命題の概念を持つ。記号を体系的に作れるところでは体系が重要
-5.556	claim	mid	elementary_forms	elementary_proposition	5.5561	要素命題の形式の階層はありえない
-5.5561	claim	low	-	reality,object,elementary_proposition	5.556	経験的現実は対象の全体で限られる。その限界は要素命題の全体に再び現れる
-5.5562	claim	low	-	elementary_proposition	5.5563	純粋に論理的な根拠から要素命題がなければならないとわかるなら、分析されていない形の命題を理解する人は誰でもそれを知っている
-5.5563	elucid	mid	-	language	5.5562	日常言語の命題は全て、そのままで論理的に完全に秩序だっている
-5.557	claim	mid	elementary_forms	elementary_proposition,logic,application	5.5571	どんな要素命題があるかは論理の適用が決める。論理はそれを先取りできない。形式化では要素命題(事態)の集合をパラメータとして扱う根拠
-5.5571	conseq	mid	elementary_forms	elementary_proposition	5.557	要素命題をア・プリオリに挙げられないなら、挙げようとすれば無意味に陥る
-5.6	out	mid	solipsism	language,world,subject	5.62	私の言語の限界が私の世界の限界を意味する。独我論の節の導入で、形式化の対象外
-5.61	claim	low	solipsism	logic,world	5.6	論理は世界を満たす。論理の中で「これは世界にあり、あれはない」とは言えない
-5.62	out	mid	solipsism	solipsism,say_show	5.6	独我論が意味するところは正しいが、語られえず示される
-5.621	out	high	-	world,life	5.63	世界と生は一つ
-5.63	out	high	solipsism	subject,world	5.631	私は私の世界である
-5.631	out	high	solipsism	subject	5.632	思考し表象する主体はない
-5.632	out	high	solipsism	subject,world	5.641	主体は世界に属さず、世界の限界
-5.633	out	high	solipsism	subject	5.6331	形而上学的主体は世界のどこにも見出されない。眼と視野の比喩
-5.6331	elucid	high	-	subject	5.633	視野の形の図
-5.634	claim	mid	-	experience,a_priori	2.225,6.37	経験のどの部分もア・プリオリではない。見るもの・記述できるものは全て別様でありえた。全ての意味のある命題は偶然的という定理(2.225)と同じ内容
-5.64	out	high	solipsism	solipsism,realism	5.641	徹底した独我論は純粋な実在論と一致する
-5.641	out	high	solipsism	subject	5.64	哲学的な私は形而上学的主体であり、世界の部分ではなく限界
-6	notation	high	n_operator	general_form,n_operator,notation	5.5,6.001	真理関数の一般形式 [p̄, ξ̄, N(ξ̄)]。これが命題の一般形式。要素命題から N で帰納的に生成される命題の型として形式化する中心命題
-6.001	claim	high	n_operator	n_operator,successive_application,elementary_proposition	6,5.32	6 の言い換え:全ての命題は要素命題への N’(ξ̄) の継続的適用の結果。5.5 と合わせて表現的完全性の定理の候補
-6.002	claim	mid	-	operation,general_form	6.01	命題の作り方の一般形式が与えられれば、操作で命題から命題を作る一般形式も与えられる
-6.01	notation	high	n_operator	operation,n_operator,notation	6.002	操作 Ω’(η̄) の一般形式 [ξ̄, N(ξ̄)]’(η̄)(=[η̄, ξ̄, N(ξ̄)])。命題から命題への最も一般的な移行
-6.02	notation	high	number	number,operation,notation	6.021,5.2522	数の定義:x=Ω^0’x、Ω’Ω^ν’x=Ω^(ν+1)’x。操作の反復回数としての自然数。Lean の Nat.iterate に当たり、定義として形式化できる
-6.021	def	high	number	number,operation	6.02	数は操作の指数
-6.022	claim	mid	number	number,formal_concept	4.1272	数の概念は全ての数に共通なもの、数の一般形式。数の概念は変項としての数
-6.03	notation	high	number	number,notation	6.02	基数の一般形式 [0, ξ, ξ+1]。自然数の帰納的定義に当たる
-6.031	claim	low	-	class,mathematics	6.03	数学ではクラスの理論は全く不要
-6.1	claim	high	logic_tautology	tautology,logic	5.43,6.11	論理の命題はトートロジー。形式化では「論理の命題=トートロジー」を定義と見るか、証明可能性との一致(完全性)を定理と見るかを D で決める
-6.11	conseq	high	logic_tautology	tautology,logic,sense	6.1,4.461	6.1 から:論理の命題は何も語らない(分析的命題)
-6.111	elucid	mid	-	logic,truth	6.112	論理の命題を内容のあるものに見せる理論は常に誤り
-6.112	claim	mid	-	logic	6.113	論理の命題の正しい説明は、それに全命題の中で特別な位置を与えなければならない
-6.113	claim	high	-	logic,tautology,truth	2.224,6.1	論理の命題は記号だけから真とわかる。論理でない命題の真偽は命題だけからはわからない。トートロジー性の判定可能性(真理表)と、偶然的命題の真偽の非決定性として定理の候補
-6.12	claim	mid	say_show	tautology,logical_form	6.121	論理の命題がトートロジーであることが、言語と世界の形式的・論理的性質を示す
-6.1201	claim	high	-	tautology,contradiction,consequence	6.1221	~(p . ~p) がトートロジーであることは p と ~p が矛盾することを示す。(p ⊃ q) . (p): ⊃ :(q) がトートロジーであることは q が p と p ⊃ q から帰結することを示す。帰結と条件文のトートロジー性の対応(演繹定理)として定理の候補
-6.1202	claim	mid	-	contradiction,tautology	6.1201	トートロジーの代わりに矛盾を使うこともできた。双対性として示せる
-6.1203	notation	high	-	tautology,notation	6.1201	一般性の記号を含まないトートロジーを見分ける直観的な方法(TpF の括弧の図式)。真理表による判定と同等であることを示せる
-6.121	claim	mid	-	tautology,logical_property	6.12	論理の命題は、命題を何も語らない命題に結合することで論理的性質を示す(ゼロ法)
-6.122	conseq	mid	-	logical_property,notation	6.121	適切な記法があれば、論理の命題なしで、見るだけで命題の形式的性質がわかる
-6.1221	claim	high	-	consequence,tautology	6.1201	「p ⊃ q」がトートロジーなら q は p から帰結する。演繹定理として定理の候補
-6.1222	conseq	mid	-	logic,experience	6.1221	論理の命題は経験で確立も反駁もできない
-6.1223	elucid	mid	-	logic	6.1222	論理的真理を「要請」するように感じる理由
-6.1224	elucid	mid	-	logic	6.1223	論理が形式と推論の理論と呼ばれてきた理由
-6.123	claim	mid	type_theory	logic	6.1231	論理法則がさらに論理法則に従うことはない。型ごとに矛盾律があるわけではない
-6.1231	claim	mid	-	logic,generality	6.1232	論理の命題の目印は一般的妥当性ではない。一般化されていない命題もトートロジーでありうる
-6.1232	claim	mid	-	logic,generality	6.1231	本質的な一般的妥当性と偶然的な一般的妥当性。還元公理は論理の命題ではない
-6.1233	elucid	mid	-	logic	6.1232	還元公理が成り立たない世界を想像できる
-6.124	claim	mid	say_show	logic,tautology,world	6.13	論理の命題は世界の足場を描く(表す)。名前が意味を持ち要素命題が意味を持つことを前提する。記号言語の論理的構文論がわかれば論理の命題は全て与えられている
-6.125	claim	high	-	logic,tautology	6.1251	古い論理でも、全ての「真な」論理的命題を最初に記述できる。トートロジー全体の集合が決定可能という定理の候補
-6.1251	conseq	high	-	logic	6.125	だから論理に驚きはない
-6.126	claim	mid	-	logic,proof,tautology	6.1262	命題が論理に属するかはシンボルの論理的性質で決まる。証明は記号規則による変形で、トートロジーからはトートロジーしか帰結しない(健全性)。証明は論理にとって本質的でない
-6.1261	claim	mid	-	logic,proof	6.126	論理では過程と結果が同値
-6.1262	claim	mid	-	proof,tautology	6.126	論理の証明は、複雑なときにトートロジーを見分けやすくする機械的な手段にすぎない
-6.1263	claim	mid	-	proof,logic	6.1264	意味のある命題の論理的証明と論理の中の証明は全く別物
-6.1264	claim	low	-	proof,modus_ponens	6.1263	論理の命題は全て記号で示された modus ponens。modus ponens は命題で表せない
-6.1265	claim	low	-	logic,proof	6.1264	論理の命題は全て自分自身の証明と考えられる
-6.127	claim	mid	-	logic,tautology	6.1271	論理の命題は全て同格。原始的なものと導かれたものはない。トートロジーは自分がトートロジーであることを示す
-6.1271	elucid	mid	-	logic	6.127	論理の原始命題の数は恣意的。Frege の原始命題の論理積を一つの原始命題にできる。Frege の自明性の基準への批判
-6.13	out	mid	-	logic,world	6.12	論理は理論ではなく世界の鏡像。論理は超越論的
-6.2	claim	mid	mathematics	mathematics,equation	6.21	数学は論理的方法。数学の命題は等式で、擬似命題
-6.21	claim	mid	mathematics	mathematics,thought	6.2	数学の命題は思考を表さない
-6.211	elucid	mid	mathematics	mathematics	6.21	数学の命題は数学でない命題から数学でない命題を推論するためにだけ使う
-6.22	claim	low	mathematics	mathematics,logic	6.2	論理の命題がトートロジーで示す世界の論理を、数学は等式で示す
-6.23	claim	mid	mathematics	equation,substitution	4.241	等号で結ばれた二つの表現は互いに置き換えられる。それが成り立つかは二つの表現自体に示されなければならない
-6.231	elucid	mid	mathematics	equation	6.23	肯定を二重否定と考えられること、1+1+1+1 を (1+1)+(1+1) と考えられること
-6.232	claim	low	mathematics	equation,sense,meaning	6.23	等式の本質は、両辺が同じ意味(Bedeutung)を持つことを示すのに等式が必要ないこと。Frege の意義と意味の区別への応答
-6.2321	claim	low	mathematics	proof,mathematics	6.232	数学の命題が証明できるとは、事実と比べずに正しさがわかること
-6.2322	claim	mid	mathematics	equation,meaning	6.232	二つの表現の意味の同一性は主張できない
-6.2323	elucid	mid	mathematics	equation	6.2322	等式は二つの表現を見る観点を特徴づけるだけ
-6.233	claim	low	mathematics	mathematics,intuition	6.2331	数学の問題を解くのに必要な直観は言語そのものが与える
-6.2331	claim	low	mathematics	mathematics,calculation	6.233	計算の過程がまさにその直観をもたらす。計算は実験ではない
-6.234	claim	mid	mathematics	mathematics,logic	6.2	数学は論理の方法
-6.2341	claim	low	mathematics	mathematics,equation	6.234	数学の方法の本質は等式を扱うこと
-6.24	claim	mid	mathematics	mathematics,equation,substitution	6.241	数学が等式に至る方法は代入
-6.241	notation	high	number	number,operation,notation	6.02,6.24	2×2=4 の証明。(Ω^ν)^μ’x=Ω^(ν×μ)’x の定義と代入による計算。操作の反復としての数で定理として再現できる
-6.3	claim	mid	-	logic,regularity	6.31	論理の探究は全ての規則性の探究。論理の外は全て偶然
-6.31	claim	mid	induction	induction,logic	6.3,6.363	いわゆる帰納法則は意味のある命題なので論理法則でもア・プリオリな法則でもない
-6.32	claim	low	causality	causality,law	6.321	因果律は法則ではなく法則の形式
-6.321	elucid	mid	causality	causality,law	6.32	「因果律」はクラス名。最小作用の法則などとの類比
-6.3211	elucid	mid	-	law	6.321	ア・プリオリに確実なものは純粋に論理的なものだとわかる
-6.33	claim	low	-	law,logical_form	6.34	保存則をア・プリオリに信じるのではなく、論理形式の可能性をア・プリオリに知る
-6.34	claim	low	causality	law,science	6.341	因果律・連続律などは科学の命題の可能な形式についてのア・プリオリな直観
-6.341	elucid	high	-	science,description	6.342	ニュートン力学と網目の比喩
-6.342	elucid	mid	-	science,description,logic	6.341	網目による記述が可能であることは像について何も語らないが、特定の網目で完全に記述できることは語る
-6.343	claim	low	-	science	6.341	力学は世界の記述に必要な全ての真な命題を一つの計画で作る試み
-6.3431	claim	low	-	science,object	6.343	物理法則は論理の装置を通して世界の対象について語る
-6.3432	claim	low	-	science,generality	6.343	力学による世界の記述は常に一般的
-6.35	elucid	mid	-	science,geometry	6.341	網目は純粋に幾何学的で、因果律などは網目について語る
-6.36	claim	low	say_show	causality,law	6.32	因果律があるとすれば「自然法則がある」だろうが、それは語られえず示される
-6.361	elucid	mid	-	law	6.36	Hertz の言い方では、規則的な結合だけが考えうる
-6.3611	elucid	mid	-	time,description	6.36111	「時間の経過」と比べることはできず、別の過程と比べるだけ
-6.36111	elucid	high	-	space	6.3611	右手と左手の問題(カント)
-6.362	claim	low	causality	causality,description	6.36	記述できることは起こりうる。因果律に排除されるものは記述できない
-6.363	claim	mid	induction	induction	6.3631	帰納の過程は経験と調和する最も単純な法則を仮定する過程
-6.3631	claim	mid	induction	induction	6.363	その過程には論理的な根拠はなく、心理的な根拠だけ
-6.36311	elucid	high	induction	induction	6.3631	太陽が明日昇ることは仮説
-6.37	claim	high	-	necessity,causality	5.136,6.375	ある事が起きたから別の事が起きるという必然性はない。論理的必然性だけがある。必然性をトートロジー性として形式化する根拠
-6.371	elucid	mid	-	law,science	6.372	自然法則が自然現象の説明だという錯覚
-6.372	elucid	mid	-	law	6.371	古代人の神と運命との比較
-6.373	out	mid	-	will,world	6.374	世界は私の意志から独立している
-6.374	out	mid	-	will,world	6.373	意志と世界の間に論理的な結びつきはない
-6.375	claim	high	-	necessity,impossibility	6.37	論理的必然性だけがあるように、論理的不可能性だけがある
-6.3751	claim	mid	colour	colour,elementary_proposition,contradiction,independence	2.061,4.211	視野の一か所に二つの色があることは論理的に不可能(矛盾)。二つの要素命題の論理積はトートロジーにも矛盾にもなれない。色の命題を要素命題とすると独立性(2.061)と衝突する、論考内部の緊張関係として定理化を試みる
-6.4	out	mid	-	value,proposition	6.41	全ての命題は同じ価値を持つ
-6.41	out	high	-	value,world	6.42	世界の意味は世界の外にある。世界の中に価値はない
-6.42	out	high	-	ethics,proposition	6.41	だから倫理の命題はありえない。命題はより高いものを表せない
-6.421	out	high	-	ethics	6.42	倫理は表せない。倫理は超越論的。倫理と美学は一つ
-6.422	out	high	-	ethics	6.421	倫理的な賞罰は行為そのものにある
-6.423	out	high	-	will,ethics	6.422	倫理の担い手としての意志については語れない
-6.43	out	high	-	will,world	6.431	善い意志・悪い意志が世界を変えるなら、世界の限界だけを変える。幸福な人の世界と不幸な人の世界は別
-6.431	out	high	-	death,world	6.4311	死において世界は変わるのではなく終わる
-6.4311	out	high	-	death	6.431	死は人生の出来事ではない
-6.4312	out	high	-	death,soul	6.4311	魂の時間的な不死は何も解決しない
-6.432	out	high	-	god,world	6.4321	世界がどうあるかは、より高いものにとって全くどうでもよい。神は世界の中に現れない
-6.4321	out	high	-	fact	6.432	事実は全て課題に属し、解決には属さない
-6.44	out	high	-	mystical,world	6.45	神秘的なのは世界がどうあるかではなく、世界があること
-6.45	out	high	-	mystical,world	6.44	限られた全体として世界を感じることが神秘的な感情
-6.5	claim	low	-	question,answer	6.51	表せない答えには問いも表せない。謎は存在しない。問いが立てられるなら答えられる。問いと答えの対応(意味のある命題は真か偽)として部分的に形式化できる
-6.51	claim	low	-	scepticism,question	6.5	懐疑論は反駁できないのではなく、問いが立てられないところで疑おうとするなら無意味
-6.52	out	high	-	life,science	6.521	全ての科学的な問いに答えても生の問題には触れていない
-6.521	out	high	-	life	6.52	生の問題の解決はその問題が消えることに見られる
-6.522	out	high	say_show	mystical,say_show	6.52	表せないものは確かにある。それは自らを示す。それが神秘的なもの
-6.53	elucid	mid	-	philosophy,method	4.112	哲学の正しい方法:語りうること(自然科学の命題)だけを語り、形而上学的なことを言おうとする人には記号に意味を与えていないことを示す
-6.54	elucid	mid	ladder	philosophy,nonsense	4.112,3.263	私の命題は、理解した人が最後に無意味だとわかることで解明となる(梯子)。この形式化プロジェクト全体の位置づけに関わる
-7	out	mid	say_show	say_show	序文,4.115	語りえないことについては沈黙しなければならない
+number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
+1	def	1	-	mid	-	world,fact	1.1,2.04	世界の特徴づけ。1.1 と合わせて「世界=成立している事実の全体」という定義として扱う。主張とも読める
+1.1	def	1	-	mid	-	world,fact,object	2.04	世界は事実の全体であり物の全体ではない。世界の型を事実(のちに事態)の集まりとして与える
+1.11	claim	1	-	mid	totality	world,fact	1.12	世界は事実と、それが「全て」であることによって決まる。全体性(これで全部という閉包条件)の主張
+1.12	conseq	1	-	mid	totality	world,fact	1.11,2.05	1.11 から:事実の全体は、成立していないことも決める。2.05 と並行
+1.13	def	1	-	mid	-	world,fact,logical_space	2.11,3.4	論理空間の中の事実が世界。論理空間という概念を導入する
+1.2	claim	1	-	high	-	world,fact	2.04	世界は事実に分かれる(原子的に分解できる)
+1.21	claim	1	-	high	independence	fact,independence	2.061,4.211	一つの事実は他の全てを変えずに成立・不成立になれる。厳密には要素的な事態についての独立性(2.061)
+2	def	1	-	high	-	fact,atomic_fact	2.06,4.2	事実を事態の成立として定義する
+2.01	def	1	-	high	simples	atomic_fact,object	2.0272	事態を対象の結合として定義する
+2.011	claim	1	-	high	-	object,atomic_fact	2.0141	事態の構成要素になりうることは対象の本質。対象の型に結合可能性が属する
+2.012	claim	1	-	mid	-	object,atomic_fact,form	2.0123	対象が事態に現れうるなら、その可能性は対象に先取りされている
+2.0121	elucid	out	-	mid	-	object,atomic_fact	2.012	2.012 の理由づけと空間・時間の類比
+2.0122	elucid	out	-	mid	-	object,atomic_fact	2.012	対象の自立性は事態への依存の一形式だという注釈
+2.0123	claim	1	-	mid	object_form	object,form	2.0141,2.0124	対象を知ればその全ての結合可能性を知る。形式化では「対象の形式が可能な事態を決める」と読む
+2.01231	claim	1	-	low	-	object,internal_property	4.122	対象を知るには内的性質を全て知る必要がある。内的性質の概念は 4.122 以降で扱う
+2.0124	conseq	1	-	high	object_form	object,atomic_fact	2.0123,2.014	2.0123/2.014 から:全ての対象が与えられれば可能な事態も全て与えられる。定理の候補
+2.013	elucid	out	-	mid	-	object,logical_space	2.0131	可能な事態の空間の比喩
+2.0131	elucid	out	-	mid	colour	object,form	2.0251,6.3751	空間・色・音の例。色の排除問題(6.3751)と関わる
+2.014	claim	1	-	high	object_form	object,atomic_fact	2.0124	対象は全ての事態の可能性を含む
+2.0141	def	1	-	high	object_form	object,form	2.033	対象の形式=事態に現れる可能性
+2.02	claim	1	-	high	simples	object	2.021,3.24	対象は単純
+2.0201	claim	1	-	mid	analysis	complex,analysis	3.24,3.25	複合体についての言明は構成要素についての言明と記述に分析できる
+2.021	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	object,substance	2.02,2.024	対象は世界の実体をなす。後半の「だから複合でない」は 2.02 と同じ内容の帰結
+2.0211	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,sense,truth	2.0212	実体がなければ命題の意味(Sinn)が他の命題の真偽に依存してしまう、という背理法の前提。条件文として形式化できる
+2.0212	conseq	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,picture	2.0211	2.0211 から:そのとき世界の像を作れない
+2.022	claim	1	-	mid	-	world,form	2.023	想像された世界も現実の世界と形式を共有する。可能世界が同じ対象領域を持つ
+2.023	claim	1	-	mid	-	form,object	2.022	固定した形式は対象からなる
+2.0231	claim	1	-	mid	-	substance,form	2.0232	実体は形式だけを決め、物質的性質は決めない
+2.0232	elucid	out	-	mid	-	object	2.0231	対象は無色である(比喩)
+2.0233	claim	1	-	mid	identity	object,form,identity	2.02331,5.53	同じ論理形式の二つの対象は、異なるということ以外では区別されない
+2.02331	elucid	out	-	mid	identity	object,identity	2.0233	識別不能なものについての議論
+2.024	def	out	実体の議論の再構成は範囲外(interpretation の substance)	high	substance	substance	2.021	実体=何が成立しているかと独立に存在するもの
+2.025	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,form	2.024	実体は形式と内容である
+2.0251	claim	1	-	low	colour	form,object	2.0131	空間・時間・色は対象の形式
+2.026	conseq	1	-	mid	-	object,form	2.023	対象があるときにだけ世界の固定した形式がある
+2.027	claim	1	-	mid	-	object,substance	2.0271	固定したもの、存在するもの、対象は同一
+2.0271	claim	1	-	mid	-	object,configuration	2.0272	対象は固定・不変、配列は変化するもの。可能世界をまたいで対象は共通で、配列だけが変わる
+2.0272	def	1	-	high	-	configuration,atomic_fact	2.01	対象の配列が事態をなす
+2.03	elucid	out	-	mid	relations	atomic_fact,object	2.031	鎖の比喩。事態には対象をつなぐ別の構成要素(関係という対象)がない、という含意は解釈が分かれる
+2.031	claim	1	-	high	-	atomic_fact,object,structure	2.032	事態の中で対象は特定の仕方で結合している
+2.032	def	1	-	high	-	structure,atomic_fact	2.033	事態の構造=対象のつながり方
+2.033	def	1	-	high	-	form,structure	2.0141,2.151	形式=構造の可能性
+2.034	claim	1	-	mid	-	structure,fact,atomic_fact	2	事実の構造は事態の構造からなる
+2.04	def	1	-	high	-	world,atomic_fact	1.1,2.05	世界=成立している事態の全体。形式化の基本定義(世界は事態の集合)
+2.05	conseq	1	-	high	-	world,atomic_fact	2.04,1.12	2.04 から:成立している事態の全体が、成立していない事態も決める。補集合として定理になる
+2.06	def	1	-	high	-	reality,atomic_fact	2.063	現実=事態の成立と不成立。肯定的事実・否定的事実の定義
+2.061	claim	1	-	high	independence	atomic_fact,independence	2.062,4.211,6.3751	事態は互いに独立。論理空間が全ての割り当てからなるという中心的な主張
+2.062	conseq	1	-	high	independence	atomic_fact,independence	2.061	2.061 から:一つの事態の成立・不成立から他の事態の成立・不成立は推論できない。反例モデルで示す定理の候補
+2.063	conseq	1	-	mid	world_reality	world,reality	2.04,2.05,2.06	全体としての現実が世界。2.05 により成立の全体と成立・不成立の全体が互いを決めることからの帰結と読む
+2.1	elucid	out	-	mid	-	picture,fact	2.11	我々は事実の像を作る(導入的な言明)
+2.11	claim	3	-	high	-	picture,logical_space,atomic_fact	2.201	像は論理空間の中の状況(事態の成立・不成立)を表す
+2.12	def	3	-	mid	-	picture,reality	2.11	像は現実のモデル
+2.13	claim	3	-	high	-	picture,picture_element,object	2.131	像の要素が対象に対応する
+2.131	claim	3	-	high	-	picture_element,object	3.22	像の要素は対象の代わりになる
+2.14	def	3	-	high	-	picture,picture_element	2.15	像は要素の特定の結合からなる
+2.141	claim	3	-	high	-	picture,fact	3.14	像は事実である
+2.15	def	3	-	high	-	structure,form_of_representation	2.151	像の構造と写像形式の定義
+2.151	def	3	-	high	-	form_of_representation	2.15	写像形式=物が像の要素と同じように結合している可能性
+2.1511	elucid	out	-	mid	-	picture,reality	2.1512	像は現実と結びついている(比喩)
+2.1512	elucid	out	-	high	-	picture,reality	2.15121	物差しの比喩
+2.15121	elucid	out	-	high	-	picture	2.1512	物差しの比喩の続き
+2.1513	claim	3	-	mid	-	picture,representing_relation	2.1514	写像関係も像に属する。像を「事実+対応づけ」の組として形式化する根拠
+2.1514	def	3	-	high	-	representing_relation	2.1513	写像関係=像の要素と物との対応づけ
+2.1515	elucid	out	-	high	-	representing_relation	2.1514	触角の比喩
+2.16	claim	3	-	high	-	picture	2.161	像であるには写されるものと何かを共有しなければならない
+2.161	claim	3	-	high	-	picture	2.17	像と写されるものの間には同一のものがある
+2.17	claim	3	-	high	-	form_of_representation,picture	2.18	共有されるものが写像形式
+2.171	claim	3	-	mid	-	picture,form_of_representation	2.17	像は自分の形式を持つ全ての現実を写せる
+2.172	claim	3	-	low	say_show	form_of_representation	4.12,4.121	像は自分の写像形式を写せず、示す。語る/示すの区別。形式化するならメタ定理(体系内の命題では表せない)として
+2.173	claim	3	-	mid	-	picture,truth	2.174	像は外から対象を写すので、正しくも誤ってもありうる
+2.174	claim	3	-	mid	say_show	picture,form_of_representation	2.172	像は自分の写像形式の外に立てない
+2.18	claim	3	-	high	-	logical_form,picture,reality	2.2	全ての像が現実と共有するのが論理形式
+2.181	def	3	-	high	-	logical_form,picture	2.182	写像形式が論理形式であるとき、像を論理的像と呼ぶ
+2.182	claim	3	-	high	-	logical_form,picture	2.181	全ての像は論理的像でもある
+2.19	claim	3	-	mid	-	logical_form,picture,world	3	論理的像は世界を写せる
+2.2	conseq	1	-	high	-	logical_form,picture	2.18,2.182	2.18 と 2.182 から:像は写されるものと論理的写像形式を共有する
+2.201	claim	1	-	high	-	picture,atomic_fact	2.11	像は事態の成立・不成立の可能性を表すことで現実を写す。像の意味(Sinn)を可能世界の集合として形式化する根拠
+2.202	claim	1	-	high	-	picture,situation,logical_space	2.11	像は論理空間の中の可能な状況を表す
+2.203	claim	1	-	mid	-	picture,situation	2.202	像は自分が表す状況の可能性を含む
+2.21	claim	1	-	high	-	picture,truth	2.222	像は現実と一致するかしないか。真か偽(二値性)
+2.22	claim	1	-	high	-	picture,sense,truth	2.221	像はその真偽と独立に写像形式によって表す
+2.221	def	1	-	high	-	sense,picture	2.222	像が表すものがその意味(Sinn)
+2.222	def	1	-	high	-	truth,sense,reality	2.21	真偽=意味と現実の一致・不一致
+2.223	conseq	1	-	mid	-	truth,picture	2.222	2.222 から:真偽を知るには現実と比べなければならない
+2.224	conseq	1	-	high	-	truth,picture	2.225	像だけからは真偽はわからない。独立性のもとで、意味のある像には真になる世界と偽になる世界があるという定理の候補
+2.225	conseq	1	-	high	-	truth,picture	2.224,6.31	ア・プリオリに真な像はない。定理の候補(像は偶然的)
+3	def	3	-	high	-	thought,picture,fact	2.181,3.5	思考=事実の論理的像
+3.001	def	3	-	mid	-	atomic_fact,thought	3	「事態が思考可能」=それを想像できる
+3.01	claim	3	-	mid	-	thought,truth,world	2.04	真な思考の全体は世界の像
+3.02	claim	3	-	high	-	thought,situation	2.203	思考は思考する状況の可能性を含む。思考可能なものは可能
+3.03	claim	3	-	high	-	thought,logic	3.031	非論理的なものは思考できない
+3.031	elucid	out	-	high	-	logic	3.03	神と論理法則の例
+3.032	elucid	out	-	high	-	logic,language	3.0321	幾何学との類比
+3.0321	elucid	out	-	high	-	logic	3.032	物理法則と幾何学法則の類比
+3.04	def	3	-	mid	-	thought,truth	3.05	ア・プリオリに真な思考=その可能性が真を保証する思考
+3.05	claim	3	-	mid	-	thought,truth	2.225,3.04	思考がア・プリオリに真と知れるのは、比較対象なしに思考そのものから真がわかる場合だけ
+3.1	claim	3	-	mid	-	proposition,thought	3.11	命題において思考は感覚的に知覚できる形で表される
+3.11	claim	3	-	mid	-	propositional_sign,situation,sense	3.12	命題記号は可能な状況の射影として使われる。射影の方法は命題の意味(Sinn)を考えること
+3.12	def	3	-	high	-	propositional_sign,proposition	3.11	命題記号の定義。命題=世界との射影関係にある命題記号
+3.13	claim	3	-	mid	-	proposition,sense	3.12	命題には意味(Sinn)の内容ではなく形式と、表す可能性が含まれる
+3.14	claim	3	-	high	-	propositional_sign,fact	2.141	命題記号は語が特定の仕方で結合した事実
+3.141	claim	3	-	mid	-	proposition	3.14	命題は語の混合ではなく分節されている
+3.142	claim	3	-	high	-	fact,sense,name	3.144	事実だけが意味(Sinn)を表せる。名前の集まりはできない
+3.143	elucid	out	-	mid	-	propositional_sign,fact	3.1431	命題記号が事実であることは通常の書き方では隠されている。Frege 批判
+3.1431	elucid	out	-	high	-	propositional_sign	3.143	机や椅子で命題記号を作る例
+3.1432	claim	3	-	mid	relations	propositional_sign,name	3.14	「aRb」については、「a」と「b」がある関係に立つことが aRb を語る。関係は名前でなく名前の配置で表される
+3.144	claim	3	-	high	-	situation,name,proposition	3.221	状況は記述できるが名指せない。名前は点、命題は矢印
+3.2	claim	3	-	high	-	thought,proposition,object,simple_sign	3.201	思考の対象に命題記号の要素が対応するように表現できる
+3.201	def	3	-	high	analysis	simple_sign,analysis	3.25	単純記号と完全に分析された命題の定義
+3.202	def	3	-	high	-	name,simple_sign	3.203	名前=命題で使われる単純記号
+3.203	def	3	-	high	-	name,object,meaning	3.22	名前は対象を意味する。対象が名前の意味(Bedeutung)。形式化では名前から対象への解釈関数
+3.21	claim	3	-	high	-	name,configuration,situation	2.15	命題記号の中の単純記号の配置に、状況の中の対象の配置が対応する
+3.22	claim	3	-	high	-	name,object	3.203	命題の中で名前は対象の代わりになる
+3.221	claim	3	-	mid	say_show	object,name,proposition	3.144	対象は名指せるだけで、言明できない。命題は物がどうあるかを語り、何であるかは語れない
+3.23	claim	3	-	mid	analysis	simple_sign,sense	3.24,3.25	単純記号の可能性の要請は、意味(Sinn)の確定性の要請
+3.24	claim	3	-	mid	analysis	complex,analysis,proposition	2.0201,3.3442	複合体についての命題は構成要素についての命題と内的関係にある。複合体が存在しなければ偽(無意味ではない)
+3.25	claim	3	-	high	analysis	analysis,proposition	3.201	命題の完全な分析はただ一つ。形式化では分析を関数として扱える
+3.251	claim	3	-	mid	-	proposition	3.141	命題は確定した仕方で表す。命題は分節されている
+3.26	claim	3	-	high	-	name	3.261	名前は定義でさらに分析できない原始記号
+3.261	claim	3	-	mid	-	name,definition	3.26	定義された記号は定義を通じて意味する。原始記号とは意味の仕方が違う
+3.262	claim	3	-	low	say_show	sign	3.26	記号に表れないものは使用が示す
+3.263	elucid	out	-	mid	-	name,meaning	3.26	原始記号の意味は解明(Erläuterung)で説明される。6.54 とつながる方法論的な注釈
+3.3	claim	3	-	high	-	proposition,sense,name,meaning	3.314	文脈原理:命題だけが意味(Sinn)を持ち、名前は命題の脈絡でだけ意味(Bedeutung)を持つ
+3.31	def	3	-	high	-	expression,proposition,sense	3.311	表現(シンボル)の定義
+3.311	claim	3	-	mid	-	expression,proposition	3.31	表現は自分が現れうる全ての命題の形式を前提する
+3.312	conseq	3	-	mid	-	expression,propositional_variable	3.311	3.311 から:表現はそれが特徴づける命題の一般形式で表される
+3.313	def	3	-	high	-	expression,propositional_variable	3.312	表現は変項で表される。命題変項の定義
+3.314	claim	3	-	mid	-	expression,propositional_variable	3.3	表現は命題の中でだけ意味を持つ。全ての変項は命題変項とみなせる
+3.315	claim	3	-	mid	-	propositional_variable,logical_form	3.313	恣意的に決めた記号を全て変項に変えても残る命題のクラスは、論理形式に対応する
+3.316	claim	3	-	mid	-	propositional_variable	3.317	命題変項がとる値は確定している。値の確定が変項そのもの
+3.317	claim	3	-	mid	-	propositional_variable,symbol	3.316,5.501	値の確定は命題の記述であり、記号だけを扱う
+3.318	claim	3	-	mid	-	proposition,expression	5.47	命題を、それが含む表現の関数とみなす(Frege・Russell と同じく)
+3.32	def	3	-	high	-	sign,symbol	3.321	記号(Zeichen)=シンボルの感覚的に知覚できる部分
+3.321	conseq	3	-	mid	-	sign,symbol	3.32	3.32 から:二つのシンボルが記号を共有しうる
+3.322	claim	3	-	mid	-	sign,symbol	3.321	同じ記号を違う方法で使っても二つの対象の共通点は示せない。記号は恣意的
+3.323	elucid	out	-	high	-	sign,symbol	3.324	日常言語での「is」などの多義性の例
+3.324	elucid	out	-	mid	-	symbol	3.323	ここから哲学の根本的な混乱が生じる
+3.325	claim	3	-	mid	-	logical_syntax	3.33	誤りを避けるには論理的文法(論理的構文論)に従う記号法を使う
+3.326	claim	3	-	mid	-	sign,symbol	3.327	記号の中のシンボルを見分けるには意味のある使用を見る
+3.327	claim	3	-	mid	-	sign,logical_form,logical_syntax	3.326	記号は論理的構文論上の使用と一緒になって初めて論理形式を決める
+3.328	claim	3	-	mid	-	sign,meaning	5.47321	必要でない記号は意味を持たない(オッカムの剃刀)
+3.33	claim	3	-	high	type_theory	logical_syntax,meaning	3.331	論理的構文論では記号の意味が役割を演じてはならない
+3.331	elucid	out	-	mid	type_theory	logical_syntax	3.33	Russell の型理論への批判
+3.332	claim	3	-	mid	type_theory	proposition,self_reference	3.333	命題は自分自身について何も語れない(「型理論の全て」)
+3.333	claim	3	-	mid	type_theory	function,self_reference	3.332	関数は自分の引数になれない。Russell のパラドックスの解消。Lean の型理論とは別の理由づけ
+3.334	claim	3	-	mid	-	logical_syntax	3.33	個々の記号の意味の仕方がわかれば、論理的構文論の規則はおのずと出てくる
+3.34	def	3	-	mid	-	proposition,sense	3.341	命題の本質的な特徴と偶然的な特徴の定義
+3.341	conseq	3	-	mid	-	proposition,sense,symbol	3.34	3.34 から:命題の本質は同じ意味(Sinn)を表せる全ての命題に共通なもの。意味の同値類として形式化できる
+3.3411	elucid	out	-	mid	-	name,symbol	3.341	本当の名前は対象を意味する全てのシンボルに共通なもの
+3.342	claim	3	-	mid	-	notation	3.3421	記法には恣意的な部分があるが、何かを恣意的に決めれば別の何かが必然的に決まる
+3.3421	elucid	out	-	mid	-	notation	3.342	個々のものより、その可能性が世界の本質を明かす
+3.343	claim	3	-	mid	-	definition,notation	3.344	定義はある言語から別の言語への翻訳規則。正しい記号法は全て互いに翻訳できる
+3.344	claim	3	-	mid	-	symbol,logical_syntax	3.343	シンボルの中で意味するのは、論理的構文論の規則で置き換えうる全てのシンボルに共通なもの
+3.3441	elucid	out	-	high	-	truth_function,notation	5.5	真理関数の記法は全て「~p」と「p ∨ q」で置き換えられる。関数的完全性の例示(定理として示せる)
+3.3442	claim	3	-	mid	analysis	complex,analysis	3.25	複合体の記号は分析で恣意的に分解されない
+3.4	claim	3	-	mid	-	proposition,logical_place,logical_space	3.41	命題は論理空間の中の場所を決める。その存在は構成要素の存在だけで保証される
+3.41	def	3	-	mid	-	logical_place,propositional_sign	3.4	命題記号と論理座標=論理的場所
+3.411	elucid	out	-	mid	-	logical_place	3.41	幾何学的場所と論理的場所の類比
+3.42	claim	3	-	high	-	proposition,logical_space	5.44	命題は論理空間の一つの場所しか決めないが、論理空間全体が既に与えられていなければならない。否定や論理和が新しい要素を持ち込まない
+3.5	def	3	-	mid	-	thought,propositional_sign	3	使用され思考された命題記号が思考
+4	def	3	-	high	-	thought,proposition,sense	3,3.5	思考=意味(Sinn)を持つ命題
+4.001	def	1	-	high	-	proposition,language	5.6	言語=命題の全体
+4.002	elucid	out	-	high	-	language	4.003	日常言語は思考を覆い隠す、という注釈
+4.003	elucid	out	-	mid	-	philosophy,nonsense	4.0031,6.53	哲学の問いの多くは偽ではなく無意味(unsinnig)。方法論の主張で、形式化の対象ではない
+4.0031	elucid	out	-	high	-	philosophy	4.003	哲学は言語批判。Russell の功績
+4.01	claim	3	-	high	-	proposition,picture,reality	2.12	命題は現実の像、現実のモデル
+4.011	elucid	out	-	high	-	proposition,picture	4.01	楽譜や表音文字の例
+4.012	elucid	out	-	high	-	proposition,picture	4.01	aRb の形の命題は明らかに像
+4.013	elucid	out	-	high	-	proposition,picture	4.012	楽譜の♯♭のような見かけの不規則性も写像性を乱さない
+4.014	elucid	out	-	high	-	picture,logical_structure	4.0141	レコード・楽譜・音波の内的な写像関係
+4.0141	elucid	out	-	high	-	picture,projection	4.014	射影の法則は翻訳規則
+4.015	elucid	out	-	mid	-	picture	4.014	比喩の可能性は写像の論理に基づく
+4.016	elucid	out	-	high	-	proposition,picture	4.015	象形文字の例
+4.02	claim	3	-	mid	-	proposition,sense	4.021	説明されなくても命題記号の意味(Sinn)がわかる
+4.021	claim	3	-	mid	-	proposition,picture,sense	4.02	命題を理解すれば、それが表す状況を知る。説明なしに理解する
+4.022	claim	3	-	mid	say_show	proposition,sense,truth	4.1212	命題は意味(Sinn)を示し、それが真ならどうなっているかを示し、そうなっていると語る
+4.023	claim	3	-	mid	-	proposition,reality,description	4.024	命題は Yes/No だけで現実と一致するまで現実を確定する。命題は事実の記述。偽の命題からも推論できる
+4.024	claim	3	-	high	-	proposition,sense,truth	4.431	命題を理解する=それが真なら何が成立しているかを知る(真理条件意味論)。構成要素を理解すれば命題を理解できる(合成性)
+4.025	claim	3	-	mid	-	language,translation	3.343	翻訳は命題単位ではなく構成要素単位
+4.026	claim	3	-	mid	-	name,meaning	3.263	単純記号の意味(Bedeutung)は説明されなければならない
+4.027	claim	3	-	mid	-	proposition,sense	4.03	命題は新しい意味(Sinn)を伝えられることが本質
+4.03	claim	3	-	high	-	proposition,picture,situation	4.027	命題は古い語で新しい意味を伝える。命題は状況の論理的像である限りで何かを主張する
+4.031	elucid	out	-	mid	-	proposition,situation	4.03	命題の中で状況が試験的に組み立てられる
+4.0311	elucid	out	-	high	-	name,object,atomic_fact	3.21	名前が物の代わりに結合して事態を表す
+4.0312	claim	3	-	high	logical_constants	logical_constant,representation	5.4,5.44	「論理定項」は何も代表しない(根本思想)。形式化では論理結合子を対象や名前として扱わず、真理関数として扱う根拠
+4.032	claim	3	-	mid	-	proposition,picture	3.141	命題は論理的に分節されている限りで状況の像
+4.04	claim	3	-	high	-	proposition,situation,multiplicity	4.041	命題と状況は同じ論理的(数学的)多様性を持つ
+4.041	claim	3	-	mid	say_show	multiplicity	4.04	数学的多様性そのものは表せない
+4.0411	elucid	out	-	high	-	generality,notation,multiplicity	4.04	一般性を指標で表す試みが失敗する例
+4.0412	elucid	out	-	high	-	multiplicity	4.04	観念論の「空間の眼鏡」批判
+4.05	claim	3	-	mid	-	reality,proposition	2.223	現実が命題と比べられる
+4.06	claim	3	-	high	-	proposition,truth,picture	2.21	命題は現実の像であることによってだけ真か偽になりうる
+4.061	elucid	out	-	mid	-	truth,sense	4.062	真偽を記号と事物の対等な二つの関係とみなす誤り
+4.062	elucid	out	-	mid	-	truth	4.061	偽の命題で意思疎通できないことの説明
+4.0621	claim	3	-	high	logical_constants	negation,sense	4.0312,5.44	「p」と「~p」は同じことを言いうる。「~」は現実の何にも対応しない。~~p=p。p と ~p は逆の意味を持つが対応する現実は同じ。二重否定の除去は定理として示せる
+4.063	elucid	out	-	high	-	truth,sense	4.064	白い紙の黒い点の比喩。Frege の真理値の考え方への批判
+4.064	claim	3	-	mid	-	proposition,sense,assertion	4.063	全ての命題は既に意味(Sinn)を持つ。主張が意味を与えるのではない
+4.0641	claim	3	-	mid	-	negation,logical_place	3.42	否定は否定される命題の論理的場所の外にある場所を決める。否定を補集合として形式化する根拠
+4.1	claim	1	-	high	-	proposition,atomic_fact	2.11,4.2	命題は事態の成立と不成立を表す
+4.11	claim	out	自然科学についての主張で、範囲外	mid	-	proposition,truth,natural_science	6.53	真な命題の全体が自然科学の全体
+4.111	elucid	out	-	high	-	philosophy,natural_science	4.112	哲学は自然科学の一つではない
+4.112	elucid	out	-	high	-	philosophy	6.54	哲学は理論でなく活動。哲学の著作は本質的に解明からなる
+4.1121	elucid	out	-	high	-	philosophy	4.112	心理学と認識論について
+4.1122	elucid	out	-	high	-	philosophy	4.112	ダーウィンの理論と哲学
+4.113	elucid	out	-	high	-	philosophy,natural_science	4.114	哲学は自然科学の議論可能な領域を限る
+4.114	elucid	out	-	high	-	philosophy	4.115	考えうるものを限ることで考えられないものを限る
+4.115	elucid	out	-	high	-	philosophy	4.114	語りうるものを明示することで語りえないものを意味する
+4.116	claim	out	明晰に語れることについての方法論の主張で、範囲外	mid	-	thought,proposition	序文	考えうることは全て明晰に考えられ、語りうることは全て明晰に語れる
+4.12	claim	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	proposition,logical_form	4.121	命題は現実全体を表せるが、論理形式は表せない。表すには論理の外=世界の外に出る必要がある
+4.121	claim	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	proposition,logical_form	4.12,4.1212	論理形式は命題に自らを映す。言語は自らを映すものを表せない。命題は論理形式を示す
+4.1211	elucid	out	-	mid	say_show	proposition,logical_form,object	4.121	「fa」は対象 a が現れることを示す。矛盾や帰結は構造が示す。帰結関係を構造(真理条件)から計算できるという形式化の根拠にもなる
+4.1212	claim	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	-	4.121	示されうるものは語られえない。語る/示すの区別の中心命題。形式化の限界として記録する
+4.1213	elucid	out	-	mid	say_show	-	4.1212	記号法が全て正しければ正しい論理的理解を持っているという感覚の説明
+4.122	def	3	-	mid	say_show	internal_property,internal_relation	4.123	形式的(内的)性質・関係の導入。その成立は命題で主張できず、命題に示される
+4.1221	def	3	-	high	-	internal_property,fact	4.122	事実の内的性質を事実の「特徴」とも呼ぶ
+4.123	def	3	-	high	-	internal_property	4.122	内的性質=対象がそれを持たないことが考えられない性質。形式化では「全ての可能世界で成り立つ」性質と読める
+4.124	claim	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	internal_property,proposition	4.122	内的性質の存在は命題で表されず、命題の内的性質で表される
+4.1241	elucid	out	-	mid	-	logical_form	4.124	形式どうしを性質で区別できない
+4.125	claim	3	-	mid	-	internal_relation,proposition	4.1211	可能な状況の間の内的関係は、命題の間の内的関係として表れる
+4.1251	elucid	out	-	mid	-	internal_relation	4.125	関係は全て内的か外的かという論争が消える
+4.1252	def	2	-	high	-	formal_series,internal_relation	4.1273,5.2522	内的関係で順序づけられた列を形式列と呼ぶ。後続者の定義。※英訳(1922)の式「(∃x, y):aRx . aRy . yRb」はドイツ語原文の「aRx . xRy . yRb」と食い違う。英訳側の誤りと考え、形式化はドイツ語に従う
+4.126	def	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	formal_concept,propositional_variable	4.127	形式的概念の導入。それに属することは命題で表せず記号そのものに示される。形式的概念は関数では表せず、命題変項で表される
+4.127	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	-	formal_concept,propositional_variable	4.126	命題変項が形式的概念を意味し、その値が概念に属する対象を意味する
+4.1271	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	-	formal_concept,variable	4.127	全ての変項は形式的概念の記号
+4.1272	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	formal_concepts	formal_concept,object,variable,nonsense	4.1274,5.535	「対象」は擬似概念で、変項名「x」で表される。「対象がある」「対象は100個ある」「全ての対象の数」は無意味。Lean では型(Sort)として扱うことになり、この主張との関係は D で検討する
+4.12721	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	formal_concepts	formal_concept	4.1272	形式的概念とそれに属する対象を、両方とも原始概念として導入できない
+4.1273	claim	2	-	mid	-	formal_series,variable,operation	4.1252,5.2522,6.02	形式列の一般項は変項でだけ表せる。最初の項と、前の項から次の項を作る操作の一般形式で決まる。Frege・Russell の「後続者」の表し方は循環を含む。形式化では帰納的定義(閉包)として表せる
+4.1274	claim	out	形式的概念と変項についての主張。Lean では型として表すので、ずれとして記録する(policy §8)	mid	formal_concepts	formal_concept,nonsense	4.1272	形式的概念の存在についての問いは無意味
+4.128	claim	out	論理形式は数を持たないという主張で、形式化の対象として定まらない	low	-	logical_form	4.1272	論理形式は数を持たない。論理に特別な数はない
+4.2	def	1	-	high	-	sense,proposition,atomic_fact	2.201,4.4	命題の意味(Sinn)=事態の成立・不成立の可能性との一致・不一致。意味を可能世界の集合(真理条件)として定義する中心命題
+4.21	def	1	-	high	-	elementary_proposition,atomic_fact	4.25	要素命題=事態の成立を主張する最も単純な命題
+4.211	claim	1	-	high	independence	elementary_proposition,independence	2.061,6.3751	要素命題はどれも他の要素命題と矛盾しない。2.061 の言語側の対応物
+4.22	claim	1	-	high	-	elementary_proposition,name	4.221	要素命題は名前の連鎖(結合)
+4.221	claim	1	-	mid	analysis	analysis,elementary_proposition,name	3.25	分析すれば名前の直接の結合からなる要素命題に行き着く
+4.2211	claim	1	-	mid	infinity	world,object,atomic_fact	4.463,5.535	世界が無限に複雑でも対象と事態はなければならない。形式化で対象や事態を有限に限るかどうかに関わる
+4.23	claim	1	-	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる
+4.24	notation	1	-	high	-	name,elementary_proposition,notation	4.241	名前を x, y, z、要素命題を fx, φ(x, y) や p, q, r で書く記法
+4.241	notation	1	-	high	identity	identity,definition,notation	4.242,5.53	「a=b」は記号 a を b で置き換えられること。定義は記号の規則
+4.242	claim	1	-	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない
+4.243	claim	1	-	mid	identity	identity,name,meaning	5.53,5.5303	二つの名前が同じものを指すかを知らずに理解することはできない。「a=a」などは要素命題でも意味のある記号でもない
+4.25	claim	1	-	high	-	elementary_proposition,atomic_fact,truth	4.21	要素命題が真なら事態は成立し、偽なら成立しない。要素命題の真理を事態の成立として定義する
+4.26	claim	1	-	high	-	elementary_proposition,world,truth	2.04,4.25	全ての真な要素命題を挙げれば世界は完全に記述される。世界=要素命題への真理値割り当てと同一視する根拠
+4.27	conseq	1	-	high	independence	atomic_fact,truth_possibility	2.061,4.28	n 個の事態の成立について K_n=Σ C(n,ν) 通りの可能性がある(=2^n)。どの組み合わせも成立しうる。数え上げの定理の候補
+4.28	conseq	1	-	high	-	truth_possibility,elementary_proposition	4.27	4.27 から:それらの組み合わせに、n 個の要素命題の真偽の可能性が同数対応する
+4.3	def	1	-	high	-	truth_possibility,elementary_proposition,atomic_fact	4.31	要素命題の真理可能性=事態の成立・不成立の可能性
+4.31	notation	1	-	high	-	truth_possibility,truth_table	4.3	真理可能性を T/F の表で表す記法
+4.4	def	1	-	high	-	proposition,truth_possibility	4.2,4.431	命題=要素命題の真理可能性との一致・不一致の表現
+4.41	claim	1	-	high	-	truth_possibility,truth_condition	4.4	要素命題の真理可能性が命題の真偽の条件
+4.411	elucid	out	-	mid	-	elementary_proposition,generality	4.4	要素命題の導入は他の命題の理解に基本的
+4.42	conseq	1	-	high	-	truth_condition,truth_possibility	4.27,4.45	一致・不一致の仕方は L_n=Σ C(K_n,κ) 通り(=2^(2^n))。数え上げの定理の候補
+4.43	notation	1	-	high	-	truth_condition,truth_table	4.44	一致を T の印で表し、印がないことで不一致を表す
+4.431	claim	1	-	high	-	truth_condition,proposition	4.024,4.4	命題は真理条件の表現。Frege の真理概念の説明は誤り
+4.44	claim	1	-	mid	-	truth_table,propositional_sign	4.442	T の印と真理可能性の対応から生じる記号は命題記号
+4.441	claim	1	-	high	logical_constants	truth_table,logical_object	4.0312	T と F の記号の複合体に対応する対象はない。「論理的対象」はない
+4.442	notation	1	-	high	-	truth_table,propositional_sign,notation	5.101	真理表の例と「(TTFT)(p, q)」の記法。Frege の判断線は論理的に無意味
+4.45	conseq	1	-	high	-	truth_condition	4.42	n 個の要素命題に対して真理条件のグループは L_n 通りあり、列に並べられる
+4.46	def	1	-	high	-	tautology,contradiction,truth_condition	4.461,6.1	トートロジーと矛盾の定義(全ての真理可能性で真/偽)。定義として直接形式化できる
+4.461	claim	1	-	high	-	tautology,contradiction,sense	4.4611,6.11	トートロジーと矛盾は何も語らない。真理条件を持たず、意味を欠く(sinnlos)
+4.4611	claim	1	-	high	-	tautology,contradiction,nonsense	4.461	トートロジーと矛盾は無意味(unsinnig)ではない。記号法の一部(算術の 0 のように)。sinnlos と unsinnig の区別は形式化でも型として分ける
+4.462	conseq	1	-	high	-	tautology,contradiction,picture	4.46	4.46 から:トートロジーと矛盾は現実の像ではない。全ての状況を許すか、どれも許さない
+4.463	claim	1	-	mid	-	truth_condition,logical_space,tautology	4.462	真理条件は命題が事実に残す範囲を決める。トートロジーは論理空間全体を、矛盾は何も残さない。命題を論理空間の部分集合として形式化する根拠
+4.464	claim	1	-	mid	-	tautology,contradiction,probability	5.15	トートロジーの真は確実、命題の真は可能、矛盾の真は不可能
+4.465	conseq	1	-	high	-	tautology,logical_product,sense	4.46	トートロジーと命題の論理積は命題と同じことを言う。定理の候補(p ∧ ⊤ ≡ p)
+4.466	claim	1	-	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
+4.4661	elucid	out	-	mid	-	tautology,symbol	4.466	トートロジーの中の記号の関係はシンボルにとって本質的でない
+4.5	claim	2	-	mid	general_form	general_form,proposition	4.53,6	命題の最も一般的な形式を与えられそう。一般形式は「事情はかくかくである」
+4.51	claim	2	-	high	general_form	elementary_proposition,proposition	4.52,5	全ての要素命題が与えられれば、そこから作れる命題が全ての命題。命題の全体を要素命題からの生成として形式化する根拠
+4.52	claim	2	-	mid	general_form	elementary_proposition,proposition	4.51	命題は全ての要素命題の全体から(それが全体であることも含めて)帰結するもの全て
+4.53	claim	2	-	mid	general_form	general_form,variable	6	命題の一般形式は変項
+5	claim	1	-	high	extensionality	proposition,truth_function,elementary_proposition	4.4,5.3	命題は要素命題の真理関数(外延性のテーゼ)。要素命題はそれ自身の真理関数。形式化の中心となる主張
+5.01	def	1	-	high	-	elementary_proposition,truth_argument	5	要素命題は命題の真理項
+5.02	elucid	out	-	mid	-	argument,index	5.2341	関数の項と名前の指標の混同についての Frege 批判
+5.1	claim	1	-	mid	-	truth_function,probability	5.101,5.15	真理関数は列に並べられる。確率論の基礎
+5.101	notation	1	-	high	-	truth_function,truth_ground,notation	4.442	2 変数の 16 個の真理関数の表と、真理根拠(命題を真にする真理可能性)の定義。「16 個」は数え上げの定理の候補
+5.11	def	1	-	high	-	consequence,truth_ground	5.12	帰結関係の定義:いくつかの命題に共通の真理根拠が全てある命題の真理根拠なら、その命題はそれらから帰結する
+5.12	def	1	-	high	-	consequence,truth_ground	5.11	5.11 の特殊な場合:q の真理根拠が全て p の真理根拠なら p は q から帰結する
+5.121	conseq	1	-	high	-	consequence,truth_ground	5.12	5.12 の言い換え
+5.122	conseq	1	-	high	-	consequence,sense	5.12	5.12 から:p が q から帰結するなら p の意味(Sinn)は q の意味に含まれる。意味を真理根拠の集合とすれば包含関係になる
+5.123	elucid	out	-	mid	-	consequence,world,object	5.12	神が世界を作る比喩。後半の「命題の対象を全て作らずに命題を真にできない」は対象の存在についての含意を持つ
+5.124	conseq	1	-	high	-	consequence,assertion	5.12	命題はそれから帰結する全ての命題を主張する
+5.1241	conseq	1	-	high	-	consequence,logical_product,contradiction	5.124	「p . q」は p も q も主張する。二つを同時に主張する意味のある命題がなければ対立する。矛盾する命題は否定する
+5.13	claim	1	-	high	-	consequence,structure	4.1211,5.131	帰結関係は命題の構造から見て取れる。帰結の判定は真理条件から計算できる(決定可能)
+5.131	claim	1	-	mid	say_show	consequence,internal_relation	5.13	帰結関係は命題の形式の内的関係として表れ、命題で結びつける必要はない
+5.1311	elucid	out	-	high	-	consequence,notation,sheffer_stroke	5.13	p∨q と ~p から q を推論する例を、Sheffer の棒(p|q=p でも q でもない)で書き直すと内的な結びつきが明らかになる
+5.132	claim	1	-	mid	-	consequence,inference	5.13	推論の正しさは二つの命題だけから理解される。Frege・Russell の推論規則は無意味で余計
+5.133	claim	1	-	high	-	inference	5.132	全ての推論はア・プリオリに行われる
+5.134	conseq	1	-	high	independence	elementary_proposition,inference,independence	4.211,2.062	要素命題からは他の要素命題を推論できない。2.062・4.211 の帰結として定理の候補
+5.135	conseq	1	-	high	independence	situation,inference,independence	5.134	ある状況の存在から全く別の状況の存在は推論できない
+5.136	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	causality	causality,inference	5.135	推論を正当化する因果連関はない
+5.1361	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	causality	causality,inference	5.136	未来の出来事を現在の出来事から推論できない。迷信は因果連関への信仰
+5.1362	out	out	-	mid	-	will,knowledge	5.136	意志の自由は未来の行為が今知られないことにある。知ることと知られることの関係は論理的必然性。認識についての主張で形式化の対象外
+5.1363	elucid	out	-	mid	-	knowledge,truth	5.1362	自明さは真理の正当化ではない
+5.14	conseq	1	-	high	-	consequence	5.12	p が q から帰結するなら q は p より多くを語る。意味の包含関係から
+5.141	conseq	1	-	high	-	consequence,identity	5.12	p と q が互いに帰結するなら同じ命題。命題を真理条件で同一視することの帰結(外延性)
+5.142	conseq	1	-	high	-	tautology,consequence	4.46,5.12	トートロジーは全ての命題から帰結し、何も語らない。定理の候補
+5.143	claim	1	-	mid	-	tautology,contradiction	5.142	矛盾は命題の外の限界、トートロジーは中心。束の上端・下端として形式化できる
+5.15	def	3	-	high	-	probability,truth_ground	5.151	確率の定義:T_rs:T_r を r が s に与える確率とする
+5.151	conseq	3	-	high	-	probability,truth_table	5.15	5.101 の表での確率の数え方。5.15 の言い換え
+5.1511	claim	3	-	mid	-	probability	5.15	確率命題に固有の対象はない
+5.152	conseq	3	-	high	independence	probability,independence,elementary_proposition	5.15	真理項を共有しない命題は独立で、互いに確率 1/2 を与える。帰結なら確率 1。定理の候補
+5.153	claim	3	-	mid	-	probability	5.15	命題はそれ自体では確からしくもなく、確からしくなくもない
+5.154	elucid	out	-	high	-	probability	5.155	壺から玉を取り出す例
+5.155	claim	3	-	low	-	probability	5.154	確率命題の単位
+5.156	claim	3	-	low	-	probability,generality	5.155	確率は一般化。確率命題は他の命題からの抜粋
+5.2	claim	2	-	mid	-	structure,internal_relation	5.21	命題の構造は互いに内的関係に立つ
+5.21	claim	2	-	mid	-	operation,internal_relation	5.22	内的関係は、命題を他の命題(基底)からの操作の結果として表すことで示せる
+5.22	def	2	-	mid	-	operation	5.23	操作=結果と基底の構造の関係の表現
+5.23	def	2	-	mid	-	operation	5.22	操作=命題から別の命題を作るために起きなければならないこと
+5.231	claim	2	-	mid	-	operation,formal_property	5.23	操作は形式的性質と形式の内的な類似に依存する
+5.232	claim	2	-	mid	-	operation,formal_series	4.1252	列を順序づける内的関係は、項から項を生む操作と同値
+5.233	claim	2	-	low	-	operation	5.234	操作が現れうる最初の場所は、命題の論理的構成が始まるところ
+5.234	def	2	-	high	-	truth_operation,truth_function,elementary_proposition	5.3	要素命題の真理関数は、要素命題を基底とする操作の結果。その操作を真理操作と呼ぶ
+5.2341	claim	2	-	high	-	truth_function,sense,negation	5.234	p の真理関数の意味は p の意味の関数(合成性)。否定・論理和・論理積は操作。否定は意味を逆にする
+5.24	claim	2	-	mid	-	operation,variable	5.241	操作は変項の中で示され、形式の違いを表す
+5.241	claim	2	-	mid	-	operation,form	5.24	操作は形式ではなく形式の違いを特徴づける
+5.242	claim	2	-	mid	-	operation,variable	5.2522	p から q を作る操作が q から r を作る。p, q, r が変項であることでだけ表せる
+5.25	claim	2	-	high	-	operation,function,sense	5.251	操作が現れることは命題の意味を特徴づけない。操作と関数を混同してはならない
+5.251	claim	2	-	high	-	operation,function	3.333	関数は自分自身の引数になれないが、操作の結果はその操作の基底になれる。形式化では操作を同じ型上の写像(自己写像)として扱う根拠
+5.252	claim	2	-	mid	type_theory	operation,formal_series	5.251	これによってだけ形式列の項から項への前進(型階層の型から型への前進)が可能
+5.2521	def	2	-	high	-	operation,successive_application	5.2522	操作をその結果に繰り返し適用することを継続的適用と呼ぶ
+5.2522	notation	2	-	high	-	formal_series,operation,notation	4.1273,6.02	形式列の一般項の記法「[a, x, O’x]」。初項・任意の項・その次の項。帰納的に生成される集合として形式化できる
+5.2523	claim	2	-	mid	-	successive_application	5.2522	操作の継続的適用の概念は「など」の概念と同値
+5.253	claim	2	-	mid	-	operation	5.254	操作は他の操作の効果を逆にでき、打ち消し合える
+5.254	conseq	2	-	high	-	operation,negation	4.0621	操作は消えうる(~~p=p)。二重否定の除去として定理の候補
+5.3	claim	2	-	high	general_form	proposition,truth_operation,elementary_proposition	5,5.32	全ての命題は要素命題に真理操作を施した結果。真理操作の結果に真理操作を施した結果も、要素命題に一つの真理操作を施した結果。形式化の中心となる主張
+5.31	claim	2	-	mid	-	truth_table,truth_function	4.31,4.442	4.31 の表は p, q, r が要素命題でなくても意味を持つ
+5.32	claim	2	-	high	general_form	truth_function,truth_operation,successive_application	5.3,6.001	全ての真理関数は有限個の真理操作を要素命題に継続的に適用した結果。帰納的に定義された命題の型として形式化できる。有限性の条件が N 演算子の議論に関わる
+5.4	conseq	2	-	high	logical_constants	logical_constant,logical_object	4.0312,4.441	5.3 から:Frege・Russell の意味での「論理的対象」「論理定項」はない
+5.41	conseq	2	-	high	extensionality	truth_function,truth_operation	5.3	同じ真理関数になる真理操作の結果は全て同一。命題を真理関数として同一視することの帰結
+5.42	claim	2	-	mid	logical_constants	logical_constant,definition	5.4	∨ や ⊃ は関係ではない。Frege・Russell の原始記号が互いに定義し合えることがそれを示す
+5.43	claim	2	-	mid	-	tautology,logic	6.1	p から ~~p などの無限の命題が帰結するのは驚くべきことに見えるが、論理の命題は全て同じこと、つまり何も言わない。論理の命題がトートロジーとして全て同値という定理の候補
+5.44	claim	2	-	high	logical_constants	truth_function,negation	4.0621	真理関数は実質的な関数ではない。「~~p」は否定を対象として扱わない。「~」という対象があれば ~~p は p と別のことを言うことになる
+5.441	claim	2	-	mid	logical_constants	generality,identity	5.47	見かけの論理定項の消滅は「~(∃x) . ~fx」と「(x) . fx」、「(∃x) . fx . x=a」と「fa」でも起きる
+5.442	claim	2	-	mid	-	truth_operation,proposition	3.42	命題が与えられれば、それを基底とする全ての真理操作の結果も与えられる
+5.45	elucid	out	-	mid	-	primitive_sign,logic	5.451	論理の原始記号があるなら、その相互の位置と存在を正当化しなければならない
+5.451	claim	2	-	mid	-	primitive_sign	5.45	原始概念は互いに独立で、現れる全ての脈絡で一度に導入されなければならない
+5.452	elucid	out	-	mid	-	notation	5.451	新しい記号法の導入は重大な出来事。Principia の言葉による定義の批判
+5.453	claim	2	-	low	-	logic,number	4.128	論理の中の数は全て正当化できなければならない。むしろ論理には数がない
+5.454	claim	2	-	low	-	logic	5.4541	論理には並列も分類もない。より一般的なものとより特殊なものはない
+5.4541	elucid	out	-	mid	-	logic	5.454	論理の問題の解決は単純でなければならない
+5.46	claim	2	-	mid	general_form	logical_constant,general_form	5.47	論理記号を正しく導入すれば、その全ての組み合わせの意味も導入されている。本当の原始記号は組み合わせの最も一般的な形式
+5.461	elucid	out	-	mid	logical_constants	logical_constant	5.4611	∨ や ⊃ が括弧を必要とすることは、それらが本当の原始記号でないことを示す
+5.4611	claim	2	-	mid	logical_constants	logical_constant	5.461	論理的操作の記号は句読点
+5.47	claim	2	-	mid	general_form	general_form,elementary_proposition	5.471	全ての命題の形式について前もって言えることは一度に言える。全ての論理操作は既に要素命題に含まれている(「fa」=「(∃x) . fx . x=a」)
+5.471	claim	2	-	mid	general_form	general_form,proposition	5.47	命題の一般形式は命題の本質
+5.4711	elucid	out	-	mid	-	general_form,world	5.471	命題の本質を与えることは全ての記述の本質、世界の本質を与えること
+5.472	claim	2	-	mid	general_form	general_form,primitive_sign	5.47	最も一般的な命題形式の記述は、論理の唯一の一般的な原始記号の記述
+5.473	claim	2	-	mid	-	logic,sign,nonsense	5.4733	論理は自分の面倒を自分で見る。可能な記号は意味することもできる。ある意味で論理で誤ることはできない
+5.4731	elucid	out	-	mid	-	logic	5.473	自明性は言語が論理的誤りを防ぐことで不要になる。論理がア・プリオリなのは非論理的に考えられないから
+5.4732	claim	2	-	mid	-	sign,sense	5.473	記号に誤った意味を与えることはできない
+5.47321	claim	2	-	mid	-	sign,meaning	3.328	オッカムの剃刀:記号法の不要な要素は何も意味しない。一つの目的に役立つ記号は論理的に同値
+5.4733	claim	2	-	mid	-	proposition,sense,meaning,nonsense	5.473	可能な命題は全て正しく作られている。意味(Sinn)を持たないのは構成要素に意味(Bedeutung)を与えていないから。「ソクラテスは同一である」の例
+5.474	claim	2	-	mid	-	truth_operation,notation	5.475	必要な基本操作の数は記法だけに依存する。関数的完全性(どの完全な結合子の集合でもよい)の主張
+5.475	claim	2	-	mid	-	notation,multiplicity	5.474	問題は特定の次元(数学的多様性)を持つ記号体系を作ることだけ
+5.476	claim	2	-	mid	-	primitive_sign	5.475	問題は原始概念の数ではなく規則の表現
+5.5	claim	2	-	high	n_operator	n_operator,truth_function,successive_application	5.502,6	全ての真理関数は操作 (– – – – –T)(ξ, ....)(=N)の要素命題への継続的適用の結果。N 演算子の表現的完全性。形式化の目玉となる定理の候補
+5.501	notation	2	-	high	n_operator	propositional_variable,notation	5.502	(ξ̄) の記法。値の決め方は 3 通り:直接の列挙、関数 fx の全ての値、形式的法則(形式列の全ての項)。2・3 番目は無限の場合を含みうる
+5.502	notation	2	-	high	n_operator	n_operator,notation	5.5	N(ξ̄) は命題変項 ξ の全ての値の否定
+5.503	claim	2	-	mid	n_operator	n_operator	5.5	この操作で命題をどう作れるかは厳密に表せるはず
+5.51	conseq	2	-	high	n_operator	n_operator,negation	5.502	ξ の値が一つなら N(ξ̄)=~p、二つなら ~p . ~q。定義からの計算として定理の候補
+5.511	elucid	out	-	mid	-	logic,world	5.51	論理は無限に細かい網で世界を映す大きな鏡
+5.512	claim	2	-	mid	logical_constants	negation,notation	5.513	~p で否定しているのは「~」ではなく、p を否定するこの記法の全ての記号に共通なもの
+5.513	claim	2	-	mid	-	logical_product,logical_sum,negation	5.512	p と q を共に主張する全ての記号に共通なものが「p . q」。命題の否定はただ一つ。「q:p ∨ ~p」は「q」と同じことを言う。否定の一意性は定理の候補
+5.514	claim	2	-	mid	-	notation,sense	5.513	記法が決まれば、p を否定する全ての命題を作る規則などがあり、それらは記号と同値
+5.515	claim	2	-	mid	-	proposition,logical_sum	5.514	「∨」などで結ばれるものが命題でなければならないことが記号に表れていなければならない
+5.5151	claim	2	-	low	-	negation,negative_fact	5.515	否定命題を否定的事実で表せないか。肯定命題と否定命題は互いの存在を前提する
+5.52	notation	4	-	high	n_operator	n_operator,generality	5.502,5.501	ξ の値が関数 fx の全ての値なら N(ξ̄)=~(∃x) . fx。量化を N で表す仕方。対象の領域が無限なら無限個の命題の否定になる
+5.521	claim	4	-	mid	-	generality,truth_function	5.52	「全て」の概念を真理関数から切り離す。Frege・Russell は一般性を論理積・論理和と結びつけた
+5.522	claim	4	-	low	-	generality	5.521	一般性の記号法の特徴は論理的原型への言及と、定項を際立たせること
+5.523	claim	4	-	low	-	generality	5.522	一般性の記号は項として現れる
+5.524	claim	4	-	mid	-	object,elementary_proposition	2.0124	対象が与えられれば全ての対象も与えられる。要素命題が与えられれば全ての要素命題も与えられる
+5.525	claim	4	-	mid	-	modality,tautology,generality	4.464	「(∃x) . fx」を「fx は可能」と読むのは誤り。確実・可能・不可能は命題で表されず、表現がトートロジー・意味のある命題・矛盾であることで表される
+5.526	claim	4	-	mid	-	generality,world,description	5.5262	世界は完全に一般化された命題で完全に記述できる
+5.5261	claim	4	-	low	-	generality,symbol	5.526	完全に一般化された命題も複合的
+5.5262	claim	4	-	mid	-	generality,elementary_proposition,world	5.526	どの命題の真偽も世界の一般的構造を何か変える。要素命題の全体が構造に許す範囲は、完全に一般的な命題が区切る範囲と同じ
+5.53	notation	4	-	high	identity	identity,notation	5.531	対象の同一性を記号の同一性で表し、同一性の記号を使わない。対象の違いを記号の違いで表す(排他的解釈の変項)。D で採否を決める論点
+5.5301	claim	4	-	mid	identity	identity	5.53	同一性は対象の間の関係ではない
+5.5302	claim	4	-	mid	identity	identity	5.5301	Russell の「=」の定義(全ての性質の共有)は使えない。二つの対象が全ての性質を共有するという命題は(偽でも)意味を持つ
+5.5303	claim	4	-	mid	identity	identity,nonsense	4.243	二つのものが同一だと言うのは無意味、一つのものが自分と同一だと言うのは何も言わない
+5.531	notation	4	-	high	identity	identity,notation	5.53	「f(a, b) . a=b」でなく「f(a, a)」と書く、など
+5.532	notation	4	-	high	identity	identity,generality,notation	5.531	「(∃x, y) . f(x, y) . x=y」でなく「(∃x) . f(x, x)」と書く、など。排他的解釈の量化の翻訳規則として形式化できる
+5.5321	notation	4	-	high	identity	identity,generality,notation	5.532	「(x):fx ⊃ x=a」や「ただ一つの x が f を満たす」の書き換え
+5.533	conseq	4	-	high	identity	identity	5.53,5.532	同一性の記号は論理的記法の本質的な構成要素ではない。排他的解釈の表現力が通常の同一性付きの論理と同等という定理の候補(Wehmeier の研究)
+5.534	claim	4	-	mid	identity	identity,nonsense	5.533	「a=a」「(x) . x=x」などは正しい記法では書けない
+5.535	claim	4	-	mid	infinity	identity,infinity,name	4.2211	これで擬似命題に関わる問題が消える。無限公理が言おうとすることは、異なる意味を持つ名前が無限にあることで言語に表される
+5.5351	elucid	out	-	mid	-	identity,nonsense	5.535	Russell が「p は命題である」を「p ⊃ p」で表した誤り
+5.5352	elucid	out	-	mid	-	identity,nonsense	5.535	「物はない」を「~(∃x) . x=x」で表す提案の誤り
+5.54	claim	2	-	high	extensionality	proposition,truth_operation,general_form	5.3	一般命題形式では、命題は真理操作の基底としてだけ他の命題に現れる(外延性)
+5.541	elucid	out	-	mid	extensionality	propositional_attitude	5.542	「A は p と思う」のような心理学の命題形式は外延性の反例に見える
+5.542	claim	out	命題的態度(「A は p と信じる」)は範囲外(interpretation の extensionality)	low	extensionality	propositional_attitude,fact	5.541	「A は p と信じる」は「『p』は p を語る」の形。事実と対象の対応ではなく、対象の対応による事実どうしの対応
+5.5421	out	out	-	mid	-	subject,soul	5.542	現代の表面的な心理学が考えるような魂(主体)はない
+5.5422	claim	out	命題的態度(「A は p と信じる」)は範囲外(interpretation の extensionality)	low	-	judgement,nonsense	5.542	「A は p と判断する」の正しい説明は、無意味なことを判断できないことを示さなければならない
+5.5423	elucid	out	-	high	-	complex,perception	5.5422	複合体を知覚することは構成要素の結合を知覚すること。ネッカーの立方体の例
+5.55	claim	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	mid	elementary_forms	elementary_proposition,name	5.551	要素命題の全ての可能な形式にア・プリオリに答えなければならない。名前の数が言えないので要素命題の構成も言えない
+5.551	elucid	out	-	mid	-	logic	5.55	論理で決められる問いは全て、それ以上の手間なしに決められる(根本原則)
+5.552	claim	out	論理と経験の関係についての主張で、範囲外	low	-	logic,experience	5.5521	論理の理解に必要な「経験」は、何かがあるということで、経験ではない。論理は全ての経験に先立つ
+5.5521	elucid	out	-	mid	-	logic,world	5.552	論理がもし世界と無関係なら、どうして適用できるのか
+5.553	elucid	out	-	mid	elementary_forms	relation,number	5.554	Russell の個体間の単純な関係の数についての批判
+5.554	claim	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	mid	elementary_forms	elementary_proposition	5.553	特別な形式を列挙するのは全く恣意的
+5.5541	elucid	out	-	mid	elementary_forms	elementary_proposition	5.554	27 項関係の記号が必要かをア・プリオリに決められるはず
+5.5542	elucid	out	-	mid	-	logic	5.5541	何かが成立しうるために何がなければならないかという問いに意味があるか
+5.555	claim	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	mid	elementary_forms	elementary_proposition,logical_form	5.556	特定の論理形式と別に要素命題の概念を持つ。記号を体系的に作れるところでは体系が重要
+5.556	claim	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	mid	elementary_forms	elementary_proposition	5.5561	要素命題の形式の階層はありえない
+5.5561	claim	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	low	-	reality,object,elementary_proposition	5.556	経験的現実は対象の全体で限られる。その限界は要素命題の全体に再び現れる
+5.5562	claim	out	要素命題の存在の知り方についての主張で、範囲外	low	-	elementary_proposition	5.5563	純粋に論理的な根拠から要素命題がなければならないとわかるなら、分析されていない形の命題を理解する人は誰でもそれを知っている
+5.5563	elucid	out	-	mid	-	language	5.5562	日常言語の命題は全て、そのままで論理的に完全に秩序だっている
+5.557	claim	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	mid	elementary_forms	elementary_proposition,logic,application	5.5571	どんな要素命題があるかは論理の適用が決める。論理はそれを先取りできない。形式化では要素命題(事態)の集合をパラメータとして扱う根拠
+5.5571	conseq	basis	要素命題の形式はア・プリオリに決まらない。事態の集まりを外から与える設計の根拠として使う	mid	elementary_forms	elementary_proposition	5.557	要素命題をア・プリオリに挙げられないなら、挙げようとすれば無意味に陥る
+5.6	out	out	-	mid	solipsism	language,world,subject	5.62	私の言語の限界が私の世界の限界を意味する。独我論の節の導入で、形式化の対象外
+5.61	claim	out	独我論の節の主張で、範囲外(論理空間の定式化とは関わる)	low	solipsism	logic,world	5.6	論理は世界を満たす。論理の中で「これは世界にあり、あれはない」とは言えない
+5.62	out	out	-	mid	solipsism	solipsism,say_show	5.6	独我論が意味するところは正しいが、語られえず示される
+5.621	out	out	-	high	-	world,life	5.63	世界と生は一つ
+5.63	out	out	-	high	solipsism	subject,world	5.631	私は私の世界である
+5.631	out	out	-	high	solipsism	subject	5.632	思考し表象する主体はない
+5.632	out	out	-	high	solipsism	subject,world	5.641	主体は世界に属さず、世界の限界
+5.633	out	out	-	high	solipsism	subject	5.6331	形而上学的主体は世界のどこにも見出されない。眼と視野の比喩
+5.6331	elucid	out	-	high	-	subject	5.633	視野の形の図
+5.634	claim	1	-	mid	-	experience,a_priori	2.225,6.37	経験のどの部分もア・プリオリではない。見るもの・記述できるものは全て別様でありえた。全ての意味のある命題は偶然的という定理(2.225)と同じ内容
+5.64	out	out	-	high	solipsism	solipsism,realism	5.641	徹底した独我論は純粋な実在論と一致する
+5.641	out	out	-	high	solipsism	subject	5.64	哲学的な私は形而上学的主体であり、世界の部分ではなく限界
+6	notation	2	-	high	n_operator	general_form,n_operator,notation	5.5,6.001	真理関数の一般形式 [p̄, ξ̄, N(ξ̄)]。これが命題の一般形式。要素命題から N で帰納的に生成される命題の型として形式化する中心命題
+6.001	claim	2	-	high	n_operator	n_operator,successive_application,elementary_proposition	6,5.32	6 の言い換え:全ての命題は要素命題への N’(ξ̄) の継続的適用の結果。5.5 と合わせて表現的完全性の定理の候補
+6.002	claim	2	-	mid	-	operation,general_form	6.01	命題の作り方の一般形式が与えられれば、操作で命題から命題を作る一般形式も与えられる
+6.01	notation	2	-	high	n_operator	operation,n_operator,notation	6.002	操作 Ω’(η̄) の一般形式 [ξ̄, N(ξ̄)]’(η̄)(=[η̄, ξ̄, N(ξ̄)])。命題から命題への最も一般的な移行
+6.02	notation	2	-	high	number	number,operation,notation	6.021,5.2522	数の定義:x=Ω^0’x、Ω’Ω^ν’x=Ω^(ν+1)’x。操作の反復回数としての自然数。Lean の Nat.iterate に当たり、定義として形式化できる
+6.021	def	2	-	high	number	number,operation	6.02	数は操作の指数
+6.022	claim	2	-	mid	number	number,formal_concept	4.1272	数の概念は全ての数に共通なもの、数の一般形式。数の概念は変項としての数
+6.03	notation	2	-	high	number	number,notation	6.02	基数の一般形式 [0, ξ, ξ+1]。自然数の帰納的定義に当たる
+6.031	claim	2	-	low	-	class,mathematics	6.03	数学ではクラスの理論は全く不要
+6.1	claim	2	-	high	logic_tautology	tautology,logic	5.43,6.11	論理の命題はトートロジー。形式化では「論理の命題=トートロジー」を定義と見るか、証明可能性との一致(完全性)を定理と見るかを D で決める
+6.11	conseq	2	-	high	logic_tautology	tautology,logic,sense	6.1,4.461	6.1 から:論理の命題は何も語らない(分析的命題)
+6.111	elucid	out	-	mid	-	logic,truth	6.112	論理の命題を内容のあるものに見せる理論は常に誤り
+6.112	claim	2	-	mid	-	logic	6.113	論理の命題の正しい説明は、それに全命題の中で特別な位置を与えなければならない
+6.113	claim	2	-	high	-	logic,tautology,truth	2.224,6.1	論理の命題は記号だけから真とわかる。論理でない命題の真偽は命題だけからはわからない。トートロジー性の判定可能性(真理表)と、偶然的命題の真偽の非決定性として定理の候補
+6.12	claim	2	-	mid	say_show	tautology,logical_form	6.121	論理の命題がトートロジーであることが、言語と世界の形式的・論理的性質を示す
+6.1201	claim	2	-	high	-	tautology,contradiction,consequence	6.1221	~(p . ~p) がトートロジーであることは p と ~p が矛盾することを示す。(p ⊃ q) . (p): ⊃ :(q) がトートロジーであることは q が p と p ⊃ q から帰結することを示す。帰結と条件文のトートロジー性の対応(演繹定理)として定理の候補
+6.1202	claim	2	-	mid	-	contradiction,tautology	6.1201	トートロジーの代わりに矛盾を使うこともできた。双対性として示せる
+6.1203	notation	2	-	high	-	tautology,notation	6.1201	一般性の記号を含まないトートロジーを見分ける直観的な方法(TpF の括弧の図式)。真理表による判定と同等であることを示せる
+6.121	claim	2	-	mid	-	tautology,logical_property	6.12	論理の命題は、命題を何も語らない命題に結合することで論理的性質を示す(ゼロ法)
+6.122	conseq	2	-	mid	-	logical_property,notation	6.121	適切な記法があれば、論理の命題なしで、見るだけで命題の形式的性質がわかる
+6.1221	claim	2	-	high	-	consequence,tautology	6.1201	「p ⊃ q」がトートロジーなら q は p から帰結する。演繹定理として定理の候補
+6.1222	conseq	2	-	mid	-	logic,experience	6.1221	論理の命題は経験で確立も反駁もできない
+6.1223	elucid	out	-	mid	-	logic	6.1222	論理的真理を「要請」するように感じる理由
+6.1224	elucid	out	-	mid	-	logic	6.1223	論理が形式と推論の理論と呼ばれてきた理由
+6.123	claim	2	-	mid	type_theory	logic	6.1231	論理法則がさらに論理法則に従うことはない。型ごとに矛盾律があるわけではない
+6.1231	claim	2	-	mid	-	logic,generality	6.1232	論理の命題の目印は一般的妥当性ではない。一般化されていない命題もトートロジーでありうる
+6.1232	claim	2	-	mid	-	logic,generality	6.1231	本質的な一般的妥当性と偶然的な一般的妥当性。還元公理は論理の命題ではない
+6.1233	elucid	out	-	mid	-	logic	6.1232	還元公理が成り立たない世界を想像できる
+6.124	claim	2	-	mid	say_show	logic,tautology,world	6.13	論理の命題は世界の足場を描く(表す)。名前が意味を持ち要素命題が意味を持つことを前提する。記号言語の論理的構文論がわかれば論理の命題は全て与えられている
+6.125	claim	2	-	high	-	logic,tautology	6.1251	古い論理でも、全ての「真な」論理的命題を最初に記述できる。トートロジー全体の集合が決定可能という定理の候補
+6.1251	conseq	2	-	high	-	logic	6.125	だから論理に驚きはない
+6.126	claim	2	-	mid	-	logic,proof,tautology	6.1262	命題が論理に属するかはシンボルの論理的性質で決まる。証明は記号規則による変形で、トートロジーからはトートロジーしか帰結しない(健全性)。証明は論理にとって本質的でない
+6.1261	claim	2	-	mid	-	logic,proof	6.126	論理では過程と結果が同値
+6.1262	claim	2	-	mid	-	proof,tautology	6.126	論理の証明は、複雑なときにトートロジーを見分けやすくする機械的な手段にすぎない
+6.1263	claim	2	-	mid	-	proof,logic	6.1264	意味のある命題の論理的証明と論理の中の証明は全く別物
+6.1264	claim	2	-	low	-	proof,modus_ponens	6.1263	論理の命題は全て記号で示された modus ponens。modus ponens は命題で表せない
+6.1265	claim	2	-	low	-	logic,proof	6.1264	論理の命題は全て自分自身の証明と考えられる
+6.127	claim	2	-	mid	-	logic,tautology	6.1271	論理の命題は全て同格。原始的なものと導かれたものはない。トートロジーは自分がトートロジーであることを示す
+6.1271	elucid	out	-	mid	-	logic	6.127	論理の原始命題の数は恣意的。Frege の原始命題の論理積を一つの原始命題にできる。Frege の自明性の基準への批判
+6.13	out	out	-	mid	-	logic,world	6.12	論理は理論ではなく世界の鏡像。論理は超越論的
+6.2	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,equation	6.21	数学は論理的方法。数学の命題は等式で、擬似命題
+6.21	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,thought	6.2	数学の命題は思考を表さない
+6.211	elucid	out	-	mid	mathematics	mathematics	6.21	数学の命題は数学でない命題から数学でない命題を推論するためにだけ使う
+6.22	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	mathematics,logic	6.2	論理の命題がトートロジーで示す世界の論理を、数学は等式で示す
+6.23	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	equation,substitution	4.241	等号で結ばれた二つの表現は互いに置き換えられる。それが成り立つかは二つの表現自体に示されなければならない
+6.231	elucid	out	-	mid	mathematics	equation	6.23	肯定を二重否定と考えられること、1+1+1+1 を (1+1)+(1+1) と考えられること
+6.232	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	equation,sense,meaning	6.23	等式の本質は、両辺が同じ意味(Bedeutung)を持つことを示すのに等式が必要ないこと。Frege の意義と意味の区別への応答
+6.2321	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	proof,mathematics	6.232	数学の命題が証明できるとは、事実と比べずに正しさがわかること
+6.2322	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	equation,meaning	6.232	二つの表現の意味の同一性は主張できない
+6.2323	elucid	out	-	mid	mathematics	equation	6.2322	等式は二つの表現を見る観点を特徴づけるだけ
+6.233	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	mathematics,intuition	6.2331	数学の問題を解くのに必要な直観は言語そのものが与える
+6.2331	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	mathematics,calculation	6.233	計算の過程がまさにその直観をもたらす。計算は実験ではない
+6.234	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,logic	6.2	数学は論理の方法
+6.2341	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	low	mathematics	mathematics,equation	6.234	数学の方法の本質は等式を扱うこと
+6.24	claim	out	数学の命題一般は範囲外。数の定義(6.02〜6.03)と 6.241 だけ扱う	mid	mathematics	mathematics,equation,substitution	6.241	数学が等式に至る方法は代入
+6.241	notation	2	-	high	number	number,operation,notation	6.02,6.24	2×2=4 の証明。(Ω^ν)^μ’x=Ω^(ν×μ)’x の定義と代入による計算。操作の反復としての数で定理として再現できる
+6.3	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	-	logic,regularity	6.31	論理の探究は全ての規則性の探究。論理の外は全て偶然
+6.31	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	induction	induction,logic	6.3,6.363	いわゆる帰納法則は意味のある命題なので論理法則でもア・プリオリな法則でもない
+6.32	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	causality	causality,law	6.321	因果律は法則ではなく法則の形式
+6.321	elucid	out	-	mid	causality	causality,law	6.32	「因果律」はクラス名。最小作用の法則などとの類比
+6.3211	elucid	out	-	mid	-	law	6.321	ア・プリオリに確実なものは純粋に論理的なものだとわかる
+6.33	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	-	law,logical_form	6.34	保存則をア・プリオリに信じるのではなく、論理形式の可能性をア・プリオリに知る
+6.34	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	causality	law,science	6.341	因果律・連続律などは科学の命題の可能な形式についてのア・プリオリな直観
+6.341	elucid	out	-	high	-	science,description	6.342	ニュートン力学と網目の比喩
+6.342	elucid	out	-	mid	-	science,description,logic	6.341	網目による記述が可能であることは像について何も語らないが、特定の網目で完全に記述できることは語る
+6.343	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	-	science	6.341	力学は世界の記述に必要な全ての真な命題を一つの計画で作る試み
+6.3431	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	-	science,object	6.343	物理法則は論理の装置を通して世界の対象について語る
+6.3432	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	-	science,generality	6.343	力学による世界の記述は常に一般的
+6.35	elucid	out	-	mid	-	science,geometry	6.341	網目は純粋に幾何学的で、因果律などは網目について語る
+6.36	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	say_show	causality,law	6.32	因果律があるとすれば「自然法則がある」だろうが、それは語られえず示される
+6.361	elucid	out	-	mid	-	law	6.36	Hertz の言い方では、規則的な結合だけが考えうる
+6.3611	elucid	out	-	mid	-	time,description	6.36111	「時間の経過」と比べることはできず、別の過程と比べるだけ
+6.36111	elucid	out	-	high	-	space	6.3611	右手と左手の問題(カント)
+6.362	claim	out	帰納・因果・科学の法則についての主張で、範囲外	low	causality	causality,description	6.36	記述できることは起こりうる。因果律に排除されるものは記述できない
+6.363	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	induction	induction	6.3631	帰納の過程は経験と調和する最も単純な法則を仮定する過程
+6.3631	claim	out	帰納・因果・科学の法則についての主張で、範囲外	mid	induction	induction	6.363	その過程には論理的な根拠はなく、心理的な根拠だけ
+6.36311	elucid	out	-	high	induction	induction	6.3631	太陽が明日昇ることは仮説
+6.37	claim	2	-	high	-	necessity,causality	5.136,6.375	ある事が起きたから別の事が起きるという必然性はない。論理的必然性だけがある。必然性をトートロジー性として形式化する根拠
+6.371	elucid	out	-	mid	-	law,science	6.372	自然法則が自然現象の説明だという錯覚
+6.372	elucid	out	-	mid	-	law	6.371	古代人の神と運命との比較
+6.373	out	out	-	mid	-	will,world	6.374	世界は私の意志から独立している
+6.374	out	out	-	mid	-	will,world	6.373	意志と世界の間に論理的な結びつきはない
+6.375	claim	2	-	high	-	necessity,impossibility	6.37	論理的必然性だけがあるように、論理的不可能性だけがある
+6.3751	claim	3	-	mid	colour	colour,elementary_proposition,contradiction,independence	2.061,4.211	視野の一か所に二つの色があることは論理的に不可能(矛盾)。二つの要素命題の論理積はトートロジーにも矛盾にもなれない。色の命題を要素命題とすると独立性(2.061)と衝突する、論考内部の緊張関係として定理化を試みる
+6.4	out	out	-	mid	-	value,proposition	6.41	全ての命題は同じ価値を持つ
+6.41	out	out	-	high	-	value,world	6.42	世界の意味は世界の外にある。世界の中に価値はない
+6.42	out	out	-	high	-	ethics,proposition	6.41	だから倫理の命題はありえない。命題はより高いものを表せない
+6.421	out	out	-	high	-	ethics	6.42	倫理は表せない。倫理は超越論的。倫理と美学は一つ
+6.422	out	out	-	high	-	ethics	6.421	倫理的な賞罰は行為そのものにある
+6.423	out	out	-	high	-	will,ethics	6.422	倫理の担い手としての意志については語れない
+6.43	out	out	-	high	-	will,world	6.431	善い意志・悪い意志が世界を変えるなら、世界の限界だけを変える。幸福な人の世界と不幸な人の世界は別
+6.431	out	out	-	high	-	death,world	6.4311	死において世界は変わるのではなく終わる
+6.4311	out	out	-	high	-	death	6.431	死は人生の出来事ではない
+6.4312	out	out	-	high	-	death,soul	6.4311	魂の時間的な不死は何も解決しない
+6.432	out	out	-	high	-	god,world	6.4321	世界がどうあるかは、より高いものにとって全くどうでもよい。神は世界の中に現れない
+6.4321	out	out	-	high	-	fact	6.432	事実は全て課題に属し、解決には属さない
+6.44	out	out	-	high	-	mystical,world	6.45	神秘的なのは世界がどうあるかではなく、世界があること
+6.45	out	out	-	high	-	mystical,world	6.44	限られた全体として世界を感じることが神秘的な感情
+6.5	claim	out	問いと答えについての主張で、形式化の対象として定まらない	low	-	question,answer	6.51	表せない答えには問いも表せない。謎は存在しない。問いが立てられるなら答えられる。問いと答えの対応(意味のある命題は真か偽)として部分的に形式化できる
+6.51	claim	out	懐疑論についての主張で、範囲外	low	-	scepticism,question	6.5	懐疑論は反駁できないのではなく、問いが立てられないところで疑おうとするなら無意味
+6.52	out	out	-	high	-	life,science	6.521	全ての科学的な問いに答えても生の問題には触れていない
+6.521	out	out	-	high	-	life	6.52	生の問題の解決はその問題が消えることに見られる
+6.522	out	out	-	high	say_show	mystical,say_show	6.52	表せないものは確かにある。それは自らを示す。それが神秘的なもの
+6.53	elucid	out	-	mid	-	philosophy,method	4.112	哲学の正しい方法:語りうること(自然科学の命題)だけを語り、形而上学的なことを言おうとする人には記号に意味を与えていないことを示す
+6.54	elucid	out	-	mid	ladder	philosophy,nonsense	4.112,3.263	私の命題は、理解した人が最後に無意味だとわかることで解明となる(梯子)。この形式化プロジェクト全体の位置づけに関わる
+7	out	out	-	mid	say_show	say_show	序文,4.115	語りえないことについては沈黙しなければならない

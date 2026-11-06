@@ -61,11 +61,17 @@ def readTsv (path : String) : IO (List (List String)) := do
   return (lines.drop 1).filter (· ≠ "") |>.map (·.splitOn "\t")
 
 def kinds : List String := ["def", "claim", "conseq", "notation", "elucid", "out"]
+/-- Kinds that can be formalized (the others are never formalized). -/
+def formalizableKinds : List String := ["def", "claim", "conseq", "notation"]
 def confidences : List String := ["high", "mid", "low"]
+/-- `1`–`4`: the stage of docs/policy.md §2; `out`: not formalized; `basis`: used as a
+design rationale rather than formalized. -/
+def stages : List String := ["1", "2", "3", "4", "out", "basis"]
 
 /-- Validates `analysis/reading/classification.tsv` against the proposition numbers:
-one row per proposition in the same order, 7 columns, known kind and confidence,
-and every contested topic listed in `analysis/reading/contested.tsv`. -/
+one row per proposition in the same order, 9 columns, known kind, stage and confidence,
+a reason for every formalizable proposition that is not formalized, and every contested
+topic listed in `analysis/reading/contested.tsv`. -/
 def checkClassification (numbers : List String) : IO (Array String) := do
   let path := "analysis/reading/classification.tsv"
   if !(← System.FilePath.pathExists path) then return #[]
@@ -80,13 +86,19 @@ def checkClassification (numbers : List String) : IO (Array String) := do
     errors := errors.push s!"{path}: numbers differ from source/tractatus.json (must be one row per proposition, in order)"
   for row in rows do
     match row with
-    | [num, kind, conf, contested, _concepts, _related, rationale] =>
+    | [num, kind, stage, scopeNote, conf, contested, _concepts, _related, rationale] =>
       if !kinds.contains kind then errors := errors.push s!"{path}: {num}: unknown kind '{kind}'"
+      if !stages.contains stage then errors := errors.push s!"{path}: {num}: unknown stage '{stage}'"
+      if formalizableKinds.contains kind then
+        if (stage == "out" || stage == "basis") && scopeNote == "-" then
+          errors := errors.push s!"{path}: {num}: {kind} with stage '{stage}' needs a scope_note (why it is not formalized)"
+      else if stage != "out" then
+        errors := errors.push s!"{path}: {num}: kind '{kind}' is never formalized, so its stage must be 'out'"
       if !confidences.contains conf then errors := errors.push s!"{path}: {num}: unknown confidence '{conf}'"
       if contested != "-" && !topics.contains contested then
         errors := errors.push s!"{path}: {num}: contested topic '{contested}' is not listed in {topicsPath}"
       if rationale.trimAscii.isEmpty then errors := errors.push s!"{path}: {num}: empty rationale"
-    | _ => errors := errors.push s!"{path}: {row.headD "?"}: expected 7 columns, got {row.length}"
+    | _ => errors := errors.push s!"{path}: {row.headD "?"}: expected 9 columns, got {row.length}"
   return errors
 
 def run (dir : String) : IO UInt32 := do

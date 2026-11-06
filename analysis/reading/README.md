@@ -16,6 +16,8 @@
 |---|---|
 | `number` | 命題番号。`source/tractatus.json` と同じ順に、全命題が1行ずつ並ぶ |
 | `kind` | 種別(下表) |
+| `stage` | どの段階で扱うか(`docs/policy.md` §2):`1`〜`4`、`out`(形式化しない)、`basis`(形式化ではなく設計の根拠として使う)。種別が `elucid` / `out` なら必ず `out`。全命題の扱いの正はこの列 |
+| `scope_note` | 形式化できる種別(`def` / `claim` / `conseq` / `notation`)なのに `out` / `basis` にした理由。それ以外は `-` |
 | `confidence` | 種別の確信度:`high` / `mid` / `low` |
 | `contested` | 解釈が分かれる論点の ID(`contested.tsv`)。なければ `-`。1命題に1つだけ付けている |
 | `concepts` | その命題が使う概念の ID(下の「用語」) |
