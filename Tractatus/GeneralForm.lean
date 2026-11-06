@@ -138,13 +138,24 @@ theorem N_interdefinable {n : ℕ} (ps : Fin n → Sense Atom) (p q : Sense Atom
     NSense ps = ⋂ i, (ps i)ᶜ ∧ pᶜ = NSense ![p] ∧ p ∩ q = NSense ![NSense ![p], NSense ![q]] := by
   refine ⟨?_, ?_, ?_⟩ <;> ext r <;> simp [NSense, Fin.forall_fin_two]
 
-/-- There is only one negation of a proposition: any two propositions denying `p` say the
-same. And `q : p ∨ ~p` says the same as `q`. -/
+/-- There is only one negation of a proposition: a proposition that is false wherever `p` is
+true and true wherever `p` is false is exactly `~p`, so any two such propositions are the same.
+And `q : p ∨ ~p` says the same as `q`. -/
 @[tlp "5.512", tlp "5.513"]
-theorem negation_unique (p q s t : Sense Atom) (hs : s = pᶜ) (ht : t = pᶜ) :
-    s = t ∧ q ∩ (p ∪ pᶜ) = q := by
-  refine ⟨hs.trans ht.symm, ?_⟩
-  simp
+theorem negation_unique (p q s t : Sense Atom) (hs : s ∩ p = ∅ ∧ s ∪ p = Set.univ)
+    (ht : t ∩ p = ∅ ∧ t ∪ p = Set.univ) : s = pᶜ ∧ s = t ∧ q ∩ (p ∪ pᶜ) = q := by
+  have key : ∀ u : Sense Atom, u ∩ p = ∅ ∧ u ∪ p = Set.univ → u = pᶜ := by
+    rintro u ⟨h1, h2⟩
+    ext r
+    constructor
+    · intro hu hp
+      have : r ∈ u ∩ p := ⟨hu, hp⟩
+      rw [h1] at this
+      exact this
+    · intro hp
+      have : r ∈ u ∪ p := by rw [h2]; exact Set.mem_univ r
+      exact this.resolve_right hp
+  exact ⟨key s hs, (key s hs).trans (key t ht).symm, by simp⟩
 
 open Classical in
 /-- A truth-operation: from the truth-function `f` of `n` places and `n` propositions as
