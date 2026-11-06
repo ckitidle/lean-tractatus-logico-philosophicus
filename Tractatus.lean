@@ -10,3 +10,8 @@ import Tractatus.Operation
 import Tractatus.GeneralForm
 import Tractatus.Logic
 import Tractatus.Models.Stage2
+import Tractatus.Names
+import Tractatus.Internal
+import Tractatus.Probability
+import Tractatus.Colour
+import Tractatus.Models.Stage3

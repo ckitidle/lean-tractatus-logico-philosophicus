@@ -13,7 +13,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 2.0121	elucid	out	-	mid	-	object,atomic_fact	2.012	2.012 の理由づけと空間・時間の類比
 2.0122	elucid	out	-	mid	-	object,atomic_fact	2.012	対象の自立性は事態への依存の一形式だという注釈
 2.0123	claim	1	-	mid	object_form	object,form	2.0141,2.0124	対象を知ればその全ての結合可能性を知る。形式化では「対象の形式が可能な事態を決める」と読む
-2.01231	claim	3	内的性質の概念(4.122 以降)と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	low	-	object,internal_property	4.122	対象を知るには内的性質を全て知る必要がある。内的性質の概念は 4.122 以降で扱う
+2.01231	claim	basis	対象を知るには内的性質を知る必要があるという主張。対象の形式(2.0141)と内的性質(4.123)の定義の根拠(段階 3 の形式化で段階 3 から移した)	low	-	object,internal_property	4.122	対象を知るには内的性質を全て知る必要がある。内的性質の概念は 4.122 以降で扱う
 2.0124	conseq	1	-	high	object_form	object,atomic_fact	2.0123,2.014	2.0123/2.014 から:全ての対象が与えられれば可能な事態も全て与えられる。定理の候補
 2.013	elucid	out	-	mid	-	object,logical_space	2.0131	可能な事態の空間の比喩
 2.0131	elucid	out	-	mid	colour	object,form	2.0251,6.3751	空間・色・音の例。色の排除問題(6.3751)と関わる
@@ -32,7 +32,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 2.02331	elucid	out	-	mid	identity	object,identity	2.0233	識別不能なものについての議論
 2.024	def	out	実体の議論の再構成は範囲外(interpretation の substance)	high	substance	substance	2.021	実体=何が成立しているかと独立に存在するもの
 2.025	claim	out	実体の議論の再構成は範囲外(interpretation の substance)	mid	substance	substance,form	2.024	実体は形式と内容である
-2.0251	claim	3	色の問題(6.3751)と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	low	colour	form,object	2.0131	空間・時間・色は対象の形式
+2.0251	claim	basis	空間・時間・色を対象の形式とする主張。対象の形式を結合の仕方(Mode)の中の場所として扱う設計の根拠。色の問題そのものは 6.3751 で扱う(段階 3 の形式化で段階 3 から移した)	low	colour	form,object	2.0131	空間・時間・色は対象の形式
 2.026	conseq	1	-	mid	-	object,form	2.023	対象があるときにだけ世界の固定した形式がある
 2.027	claim	basis	対象を全ての世界に共通の固定した型として置く設計の根拠(段階 1 の形式化で段階 1 から移した)	mid	-	object,substance	2.0271	固定したもの、存在するもの、対象は同一
 2.0271	claim	basis	対象を世界をまたいで固定し、世界ごとに変わるのは事態の成立・不成立(配列)だけとする設計の根拠(段階 1 の形式化で段階 1 から移した)	mid	-	object,configuration	2.0272	対象は固定・不変、配列は変化するもの。可能世界をまたいで対象は共通で、配列だけが変わる
@@ -49,31 +49,31 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 2.062	conseq	1	-	high	independence	atomic_fact,independence	2.061	2.061 から:一つの事態の成立・不成立から他の事態の成立・不成立は推論できない。反例モデルで示す定理の候補
 2.063	conseq	1	-	mid	world_reality	world,reality	2.04,2.05,2.06	全体としての現実が世界。2.05 により成立の全体と成立・不成立の全体が互いを決めることからの帰結と読む
 2.1	elucid	out	-	mid	-	picture,fact	2.11	我々は事実の像を作る(導入的な言明)
-2.11	claim	3	-	high	-	picture,logical_space,atomic_fact	2.201	像は論理空間の中の状況(事態の成立・不成立)を表す
+2.11	conseq	3	-	high	-	picture,logical_space,atomic_fact	2.201	像は論理空間の中の状況(事態の成立・不成立)を表す。【段階 3 の形式化で種別を claim→conseq に変更】像の描く事態が論理空間に場所を持つ(ある可能な現実で真になる)ことと、その事態が可能であることの同値を定理にした
 2.12	def	3	-	mid	-	picture,reality	2.11	像は現実のモデル
-2.13	claim	3	-	high	-	picture,picture_element,object	2.131	像の要素が対象に対応する
-2.131	claim	3	-	high	-	picture_element,object	3.22	像の要素は対象の代わりになる
+2.13	conseq	3	-	high	-	picture,picture_element,object	2.131	像の要素が対象に対応する。【段階 3 の形式化で種別を claim→conseq に変更】描かれた事態の各場所の対象が、像の同じ場所の要素に対応づけられた対象であることを定理にした
+2.131	conseq	3	-	high	-	picture_element,object	3.22	像の要素は対象の代わりになる。【段階 3 の形式化で種別を claim→conseq に変更】描かれた事態の各場所の対象が、像の同じ場所の要素に対応づけられた対象であることを定理にした
 2.14	def	3	-	high	-	picture,picture_element	2.15	像は要素の特定の結合からなる
-2.141	claim	3	-	high	-	picture,fact	3.14	像は事実である
+2.141	claim	basis	像を事実(要素の配置)として定義する設計の根拠。像の構造体の要素部分を名前の配置(事態と同じ形)にした(段階 3 の形式化で段階 3 から移した)	high	-	picture,fact	3.14	像は事実である
 2.15	def	3	-	high	-	structure,form_of_representation	2.151	像の構造と写像形式の定義
 2.151	def	3	-	high	-	form_of_representation	2.15	写像形式=物が像の要素と同じように結合している可能性
 2.1511	elucid	out	-	mid	-	picture,reality	2.1512	像は現実と結びついている(比喩)
 2.1512	elucid	out	-	high	-	picture,reality	2.15121	物差しの比喩
 2.15121	elucid	out	-	high	-	picture	2.1512	物差しの比喩の続き
-2.1513	claim	3	-	mid	-	picture,representing_relation	2.1514	写像関係も像に属する。像を「事実+対応づけ」の組として形式化する根拠
+2.1513	def	3	-	mid	-	picture,representing_relation	2.1514	写像関係も像に属する。像を「事実+対応づけ」の組として形式化する根拠。【段階 3 の形式化で種別を claim→def に変更】写像関係(要素と物の対応づけ)を、像の構造体の一部(フィールド)として定義した
 2.1514	def	3	-	high	-	representing_relation	2.1513	写像関係=像の要素と物との対応づけ
 2.1515	elucid	out	-	high	-	representing_relation	2.1514	触角の比喩
-2.16	claim	3	-	high	-	picture	2.161	像であるには写されるものと何かを共有しなければならない
-2.161	claim	3	-	high	-	picture	2.17	像と写されるものの間には同一のものがある
-2.17	claim	3	-	high	-	form_of_representation,picture	2.18	共有されるものが写像形式
-2.171	claim	3	-	mid	-	picture,form_of_representation	2.17	像は自分の形式を持つ全ての現実を写せる
-2.172	claim	3	-	low	say_show	form_of_representation	4.12,4.121	像は自分の写像形式を写せず、示す。語る/示すの区別。形式化するならメタ定理(体系内の命題では表せない)として
-2.173	claim	3	-	mid	-	picture,truth	2.174	像は外から対象を写すので、正しくも誤ってもありうる
-2.174	claim	3	-	mid	say_show	picture,form_of_representation	2.172	像は自分の写像形式の外に立てない
-2.18	claim	3	-	high	-	logical_form,picture,reality	2.2	全ての像が現実と共有するのが論理形式
+2.16	conseq	3	-	high	-	picture	2.161	像であるには写されるものと何かを共有しなければならない。【段階 3 の形式化で種別を claim→conseq に変更】像と写されるもの(描かれた事態)が同じ構造を持つことを定理にした
+2.161	conseq	3	-	high	-	picture	2.17	像と写されるものの間には同一のものがある。【段階 3 の形式化で種別を claim→conseq に変更】像と写されるものの間で同一なもの(構造)を定理にした(2.16 と同じ定理)
+2.17	conseq	3	-	high	-	form_of_representation,picture	2.18	共有されるものが写像形式。【段階 3 の形式化で種別を claim→conseq に変更】共有されるものが写像形式(構造)であることを定理にした(2.16 と同じ定理)
+2.171	conseq	3	-	mid	-	picture,form_of_representation	2.17	像は自分の形式を持つ全ての現実を写せる。【段階 3 の形式化で種別を claim→conseq に変更】要素が互いに異なる像は、同じ構造のどの事態も、要素と物の対応づけを選べば描けることを定理にした
+2.172	claim	basis	像は自分の写像形式を写せず示すという主張(say_show)。語れないことの記録(段階 3 の形式化で段階 3 から移した)	low	say_show	form_of_representation	4.12,4.121	像は自分の写像形式を写せず、示す。語る/示すの区別。形式化するならメタ定理(体系内の命題では表せない)として
+2.173	conseq	3	-	mid	-	picture,truth	2.174	像は外から対象を写すので、正しくも誤ってもありうる。【段階 3 の形式化で種別を claim→conseq に変更】像はある世界で真、別の世界で偽になりうることを定理にした
+2.174	claim	basis	像は自分の写像形式の外に立てないという主張(say_show)。語れないことの記録(段階 3 の形式化で段階 3 から移した)	mid	say_show	picture,form_of_representation	2.172	像は自分の写像形式の外に立てない
+2.18	conseq	3	-	high	-	logical_form,picture,reality	2.2	全ての像が現実と共有するのが論理形式。【段階 3 の形式化で種別を claim→conseq に変更】全ての像が写されるものと共有する論理形式(構造)を定理にした(2.16 と同じ定理)
 2.181	def	3	-	high	-	logical_form,picture	2.182	写像形式が論理形式であるとき、像を論理的像と呼ぶ
-2.182	claim	3	-	high	-	logical_form,picture	2.181	全ての像は論理的像でもある
-2.19	claim	3	-	mid	-	logical_form,picture,world	3	論理的像は世界を写せる
+2.182	conseq	3	-	high	-	logical_form,picture	2.181	全ての像は論理的像でもある。【段階 3 の形式化で種別を claim→conseq に変更】全ての像が論理的像であることを定理にした
+2.19	conseq	3	-	mid	-	logical_form,picture,world	3	論理的像は世界を写せる。【段階 3 の形式化で種別を claim→conseq に変更】全ての対象が名前で呼ばれていれば、真な要素命題の全体が世界を決めることを定理にした
 2.2	conseq	3	2.18・2.182(論理的写像形式)の帰結なので、像の構造と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	logical_form,picture	2.18,2.182	2.18 と 2.182 から:像は写されるものと論理的写像形式を共有する
 2.201	def	1	-	high	-	picture,atomic_fact	2.11	像は事態の成立・不成立の可能性を表すことで現実を写す。像の意味(Sinn)を可能世界の集合として形式化する根拠。【段階 1 の形式化で種別を claim→def に変更】像を「どの事態を成立・不成立として表すか」として定義する根拠にした(像の構造は段階 3)
 2.202	def	1	-	high	-	picture,situation,logical_space	2.11	像は論理空間の中の可能な状況を表す。【段階 1 の形式化で種別を claim→def に変更】像が論理空間の中で表す領域(像と一致する可能な現実の集合)として定義した
@@ -86,85 +86,85 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 2.224	conseq	1	-	high	-	truth,picture	2.225	像だけからは真偽はわからない。独立性のもとで、意味のある像には真になる世界と偽になる世界があるという定理の候補
 2.225	conseq	1	-	high	-	truth,picture	2.224,6.31	ア・プリオリに真な像はない。定理の候補(像は偶然的)
 3	def	3	-	high	-	thought,picture,fact	2.181,3.5	思考=事実の論理的像
-3.001	def	3	-	mid	-	atomic_fact,thought	3	「事態が思考可能」=それを想像できる
-3.01	claim	3	-	mid	-	thought,truth,world	2.04	真な思考の全体は世界の像
-3.02	claim	3	-	high	-	thought,situation	2.203	思考は思考する状況の可能性を含む。思考可能なものは可能
-3.03	claim	3	-	high	-	thought,logic	3.031	非論理的なものは思考できない
+3.001	def	out	想像できることについての主張で、形式化しない(段階 3 の形式化で段階 3 から移した)	mid	-	atomic_fact,thought	3	「事態が思考可能」=それを想像できる
+3.01	conseq	3	-	mid	-	thought,truth,world	2.04	真な思考の全体は世界の像。【段階 3 の形式化で種別を claim→conseq に変更】真な要素命題(思考)の全体が世界を決めることを定理にした(2.19 と同じ定理)
+3.02	conseq	3	-	high	-	thought,situation	2.203	思考は思考する状況の可能性を含む。思考可能なものは可能。【段階 3 の形式化で種別を claim→conseq に変更】2.0123 のもとで、名前が対象の形式の許す場所に立つ要素命題は可能な事態を描くことを定理にした
+3.03	conseq	3	-	high	-	thought,logic	3.031	非論理的なものは思考できない。【段階 3 の形式化で種別を claim→conseq に変更】2.0123 のもとで、要素命題が可能な事態を描くことと、名前が許される場所に立つことの同値を定理にした
 3.031	elucid	out	-	high	-	logic	3.03	神と論理法則の例
 3.032	elucid	out	-	high	-	logic,language	3.0321	幾何学との類比
 3.0321	elucid	out	-	high	-	logic	3.032	物理法則と幾何学法則の類比
 3.04	def	3	-	mid	-	thought,truth	3.05	ア・プリオリに真な思考=その可能性が真を保証する思考
-3.05	claim	3	-	mid	-	thought,truth	2.225,3.04	思考がア・プリオリに真と知れるのは、比較対象なしに思考そのものから真がわかる場合だけ
-3.1	claim	3	-	mid	-	proposition,thought	3.11	命題において思考は感覚的に知覚できる形で表される
-3.11	claim	3	-	mid	-	propositional_sign,situation,sense	3.12	命題記号は可能な状況の射影として使われる。射影の方法は命題の意味(Sinn)を考えること
+3.05	conseq	3	-	mid	-	thought,truth	2.225,3.04	思考がア・プリオリに真と知れるのは、比較対象なしに思考そのものから真がわかる場合だけ。【段階 3 の形式化で種別を claim→conseq に変更】独立性のもとで、意味のある思考はア・プリオリに真ではないことを定理にした
+3.1	claim	out	命題が感覚的に知覚できる形で思考を表すという主張で、形式化しない(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,thought	3.11	命題において思考は感覚的に知覚できる形で表される
+3.11	claim	basis	命題記号を可能な状況の射影として使うことを、記号と解釈の組(Thought)で表す設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	propositional_sign,situation,sense	3.12	命題記号は可能な状況の射影として使われる。射影の方法は命題の意味(Sinn)を考えること
 3.12	def	3	-	high	-	propositional_sign,proposition	3.11	命題記号の定義。命題=世界との射影関係にある命題記号
-3.13	claim	3	-	mid	-	proposition,sense	3.12	命題には意味(Sinn)の内容ではなく形式と、表す可能性が含まれる
-3.14	claim	3	-	high	-	propositional_sign,fact	2.141	命題記号は語が特定の仕方で結合した事実
-3.141	claim	3	-	mid	-	proposition	3.14	命題は語の混合ではなく分節されている
-3.142	claim	3	-	high	-	fact,sense,name	3.144	事実だけが意味(Sinn)を表せる。名前の集まりはできない
+3.13	claim	basis	命題に属するのは射影の形式と可能性で、射影されるものではないという注意。記号と解釈を分ける設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,sense	3.12	命題には意味(Sinn)の内容ではなく形式と、表す可能性が含まれる
+3.14	def	3	-	high	-	propositional_sign,fact	2.141	命題記号は語が特定の仕方で結合した事実。【段階 3 の形式化で種別を claim→def に変更】命題記号(要素命題)を、名前が特定の仕方で結合した配置として定義した
+3.141	claim	basis	命題は語の混合でなく分節されているという注意。要素命題を名前の配置として定義する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	proposition	3.14	命題は語の混合ではなく分節されている
+3.142	conseq	3	-	high	-	fact,sense,name	3.144	事実だけが意味(Sinn)を表せる。名前の集まりはできない。【段階 3 の形式化で種別を claim→conseq に変更】同じ名前からなる二つの要素命題が、名前の配置だけの違いで意味を異にしうることを定理にした
 3.143	elucid	out	-	mid	-	propositional_sign,fact	3.1431	命題記号が事実であることは通常の書き方では隠されている。Frege 批判
 3.1431	elucid	out	-	high	-	propositional_sign	3.143	机や椅子で命題記号を作る例
-3.1432	claim	3	-	mid	relations	propositional_sign,name	3.14	「aRb」については、「a」と「b」がある関係に立つことが aRb を語る。関係は名前でなく名前の配置で表される
-3.144	claim	3	-	high	-	situation,name,proposition	3.221	状況は記述できるが名指せない。名前は点、命題は矢印
-3.2	claim	3	-	high	-	thought,proposition,object,simple_sign	3.201	思考の対象に命題記号の要素が対応するように表現できる
+3.1432	conseq	3	-	mid	relations	propositional_sign,name	3.14	「aRb」については、「a」と「b」がある関係に立つことが aRb を語る。関係は名前でなく名前の配置で表される。【段階 3 の形式化で種別を claim→conseq に変更】名前の配置が意味を決めること(aRb と bRa)を定理にした(3.142 と同じ定理)
+3.144	claim	basis	状況は記述できるが名指せないという主張。名前は対象に、命題は真理可能性の集合に対応させる設計の根拠(段階 3 の形式化で段階 3 から移した)	high	-	situation,name,proposition	3.221	状況は記述できるが名指せない。名前は点、命題は矢印
+3.2	conseq	3	-	high	-	thought,proposition,object,simple_sign	3.201	思考の対象に命題記号の要素が対応するように表現できる。【段階 3 の形式化で種別を claim→conseq に変更】要素命題の要素(名前)に、描かれた事態の対象が対応することを定理にした
 3.201	def	3	-	high	analysis	simple_sign,analysis	3.25	単純記号と完全に分析された命題の定義
 3.202	def	3	-	high	-	name,simple_sign	3.203	名前=命題で使われる単純記号
 3.203	def	3	-	high	-	name,object,meaning	3.22	名前は対象を意味する。対象が名前の意味(Bedeutung)。形式化では名前から対象への解釈関数
-3.21	claim	3	-	high	-	name,configuration,situation	2.15	命題記号の中の単純記号の配置に、状況の中の対象の配置が対応する
-3.22	claim	3	-	high	-	name,object	3.203	命題の中で名前は対象の代わりになる
-3.221	claim	3	-	mid	say_show	object,name,proposition	3.144	対象は名指せるだけで、言明できない。命題は物がどうあるかを語り、何であるかは語れない
-3.23	claim	3	-	mid	analysis	simple_sign,sense	3.24,3.25	単純記号の可能性の要請は、意味(Sinn)の確定性の要請
-3.24	claim	3	-	mid	analysis	complex,analysis,proposition	2.0201,3.3442	複合体についての命題は構成要素についての命題と内的関係にある。複合体が存在しなければ偽(無意味ではない)
-3.25	claim	3	-	high	analysis	analysis,proposition	3.201	命題の完全な分析はただ一つ。形式化では分析を関数として扱える
-3.251	claim	3	-	mid	-	proposition	3.141	命題は確定した仕方で表す。命題は分節されている
-3.26	claim	3	-	high	-	name	3.261	名前は定義でさらに分析できない原始記号
-3.261	claim	3	-	mid	-	name,definition	3.26	定義された記号は定義を通じて意味する。原始記号とは意味の仕方が違う
-3.262	claim	3	-	low	say_show	sign	3.26	記号に表れないものは使用が示す
+3.21	conseq	3	-	high	-	name,configuration,situation	2.15	命題記号の中の単純記号の配置に、状況の中の対象の配置が対応する。【段階 3 の形式化で種別を claim→conseq に変更】名前の配置と対象の配置が同じ構造を持つことを定理にした
+3.22	def	3	-	high	-	name,object	3.203	命題の中で名前は対象の代わりになる。【段階 3 の形式化で種別を claim→def に変更】名前が対象の代わりになることを、名前から対象への写像(解釈)として定義した
+3.221	claim	basis	対象は名指せるだけで言明できないという主張(say_show)。名前を対象に対応させる設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	say_show	object,name,proposition	3.144	対象は名指せるだけで、言明できない。命題は物がどうあるかを語り、何であるかは語れない
+3.23	claim	out	単純記号の可能性の要請と意味の確定性(analysis)。分析は形式化しない(段階 3 の形式化で段階 3 から移した)	mid	analysis	simple_sign,sense	3.24,3.25	単純記号の可能性の要請は、意味(Sinn)の確定性の要請
+3.24	claim	out	複合体についての命題と構成要素についての命題の関係(analysis)。分析は形式化しない(段階 3 の形式化で段階 3 から移した)	mid	analysis	complex,analysis,proposition	2.0201,3.3442	複合体についての命題は構成要素についての命題と内的関係にある。複合体が存在しなければ偽(無意味ではない)
+3.25	claim	out	命題の完全な分析はただ一つという主張(analysis)。分析は形式化しない(段階 3 の形式化で段階 3 から移した)	high	analysis	analysis,proposition	3.201	命題の完全な分析はただ一つ。形式化では分析を関数として扱える
+3.251	claim	basis	命題は確定した仕方で表すという主張。記号の意味を解釈で一通りに決める設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	proposition	3.141	命題は確定した仕方で表す。命題は分節されている
+3.26	claim	basis	名前を定義で分析できない原始記号として、型パラメータに置く設計の根拠(段階 3 の形式化で段階 3 から移した)	high	-	name	3.261	名前は定義でさらに分析できない原始記号
+3.261	claim	out	定義された記号は定義を通じて意味するという主張。定義の体系は形式化しない(段階 3 の形式化で段階 3 から移した)	mid	-	name,definition	3.26	定義された記号は定義を通じて意味する。原始記号とは意味の仕方が違う
+3.262	claim	basis	記号に表れないものは使用が示すという主張(say_show)(段階 3 の形式化で段階 3 から移した)	low	say_show	sign	3.26	記号に表れないものは使用が示す
 3.263	elucid	out	-	mid	-	name,meaning	3.26	原始記号の意味は解明(Erläuterung)で説明される。6.54 とつながる方法論的な注釈
-3.3	claim	3	-	high	-	proposition,sense,name,meaning	3.314	文脈原理:命題だけが意味(Sinn)を持ち、名前は命題の脈絡でだけ意味(Bedeutung)を持つ
+3.3	claim	basis	文脈原理。名前の意味を命題の意味の計算の中でだけ使う設計の根拠(段階 3 の形式化で段階 3 から移した)	high	-	proposition,sense,name,meaning	3.314	文脈原理:命題だけが意味(Sinn)を持ち、名前は命題の脈絡でだけ意味(Bedeutung)を持つ
 3.31	def	3	-	high	-	expression,proposition,sense	3.311	表現(シンボル)の定義
-3.311	claim	3	-	mid	-	expression,proposition	3.31	表現は自分が現れうる全ての命題の形式を前提する
-3.312	conseq	3	-	mid	-	expression,propositional_variable	3.311	3.311 から:表現はそれが特徴づける命題の一般形式で表される
+3.311	claim	basis	表現は自分が現れうる命題の形式を前提するという注意。表現を命題の集まりで表す設計(3.313)の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	expression,proposition	3.31	表現は自分が現れうる全ての命題の形式を前提する
+3.312	conseq	basis	表現をそれが特徴づける命題の一般形式で表すという注意。表現を命題の集まりで表す設計(3.313)の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	expression,propositional_variable	3.311	3.311 から:表現はそれが特徴づける命題の一般形式で表される
 3.313	def	3	-	high	-	expression,propositional_variable	3.312	表現は変項で表される。命題変項の定義
-3.314	claim	3	-	mid	-	expression,propositional_variable	3.3	表現は命題の中でだけ意味を持つ。全ての変項は命題変項とみなせる
-3.315	claim	3	-	mid	-	propositional_variable,logical_form	3.313	恣意的に決めた記号を全て変項に変えても残る命題のクラスは、論理形式に対応する
-3.316	claim	3	-	mid	-	propositional_variable	3.317	命題変項がとる値は確定している。値の確定が変項そのもの
-3.317	claim	3	-	mid	-	propositional_variable,symbol	3.316,5.501	値の確定は命題の記述であり、記号だけを扱う
-3.318	claim	3	-	mid	-	proposition,expression	5.47	命題を、それが含む表現の関数とみなす(Frege・Russell と同じく)
+3.314	claim	basis	表現は命題の中でだけ意味を持つという主張(文脈原理)。名前の意味を命題の意味の計算の中でだけ使う設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	expression,propositional_variable	3.3	表現は命題の中でだけ意味を持つ。全ての変項は命題変項とみなせる
+3.315	claim	basis	構成要素を変項に変えて得られる命題のクラスと論理形式の対応。構文の型の設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	propositional_variable,logical_form	3.313	恣意的に決めた記号を全て変項に変えても残る命題のクラスは、論理形式に対応する
+3.316	claim	basis	命題変項の値の確定が変項そのものだという注意。表現を値の集まりで表す設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	propositional_variable	3.317	命題変項がとる値は確定している。値の確定が変項そのもの
+3.317	claim	basis	値の確定は命題の記述で記号だけを扱うという注意。記号の型の設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	propositional_variable,symbol	3.316,5.501	値の確定は命題の記述であり、記号だけを扱う
+3.318	conseq	3	-	mid	-	proposition,expression	5.47	命題を、それが含む表現の関数とみなす(Frege・Russell と同じく)。【段階 3 の形式化で種別を claim→conseq に変更】命題の意味が、その中の名前の意味だけで決まることを定理にした
 3.32	def	3	-	high	-	sign,symbol	3.321	記号(Zeichen)=シンボルの感覚的に知覚できる部分
 3.321	conseq	3	-	mid	-	sign,symbol	3.32	3.32 から:二つのシンボルが記号を共有しうる
-3.322	claim	3	-	mid	-	sign,symbol	3.321	同じ記号を違う方法で使っても二つの対象の共通点は示せない。記号は恣意的
+3.322	claim	basis	同じ記号を違う方法で使っても共通点は示せないという注意。記号と解釈を分ける設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	sign,symbol	3.321	同じ記号を違う方法で使っても二つの対象の共通点は示せない。記号は恣意的
 3.323	elucid	out	-	high	-	sign,symbol	3.324	日常言語での「is」などの多義性の例
 3.324	elucid	out	-	mid	-	symbol	3.323	ここから哲学の根本的な混乱が生じる
-3.325	claim	3	-	mid	-	logical_syntax	3.33	誤りを避けるには論理的文法(論理的構文論)に従う記号法を使う
-3.326	claim	3	-	mid	-	sign,symbol	3.327	記号の中のシンボルを見分けるには意味のある使用を見る
-3.327	claim	3	-	mid	-	sign,logical_form,logical_syntax	3.326	記号は論理的構文論上の使用と一緒になって初めて論理形式を決める
-3.328	claim	3	-	mid	-	sign,meaning	5.47321	必要でない記号は意味を持たない(オッカムの剃刀)
-3.33	claim	3	-	high	type_theory	logical_syntax,meaning	3.331	論理的構文論では記号の意味が役割を演じてはならない
+3.325	claim	basis	誤りを避ける記号法(論理的文法)の要請。構文の型を設計する根拠(段階 3 の形式化で段階 3 から移した)	mid	-	logical_syntax	3.33	誤りを避けるには論理的文法(論理的構文論)に従う記号法を使う
+3.326	claim	basis	記号の中のシンボルを見分けるには使用を見よという注意。記号と解釈を分ける設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	sign,symbol	3.327	記号の中のシンボルを見分けるには意味のある使用を見る
+3.327	claim	basis	記号は論理的構文論上の使用と一緒に論理形式を決めるという注意。記号と解釈を分ける設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	sign,logical_form,logical_syntax	3.326	記号は論理的構文論上の使用と一緒になって初めて論理形式を決める
+3.328	claim	basis	必要でない記号は意味を持たない(オッカムの剃刀)。5.47321 で扱った内容に含める(段階 3 の形式化で段階 3 から移した)	mid	-	sign,meaning	5.47321	必要でない記号は意味を持たない(オッカムの剃刀)
+3.33	claim	basis	論理的構文論で記号の意味が役割を演じてはならないという主張(type_theory)。構文の型を意味と別に定義する設計の根拠(段階 3 の形式化で段階 3 から移した)	high	type_theory	logical_syntax,meaning	3.331	論理的構文論では記号の意味が役割を演じてはならない
 3.331	elucid	out	-	mid	type_theory	logical_syntax	3.33	Russell の型理論への批判
-3.332	claim	3	-	mid	type_theory	proposition,self_reference	3.333	命題は自分自身について何も語れない(「型理論の全て」)
-3.333	claim	3	-	mid	type_theory	function,self_reference	3.332	関数は自分の引数になれない。Russell のパラドックスの解消。Lean の型理論とは別の理由づけ
-3.334	claim	3	-	mid	-	logical_syntax	3.33	個々の記号の意味の仕方がわかれば、論理的構文論の規則はおのずと出てくる
+3.332	claim	basis	命題は自分自身について語れないという主張(type_theory)。Lean の型をメタ言語の道具として使う前提に含める(段階 3 の形式化で段階 3 から移した)	mid	type_theory	proposition,self_reference	3.333	命題は自分自身について何も語れない(「型理論の全て」)
+3.333	claim	basis	関数は自分の引数になれないという主張(type_theory)。Lean の型をメタ言語の道具として使う前提に含める(段階 3 の形式化で段階 3 から移した)	mid	type_theory	function,self_reference	3.332	関数は自分の引数になれない。Russell のパラドックスの解消。Lean の型理論とは別の理由づけ
+3.334	claim	basis	個々の記号の意味の仕方がわかれば構文論の規則はおのずと出るという主張。意味を構成的に計算する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	logical_syntax	3.33	個々の記号の意味の仕方がわかれば、論理的構文論の規則はおのずと出てくる
 3.34	def	3	-	mid	-	proposition,sense	3.341	命題の本質的な特徴と偶然的な特徴の定義
 3.341	conseq	3	-	mid	-	proposition,sense,symbol	3.34	3.34 から:命題の本質は同じ意味(Sinn)を表せる全ての命題に共通なもの。意味の同値類として形式化できる
 3.3411	elucid	out	-	mid	-	name,symbol	3.341	本当の名前は対象を意味する全てのシンボルに共通なもの
-3.342	claim	3	-	mid	-	notation	3.3421	記法には恣意的な部分があるが、何かを恣意的に決めれば別の何かが必然的に決まる
+3.342	claim	basis	記法の恣意的な部分と必然的な部分の注意。本質的な特徴(3.34)の定義の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	notation	3.3421	記法には恣意的な部分があるが、何かを恣意的に決めれば別の何かが必然的に決まる
 3.3421	elucid	out	-	mid	-	notation	3.342	個々のものより、その可能性が世界の本質を明かす
-3.343	claim	3	-	mid	-	definition,notation	3.344	定義はある言語から別の言語への翻訳規則。正しい記号法は全て互いに翻訳できる
-3.344	claim	3	-	mid	-	symbol,logical_syntax	3.343	シンボルの中で意味するのは、論理的構文論の規則で置き換えうる全てのシンボルに共通なもの
+3.343	claim	basis	定義は翻訳規則で、正しい記号法は互いに翻訳できるという主張。N と他の結合子の相互定義(5.474)で扱った内容に含める(段階 3 の形式化で段階 3 から移した)	mid	-	definition,notation	3.344	定義はある言語から別の言語への翻訳規則。正しい記号法は全て互いに翻訳できる
+3.344	claim	basis	シンボルの中で意味するのは置き換えうる全てのシンボルに共通なもの。本質的な特徴(3.341)の定理の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	symbol,logical_syntax	3.343	シンボルの中で意味するのは、論理的構文論の規則で置き換えうる全てのシンボルに共通なもの
 3.3441	elucid	out	-	high	-	truth_function,notation	5.5	真理関数の記法は全て「~p」と「p ∨ q」で置き換えられる。関数的完全性の例示(定理として示せる)
-3.3442	claim	3	-	mid	analysis	complex,analysis	3.25	複合体の記号は分析で恣意的に分解されない
-3.4	claim	3	-	mid	-	proposition,logical_place,logical_space	3.41	命題は論理空間の中の場所を決める。その存在は構成要素の存在だけで保証される
+3.3442	claim	out	複合体の記号は分析で恣意的に分解されないという主張(analysis)。分析は形式化しない(段階 3 の形式化で段階 3 から移した)	mid	analysis	complex,analysis	3.25	複合体の記号は分析で恣意的に分解されない
+3.4	conseq	3	-	mid	-	proposition,logical_place,logical_space	3.41	命題は論理空間の中の場所を決める。その存在は構成要素の存在だけで保証される。【段階 3 の形式化で種別を claim→conseq に変更】論理空間の場所の存在が構成要素(描かれた事態が可能であること)だけで保証されることを定理にした(2.11 と同じ定理)
 3.41	def	3	-	mid	-	logical_place,propositional_sign	3.4	命題記号と論理座標=論理的場所
 3.411	elucid	out	-	mid	-	logical_place	3.41	幾何学的場所と論理的場所の類比
-3.42	claim	3	-	high	-	proposition,logical_space	5.44	命題は論理空間の一つの場所しか決めないが、論理空間全体が既に与えられていなければならない。否定や論理和が新しい要素を持ち込まない
+3.42	conseq	3	-	high	-	proposition,logical_space	5.44	命題は論理空間の一つの場所しか決めないが、論理空間全体が既に与えられていなければならない。否定や論理和が新しい要素を持ち込まない。【段階 3 の形式化で種別を claim→conseq に変更】否定は新しい名前を持ち込まず、同じ論理空間の中で補集合をとるだけであることを定理にした
 3.5	def	3	-	mid	-	thought,propositional_sign	3	使用され思考された命題記号が思考
 4	def	3	-	high	-	thought,proposition,sense	3,3.5	思考=意味(Sinn)を持つ命題
 4.001	def	1	-	high	-	proposition,language	5.6	言語=命題の全体
 4.002	elucid	out	-	high	-	language	4.003	日常言語は思考を覆い隠す、という注釈
 4.003	elucid	out	-	mid	-	philosophy,nonsense	4.0031,6.53	哲学の問いの多くは偽ではなく無意味(unsinnig)。方法論の主張で、形式化の対象ではない
 4.0031	elucid	out	-	high	-	philosophy	4.003	哲学は言語批判。Russell の功績
-4.01	claim	3	-	high	-	proposition,picture,reality	2.12	命題は現実の像、現実のモデル
+4.01	conseq	3	-	high	-	proposition,picture,reality	2.12	命題は現実の像、現実のモデル。【段階 3 の形式化で種別を claim→conseq に変更】要素命題の意味が、描かれた事態を成立するものとして表す像の意味と同じであることを定理にした
 4.011	elucid	out	-	high	-	proposition,picture	4.01	楽譜や表音文字の例
 4.012	elucid	out	-	high	-	proposition,picture	4.01	aRb の形の命題は明らかに像
 4.013	elucid	out	-	high	-	proposition,picture	4.012	楽譜の♯♭のような見かけの不規則性も写像性を乱さない
@@ -172,31 +172,31 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.0141	elucid	out	-	high	-	picture,projection	4.014	射影の法則は翻訳規則
 4.015	elucid	out	-	mid	-	picture	4.014	比喩の可能性は写像の論理に基づく
 4.016	elucid	out	-	high	-	proposition,picture	4.015	象形文字の例
-4.02	claim	3	-	mid	-	proposition,sense	4.021	説明されなくても命題記号の意味(Sinn)がわかる
-4.021	claim	3	-	mid	-	proposition,picture,sense	4.02	命題を理解すれば、それが表す状況を知る。説明なしに理解する
-4.022	claim	3	-	mid	say_show	proposition,sense,truth	4.1212	命題は意味(Sinn)を示し、それが真ならどうなっているかを示し、そうなっていると語る
-4.023	claim	3	-	mid	-	proposition,reality,description	4.024	命題は Yes/No だけで現実と一致するまで現実を確定する。命題は事実の記述。偽の命題からも推論できる
-4.024	claim	3	-	high	-	proposition,sense,truth	4.431	命題を理解する=それが真なら何が成立しているかを知る(真理条件意味論)。構成要素を理解すれば命題を理解できる(合成性)
-4.025	claim	3	-	mid	-	language,translation	3.343	翻訳は命題単位ではなく構成要素単位
-4.026	claim	3	-	mid	-	name,meaning	3.263	単純記号の意味(Bedeutung)は説明されなければならない
-4.027	claim	3	-	mid	-	proposition,sense	4.03	命題は新しい意味(Sinn)を伝えられることが本質
-4.03	claim	3	-	high	-	proposition,picture,situation	4.027	命題は古い語で新しい意味を伝える。命題は状況の論理的像である限りで何かを主張する
+4.02	claim	out	説明なしに命題を理解することについての主張で、形式化しない(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,sense	4.021	説明されなくても命題記号の意味(Sinn)がわかる
+4.021	claim	out	命題を理解すれば状況を知るという主張で、形式化しない(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,picture,sense	4.02	命題を理解すれば、それが表す状況を知る。説明なしに理解する
+4.022	claim	basis	命題は意味を示し、そうなっていると語るという主張(say_show)(段階 3 の形式化で段階 3 から移した)	mid	say_show	proposition,sense,truth	4.1212	命題は意味(Sinn)を示し、それが真ならどうなっているかを示し、そうなっていると語る
+4.023	conseq	3	-	mid	-	proposition,reality,description	4.024	命題は Yes/No だけで現実と一致するまで現実を確定する。命題は事実の記述。偽の命題からも推論できる。【段階 3 の形式化で種別を claim→conseq に変更】各現実で、命題とその否定のちょうど一方が真であることを定理にした
+4.024	conseq	3	-	high	-	proposition,sense,truth	4.431	命題を理解する=それが真なら何が成立しているかを知る(真理条件意味論)。構成要素を理解すれば命題を理解できる(合成性)。【段階 3 の形式化で種別を claim→conseq に変更】構成要素(名前の意味)がわかれば命題の意味が決まること(合成性)を定理にした(3.318 と同じ定理)
+4.025	claim	basis	翻訳は構成要素単位で行うという注意。意味を名前の意味から計算する設計(3.318)の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	language,translation	3.343	翻訳は命題単位ではなく構成要素単位
+4.026	claim	out	単純記号の意味は説明されなければならないという主張で、形式化しない(段階 3 の形式化で段階 3 から移した)	mid	-	name,meaning	3.263	単純記号の意味(Bedeutung)は説明されなければならない
+4.027	claim	basis	命題は新しい意味を伝えられることが本質だという主張。4.03 の定理で扱った内容に含める(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,sense	4.03	命題は新しい意味(Sinn)を伝えられることが本質
+4.03	conseq	3	-	high	-	proposition,picture,situation	4.027	命題は古い語で新しい意味を伝える。命題は状況の論理的像である限りで何かを主張する。【段階 3 の形式化で種別を claim→conseq に変更】名前の意味から全ての組み合わせの意味が決まる(古い語で新しい意味を伝えられる)ことを定理にした(3.318 と同じ定理)
 4.031	elucid	out	-	mid	-	proposition,situation	4.03	命題の中で状況が試験的に組み立てられる
 4.0311	elucid	out	-	high	-	name,object,atomic_fact	3.21	名前が物の代わりに結合して事態を表す
-4.0312	claim	3	-	high	logical_constants	logical_constant,representation	5.4,5.44	「論理定項」は何も代表しない(根本思想)。形式化では論理結合子を対象や名前として扱わず、真理関数として扱う根拠
-4.032	claim	3	-	mid	-	proposition,picture	3.141	命題は論理的に分節されている限りで状況の像
-4.04	claim	3	-	high	-	proposition,situation,multiplicity	4.041	命題と状況は同じ論理的(数学的)多様性を持つ
-4.041	claim	3	-	mid	say_show	multiplicity	4.04	数学的多様性そのものは表せない
+4.0312	claim	basis	論理定項は何も代表しないという根本思想(logical_constants)。結合子を名前でなく N による構成として扱う設計の根拠(段階 3 の形式化で段階 3 から移した)	high	logical_constants	logical_constant,representation	5.4,5.44	「論理定項」は何も代表しない(根本思想)。形式化では論理結合子を対象や名前として扱わず、真理関数として扱う根拠
+4.032	claim	basis	命題は論理的に分節されている限りで像だという注意。要素命題を名前の配置として定義する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,picture	3.141	命題は論理的に分節されている限りで状況の像
+4.04	conseq	3	-	high	-	proposition,situation,multiplicity	4.041	命題と状況は同じ論理的(数学的)多様性を持つ。【段階 3 の形式化で種別を claim→conseq に変更】名前の意味が単射なら、異なる要素命題は異なる事態を描く(同じ多様性)ことを定理にした
+4.041	claim	basis	数学的多様性そのものは表せないという主張(say_show)(段階 3 の形式化で段階 3 から移した)	mid	say_show	multiplicity	4.04	数学的多様性そのものは表せない
 4.0411	elucid	out	-	high	-	generality,notation,multiplicity	4.04	一般性を指標で表す試みが失敗する例
 4.0412	elucid	out	-	high	-	multiplicity	4.04	観念論の「空間の眼鏡」批判
-4.05	claim	3	-	mid	-	reality,proposition	2.223	現実が命題と比べられる
-4.06	claim	3	-	high	-	proposition,truth,picture	2.21	命題は現実の像であることによってだけ真か偽になりうる
+4.05	claim	basis	現実が命題と比べられるという注意。真偽を現実との一致で定義する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	reality,proposition	2.223	現実が命題と比べられる
+4.06	conseq	3	-	high	-	proposition,truth,picture	2.21	命題は現実の像であることによってだけ真か偽になりうる。【段階 3 の形式化で種別を claim→conseq に変更】要素命題が真であるのは描かれた事態が成立するときに限ることを定理にした
 4.061	elucid	out	-	mid	-	truth,sense	4.062	真偽を記号と事物の対等な二つの関係とみなす誤り
 4.062	elucid	out	-	mid	-	truth	4.061	偽の命題で意思疎通できないことの説明
-4.0621	claim	3	-	high	logical_constants	negation,sense	4.0312,5.44	「p」と「~p」は同じことを言いうる。「~」は現実の何にも対応しない。~~p=p。p と ~p は逆の意味を持つが対応する現実は同じ。二重否定の除去は定理として示せる
+4.0621	conseq	3	-	high	logical_constants	negation,sense	4.0312,5.44	「p」と「~p」は同じことを言いうる。「~」は現実の何にも対応しない。~~p=p。p と ~p は逆の意味を持つが対応する現実は同じ。二重否定の除去は定理として示せる。【段階 3 の形式化で種別を claim→conseq に変更】否定は名前を持ち込まず(現実の何にも対応しない)、~~p は p と同じ意味であることを定理にした
 4.063	elucid	out	-	high	-	truth,sense	4.064	白い紙の黒い点の比喩。Frege の真理値の考え方への批判
-4.064	claim	3	-	mid	-	proposition,sense,assertion	4.063	全ての命題は既に意味(Sinn)を持つ。主張が意味を与えるのではない
-4.0641	claim	3	-	mid	-	negation,logical_place	3.42	否定は否定される命題の論理的場所の外にある場所を決める。否定を補集合として形式化する根拠
+4.064	claim	basis	全ての命題は既に意味を持ち、主張が意味を与えるのではないという注意。意味を記号と解釈だけで決める設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	proposition,sense,assertion	4.063	全ての命題は既に意味(Sinn)を持つ。主張が意味を与えるのではない
+4.0641	conseq	3	-	mid	-	negation,logical_place	3.42	否定は否定される命題の論理的場所の外にある場所を決める。否定を補集合として形式化する根拠。【段階 3 の形式化で種別を claim→conseq に変更】否定の意味が補集合(否定される命題の場所の外)であることを定理にした
 4.1	claim	basis	命題の意味を事態の成立・不成立の割り当ての集合として表す設計(4.2)の根拠(段階 1 の形式化で段階 1 から移した)	high	-	proposition,atomic_fact	2.11,4.2	命題は事態の成立と不成立を表す
 4.11	claim	out	自然科学についての主張で、範囲外	mid	-	proposition,truth,natural_science	6.53	真な命題の全体が自然科学の全体
 4.111	elucid	out	-	high	-	philosophy,natural_science	4.112	哲学は自然科学の一つではない
@@ -217,7 +217,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.123	def	3	-	high	-	internal_property	4.122	内的性質=対象がそれを持たないことが考えられない性質。形式化では「全ての可能世界で成り立つ」性質と読める
 4.124	claim	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	internal_property,proposition	4.122	内的性質の存在は命題で表されず、命題の内的性質で表される
 4.1241	elucid	out	-	mid	-	logical_form	4.124	形式どうしを性質で区別できない
-4.125	claim	3	-	mid	-	internal_relation,proposition	4.1211	可能な状況の間の内的関係は、命題の間の内的関係として表れる
+4.125	conseq	3	-	mid	-	internal_relation,proposition	4.1211	可能な状況の間の内的関係は、命題の間の内的関係として表れる。【段階 3 の形式化で種別を claim→conseq に変更】二つの像が表す状況の包含(内的関係)と、命題の間の帰結が同じであることを定理にした
 4.1251	elucid	out	-	mid	-	internal_relation	4.125	関係は全て内的か外的かという論争が消える
 4.1252	def	2	-	high	-	formal_series,internal_relation	4.1273,5.2522	内的関係で順序づけられた列を形式列と呼ぶ。後続者の定義。※英訳(1922)の式「(∃x, y):aRx . aRy . yRb」はドイツ語原文の「aRx . xRy . yRb」と食い違う。英訳側の誤りと考え、形式化はドイツ語に従う
 4.126	def	out	語る/示すの区別そのものの主張で、体系の中の式としては表せない(policy §2)	mid	say_show	formal_concept,propositional_variable	4.127	形式的概念の導入。それに属することは命題で表せず記号そのものに示される。形式的概念は関数では表せず、命題変項で表される
@@ -231,10 +231,10 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.2	def	1	-	high	-	sense,proposition,atomic_fact	2.201,4.4	命題の意味(Sinn)=事態の成立・不成立の可能性との一致・不一致。意味を可能世界の集合(真理条件)として定義する中心命題
 4.21	def	1	-	high	-	elementary_proposition,atomic_fact	4.25	要素命題=事態の成立を主張する最も単純な命題
 4.211	claim	1	-	high	independence	elementary_proposition,independence	2.061,6.3751	要素命題はどれも他の要素命題と矛盾しない。2.061 の言語側の対応物
-4.22	claim	3	名前と対象の対応という構文論が要るので、像の構造と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	elementary_proposition,name	4.221	要素命題は名前の連鎖(結合)
-4.221	claim	3	名前の結合としての要素命題は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	analysis	analysis,elementary_proposition,name	3.25	分析すれば名前の直接の結合からなる要素命題に行き着く
+4.22	def	3	名前と対象の対応という構文論が要るので、像の構造と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	elementary_proposition,name	4.221	要素命題は名前の連鎖(結合)。【段階 3 の形式化で種別を claim→def に変更】要素命題を名前の配置(連鎖)として定義した
+4.221	claim	out	分析すれば名前の直接の結合からなる要素命題に行き着くという主張(analysis)。分析は形式化しない(段階 3 の形式化で段階 3 から移した)	mid	analysis	analysis,elementary_proposition,name	3.25	分析すれば名前の直接の結合からなる要素命題に行き着く
 4.2211	claim	basis	事態の型に有限性を課さない設計の根拠(interpretation の infinity)。数え上げの定理だけで有限性を仮定する(段階 1 の形式化で段階 1 から移した)	mid	infinity	world,object,atomic_fact	4.463,5.535	世界が無限に複雑でも対象と事態はなければならない。形式化で対象や事態を有限に限るかどうかに関わる
-4.23	claim	3	名前と要素命題の関係は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる
+4.23	conseq	3	名前と要素命題の関係は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる。【段階 3 の形式化で種別を claim→conseq に変更】命題の中の名前は、要素命題の中にだけ現れることを定理にした
 4.24	notation	3	名前と要素命題の記法は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	name,elementary_proposition,notation	4.241	名前を x, y, z、要素命題を fx, φ(x, y) や p, q, r で書く記法
 4.241	notation	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	high	identity	identity,definition,notation	4.242,5.53	「a=b」は記号 a を b で置き換えられること。定義は記号の規則
 4.242	claim	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない
@@ -262,7 +262,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.463	conseq	1	-	mid	-	truth_condition,logical_space,tautology	4.462	真理条件は命題が事実に残す範囲を決める。トートロジーは論理空間全体を、矛盾は何も残さない。命題を論理空間の部分集合として形式化する根拠。【段階 1 の形式化で種別を claim→conseq に変更】トートロジーは論理空間全体を、矛盾は何も残さないことを定理にした
 4.464	claim	1	-	mid	-	tautology,contradiction,probability	5.15	トートロジーの真は確実、命題の真は可能、矛盾の真は不可能
 4.465	conseq	1	-	high	-	tautology,logical_product,sense	4.46	トートロジーと命題の論理積は命題と同じことを言う。定理の候補(p ∧ ⊤ ≡ p)
-4.466	claim	3	記号の結合と対象の結合の対応は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
+4.466	claim	basis	記号の結合と意味の結合の対応、トートロジーと矛盾は結合の極限という主張。意味を構成的に計算する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	tautology,contradiction,symbol	4.4661	記号の確定した論理的結合には意味の確定した結合が対応する。トートロジーと矛盾は記号の結合の極限(解消)
 4.4661	elucid	out	-	mid	-	tautology,symbol	4.466	トートロジーの中の記号の関係はシンボルにとって本質的でない
 4.5	conseq	2	-	mid	general_form	general_form,proposition	4.53,6	命題の最も一般的な形式を与えられそう。一般形式は「事情はかくかくである」。【段階 2 の形式化で種別を claim→conseq に変更】N で作った記号の意味がちょうど要素命題の真理関数になること(一般形式が与えられること)を定理にした
 4.51	claim	2	-	high	general_form	elementary_proposition,proposition	4.52,5	全ての要素命題が与えられれば、そこから作れる命題が全ての命題。命題の全体を要素命題からの生成として形式化する根拠
@@ -297,12 +297,12 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.143	conseq	1	-	mid	-	tautology,contradiction	5.142	矛盾は命題の外の限界、トートロジーは中心。束の上端・下端として形式化できる。【段階 1 の形式化で種別を claim→conseq に変更】矛盾は全ての命題より下、トートロジーは上にあること(包含の順序の両端)を定理にした
 5.15	def	3	-	high	-	probability,truth_ground	5.151	確率の定義:T_rs:T_r を r が s に与える確率とする
 5.151	conseq	3	-	high	-	probability,truth_table	5.15	5.101 の表での確率の数え方。5.15 の言い換え
-5.1511	claim	3	-	mid	-	probability	5.15	確率命題に固有の対象はない
+5.1511	claim	basis	確率命題に固有の対象はないという注意。確率を真理根拠の数の比として定義する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	probability	5.15	確率命題に固有の対象はない
 5.152	conseq	3	-	high	independence	probability,independence,elementary_proposition	5.15	真理項を共有しない命題は独立で、互いに確率 1/2 を与える。帰結なら確率 1。定理の候補
-5.153	claim	3	-	mid	-	probability	5.15	命題はそれ自体では確からしくもなく、確からしくなくもない
+5.153	claim	basis	命題はそれ自体では確からしくも確からしくなくもないという注意。確率を二つの命題の関係として定義する設計の根拠(段階 3 の形式化で段階 3 から移した)	mid	-	probability	5.15	命題はそれ自体では確からしくもなく、確からしくなくもない
 5.154	elucid	out	-	high	-	probability	5.155	壺から玉を取り出す例
-5.155	claim	3	-	low	-	probability	5.154	確率命題の単位
-5.156	claim	3	-	low	-	probability,generality	5.155	確率は一般化。確率命題は他の命題からの抜粋
+5.155	claim	out	確信度が低く、確率命題の単位についての注意で形式化しない(段階 3 の形式化で段階 3 から移した)	low	-	probability	5.154	確率命題の単位
+5.156	claim	out	確信度が低く、確率は一般化だという注意で形式化しない(段階 3 の形式化で段階 3 から移した)	low	-	probability,generality	5.155	確率は一般化。確率命題は他の命題からの抜粋
 5.2	claim	basis	命題の構造の内的関係を、操作(写像)で表す設計の根拠(段階 2 の形式化で段階 2 から移した)	mid	-	structure,internal_relation	5.21	命題の構造は互いに内的関係に立つ
 5.21	claim	basis	内的関係を操作の結果として表すという設計の根拠(Formula を操作 N の結果として定義する)(段階 2 の形式化で段階 2 から移した)	mid	-	operation,internal_relation	5.22	内的関係は、命題を他の命題(基底)からの操作の結果として表すことで示せる
 5.22	def	2	-	mid	-	operation	5.23	操作=結果と基底の構造の関係の表現
