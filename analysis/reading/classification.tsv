@@ -237,8 +237,8 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 4.23	conseq	3	名前と要素命題の関係は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	mid	-	name,elementary_proposition	3.3	名前は要素命題の脈絡でだけ命題に現れる。【段階 3 の形式化で種別を claim→conseq に変更】命題の中の名前は、要素命題の中にだけ現れることを定理にした
 4.24	notation	3	名前と要素命題の記法は、名前の構文論と一緒に段階 3 で扱う(段階 1 の形式化で段階 1 から移した)	high	-	name,elementary_proposition,notation	4.241	名前を x, y, z、要素命題を fx, φ(x, y) や p, q, r で書く記法
 4.241	notation	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	high	identity	identity,definition,notation	4.242,5.53	「a=b」は記号 a を b で置き換えられること。定義は記号の規則
-4.242	claim	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない
-4.243	claim	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity,name,meaning	5.53,5.5303	二つの名前が同じものを指すかを知らずに理解することはできない。「a=a」などは要素命題でも意味のある記号でもない
+4.242	conseq	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity	4.241	「a=b」の形の式は表記の便宜で、記号の意味については何も主張しない。【段階 4b の形式化で種別を claim→conseq に変更】「a=b」の意味が、名前の意味に応じてトートロジーか矛盾になる(世界について何も言わない)ことを定理にした
+4.243	conseq	4b	同一性の記号の扱いは、同一性の消去(4b)と一緒に扱う(段階 1 の形式化で段階 1 から移した)	mid	identity	identity,name,meaning	5.53,5.5303	二つの名前が同じものを指すかを知らずに理解することはできない。「a=a」などは要素命題でも意味のある記号でもない。【段階 4b の形式化で種別を claim→conseq に変更】「a=a」がトートロジーで、どの要素命題もトートロジーでないこと、「a=b」の真偽が解釈で決まることを定理にした
 4.25	conseq	1	-	high	-	elementary_proposition,atomic_fact,truth	4.21	要素命題が真なら事態は成立し、偽なら成立しない。要素命題の真理を事態の成立として定義する。【段階 1 の形式化で種別を claim→conseq に変更】要素命題の真を事態の成立として定義した(4.21)ので、定義から出る
 4.26	conseq	1	-	high	-	elementary_proposition,world,truth	2.04,4.25	全ての真な要素命題を挙げれば世界は完全に記述される。世界=要素命題への真理値割り当てと同一視する根拠。【段階 1 の形式化で種別を claim→conseq に変更】現実を事態の真偽の割り当てとしたので、真な要素命題の一覧で現実が決まることは定義から出る
 4.27	conseq	1	-	high	independence	atomic_fact,truth_possibility	2.061,4.28	n 個の事態の成立について K_n=Σ C(n,ν) 通りの可能性がある(=2^n)。どの組み合わせも成立しうる。数え上げの定理の候補
@@ -376,7 +376,7 @@ number	kind	stage	scope_note	confidence	contested	concepts	related	rationale
 5.5262	claim	4c	完全に一般的な命題が区切る範囲の主張は 5.526 と同じく同一性つきの量化が要るので、4c と一緒に扱う(段階 4a の形式化で段階 4a から移した)	mid	-	generality,elementary_proposition,world	5.526	どの命題の真偽も世界の一般的構造を何か変える。要素命題の全体が構造に許す範囲は、完全に一般的な命題が区切る範囲と同じ
 5.53	notation	4b	-	high	identity	identity,notation	5.531	対象の同一性を記号の同一性で表し、同一性の記号を使わない。対象の違いを記号の違いで表す(排他的解釈の変項)。D で採否を決める論点
 5.5301	claim	4c	証明が重いので保留(段階 4c)	mid	identity	identity	5.53	同一性は対象の間の関係ではない
-5.5302	claim	4b	-	mid	identity	identity	5.5301	Russell の「=」の定義(全ての性質の共有)は使えない。二つの対象が全ての性質を共有するという命題は(偽でも)意味を持つ
+5.5302	conseq	4b	-	mid	identity	identity	5.5301	Russell の「=」の定義(全ての性質の共有)は使えない。二つの対象が全ての性質を共有するという命題は(偽でも)意味を持つ。【段階 4b の形式化で種別を claim→conseq に変更】異なる二つの対象が全ての性質を共有する現実があり、性質の共有が現実によって真にも偽にもなることを定理にした
 5.5303	claim	4c	証明が重いので保留(段階 4c)	mid	identity	identity,nonsense	4.243	二つのものが同一だと言うのは無意味、一つのものが自分と同一だと言うのは何も言わない
 5.531	notation	4b	-	high	identity	identity,notation	5.53	「f(a, b) . a=b」でなく「f(a, a)」と書く、など
 5.532	notation	4c	証明が重いので保留(段階 4c)	high	identity	identity,generality,notation	5.531	「(∃x, y) . f(x, y) . x=y」でなく「(∃x) . f(x, x)」と書く、など。排他的解釈の量化の翻訳規則として形式化できる

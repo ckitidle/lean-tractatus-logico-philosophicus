@@ -16,3 +16,4 @@ import Tractatus.Probability
 import Tractatus.Colour
 import Tractatus.Models.Stage3
 import Tractatus.Generality
+import Tractatus.Identity

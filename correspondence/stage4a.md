@@ -50,10 +50,10 @@
 
 ### 5.441
 
-- **Lean**:`Tractatus.QFormula.holds_neg_ex_neg`(定理、`Tractatus/Generality.lean`)
+- **Lean**:`Tractatus.QFormula.holds_neg_ex_neg`(定理、`Tractatus/Generality.lean`)、`Tractatus.ex_eq_iff`(定理、`Tractatus/Identity.lean`。段階 4b で追加)
 - **読み直し**:どの現実、どの解釈、どの変項の値でも、「~(∃x) . ~φ」が真であることと「(x) . φ」が真であることは同値である
 - **ずれ**:
-  - 前半の例(~(∃x) . ~fx と (x) . fx)だけを扱った。「(∃x) . fx . x=a」と「fa」の例は同一性の記号が要るので段階 4b で扱う
+  - 段階 4a では前半の例(~(∃x) . ~fx と (x) . fx)だけを扱った。「(∃x) . fx . x=a」と「fa」の例は段階 4b で追加した(記録は `correspondence/stage4b.md` の 5.441 の補足を参照)
   - 「見かけの論理定項が消える」ことを、二つの式の真偽が全く同じであることと読んだ。式の記号としては違うものが、同じ意味を持つ
   - この言語では「(∃x)」と「(x)」をどちらも原始記号にしていて、一方を他方で定義してはいない。翻訳(5.52)の先では、どちらも N に還元される
   - 種別を主張から帰結に変えた
