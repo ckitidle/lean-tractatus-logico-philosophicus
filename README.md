@@ -13,3 +13,9 @@
 mise trust && mise install
 lake build
 ```
+
+## ライセンス
+
+- Lean のコード、ツール、設定ファイル:MIT License(`LICENSE`)
+- 日本語の対応記録、分析、方針などの文書:CC BY 4.0(`LICENSE-docs.md`)
+- 引用している『論理哲学論考』の本文(ドイツ語原文、Ogden 英訳)は public domain
