@@ -199,6 +199,14 @@ def run (strict : Bool) : IO UInt32 := do
             current := none
           else if let some n := current then
             recordText := recordText.insert n ((recordText.getD n "") ++ line ++ "\n")
+  -- each proposition has at most one record, and every record has the required fields
+  for i in [0:recorded.size] do
+    if recorded[:i].toArray.contains recorded[i]! then
+      errors := errors.push s!"correspondence: record '{recorded[i]!}' appears more than once"
+  for (n, text) in recordText.toList do
+    for field in ["- **Lean**", "- **読み直し**", "- **ずれ**", "- **1933 年版**"] do
+      unless (text.splitOn field).length > 1 do
+        errors := errors.push s!"correspondence: record '{n}' lacks the field '{field}'"
   -- every declaration named in a record (as `Tractatus.…`) exists, and every tagged
   -- declaration is named in the record of its proposition
   for (n, text) in recordText.toList do
