@@ -1,7 +1,13 @@
 name = "Tractatus"
 version = "0.1.0"
 defaultTargets = ["Tractatus"]
-testDriver = "«check-source»"
+testDriver = "«tlp-test»"
+
+# Mathlib: pinned to the release matching lean-toolchain (docs/policy.md section 7)
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.35.0"
 
 [[lean_lib]]
 name = "Tractatus"
@@ -12,14 +18,28 @@ name = "extract-source"
 srcDir = "tools"
 root = "ExtractSource"
 
-# Validates source/tractatus.json (run by `lake test`)
-[[lean_exe]]
-name = "check-source"
+# Shared code of the tools in tools/ (not part of the formalization)
+[[lean_lib]]
+name = "TractatusTools"
 srcDir = "tools"
-root = "CheckSource"
+roots = ["CheckSource"]
+
+# lake test: checks the source data, the classification and the formalization, and reports
+# the status of every proposition (tools/TlpTest.lean). Run lake build first.
+[[lean_exe]]
+name = "tlp-test"
+srcDir = "tools"
+root = "TlpTest"
+supportInterpreter = true
 
 # Renders a review sheet of the classification for one stage into out/ (see docs/policy.md §10)
 [[lean_exe]]
 name = "render-review"
 srcDir = "tools"
 root = "RenderReview"
+
+# Renders correspondence/stage<N>.md with the source text inserted, into out/ (docs/policy.md §6)
+[[lean_exe]]
+name = "render-correspondence"
+srcDir = "tools"
+root = "RenderCorrespondence"

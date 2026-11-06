@@ -1,3 +1,4 @@
--- This module serves as the root of the `Tractatus` library.
--- Import modules here that should be built as part of the library.
-import Tractatus.Basic
+import Tractatus.Meta
+import Tractatus.LogicalSpace
+import Tractatus.TruthPossibility
+import Tractatus.Models.Stage1

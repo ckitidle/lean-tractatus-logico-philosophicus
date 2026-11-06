@@ -21,9 +21,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
     postinstall の `elan-init` で `~/.elan/bin` に `lean` / `lake` のプロキシを置いている
 - **Lean 本体の版は `lean-toolchain`** が決める。elan がこのファイルを読んで自動で取得する。
   版を上げるときはこのファイルだけを書き換える(Mathlib を入れたら Mathlib の版に揃える)
-- Mathlib はまだ入れていない(パイロットで入れる)。`lakefile.toml` に `[[require]]` を足し、
-  `rev` には `lean-toolchain` に対応するリリース版のタグを指定する(master は Lean の開発版前提なので使わない)。
-  `lake exe cache get` でビルド済みキャッシュを取る
+- Mathlib は `lakefile.toml` の `[[require]]` で、`lean-toolchain` に対応するリリース版のタグ(今は `v4.35.0`)に固定している
+  (master は Lean の開発版前提なので使わない)。版を上げるときは `lean-toolchain` と `rev` を揃えて変え、
+  `lake update mathlib` のあと `lake exe cache get` でビルド済みキャッシュを取る
 
 clone 直後:
 
@@ -36,24 +36,30 @@ lake build                   # lean-toolchain の版を elan が自動で入れ�
 
 ```bash
 lake build                          # ライブラリ全体をビルド(型検査 = 証明の検査)
-lake env lean Tractatus/Basic.lean  # 1ファイルだけ検査
-lake test                           # 本文データ source/tractatus.json の検査(check-source)
+lake env lean Tractatus/LogicalSpace.lean  # 1ファイルだけ検査
+lake test                           # 本文データ・分類表・形式化の検査と、全命題の状態の一覧(先に lake build が要る)
+lake test -- --strict               # 上に加えて未完成(sorry)をエラーにする。段階の締めくくりで使う
 lake exe extract-source .cache/gutenberg/5740-t.tex source  # 本文データの再生成(git 管理外。source/README.md)
 lake exe render-review 1             # 段階 1 の分類のレビュー一覧を out/review/stage1.md に生成(原文入り、git 管理外)
+lake exe render-correspondence 1     # correspondence/stage1.md に原文を差し込んだ版を out/correspondence/ に生成
 ```
 
 作成中に必要な検査は、ローカルの `lake build` と `lake test` だけで行う(CI は置いていない)。
+`lake test` は全命題の状態を `out/coverage.md` に書き出す(`docs/policy.md` §6.1)。
 
-Lake でハイフンを含む実行ファイル名を `testDriver` などから参照するときは `«check-source»` と書く。
+- Lake でハイフンを含む実行ファイル名を `testDriver` などから参照するときは `«tlp-test»` と書く
+- 命題番号の札は `@[tlp "2.062"]` / `@[tlp_refutes "6.3751"]`(`Tractatus/Meta.lean`)。札は `Tractatus.Meta.tags.*` という補助の定義として記録され、`tools/TlpTest.lean` がそれを読む。`Tractatus/Meta.lean` には Mathlib を import しない
+- `tools/` の共通部分(`CheckSource`)は lean_lib `TractatusTools` に入れてある。どのライブラリにも属さないモジュールを実行ファイルから import すると、lake が作り直さず古いビルド成果物を読むことがある
+- Mathlib は Lean のモジュール方式で書かれていて、こちらのファイルは旧来の書き方なので、import すると警告が出る。動作には影響しないので、今は旧来の書き方のままにしている
 
 ## Layout
 
 - `lakefile.toml` — Lake の設定。ライブラリ名は `Tractatus`
 - `Tractatus.lean` — ライブラリのルート。新しいモジュールはここで import する
-- `Tractatus/` — 本体
-- `tools/` — 補助ツール(`extract-source`、`check-source`、`render-review`)。ライブラリとは別の実行ファイル
+- `Tractatus/` — 本体。`Meta.lean`(命題番号の札)、`LogicalSpace.lean`、`TruthPossibility.lean`、`Models/`(モデルと反例)
+- `tools/` — 補助ツール(`extract-source`、`tlp-test`(= lake test)、`render-review`、`render-correspondence`)。ライブラリとは別の実行ファイル
 - `source/` — 論考の本文データ(英独対訳)。出典と変換の決まりは `source/README.md`
 - `docs/` — 方針だけ(`roadmap.md` 進め方、`policy.md` 形式化の方針)
 - `analysis/` — 読んで調べた結果。手書きで作り直せないので git で管理する(分類表、解釈の記録、本文の突き合わせ)
-- `correspondence/` — 日本語の対応記録(成果物。パイロット以降に作る)
+- `correspondence/` — 日本語の対応記録(成果物)。段階ごとに `stage<N>.md`。原文は書かない
 - `out/` — スクリプトで作り直せる生成物(git 管理外)

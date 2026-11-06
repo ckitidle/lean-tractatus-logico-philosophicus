@@ -56,7 +56,7 @@ lake test
 
 ## 検査
 
-`lake test`(= `lake exe check-source`)の内容(`tools/CheckSource.lean`):
+`lake test`(`tools/TlpTest.lean`)が最初に行う、本文データの検査の内容(`tools/CheckSource.lean`):
 
 - すべての命題に、正しい書式の番号と、空でない英語・ドイツ語の本文がある
 - 番号に重複がなく、Wittgenstein の順序(`2 < 2.01 < 2.011 < 2.02 < 2.1`)で並んでいる

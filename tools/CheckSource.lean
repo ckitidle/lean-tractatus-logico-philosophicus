@@ -1,7 +1,7 @@
 import Lean.Data.Json
 
 /-!
-# check-source
+# Source and classification checks
 
 Validates `source/tractatus.json`:
 
@@ -11,7 +11,7 @@ Validates `source/tractatus.json`:
   then trailing zeros) exists. Numbers whose nominal parent is missing must be listed
   in `source/numbering-exceptions.txt`, and nothing else may be listed there.
 
-Usage: `lake exe check-source [source-dir]` (default `source`). Run by `lake test`.
+Used by `lake test` (tools/TlpTest.lean), which runs these checks first.
 -/
 
 open Lean
@@ -184,6 +184,3 @@ def run (dir : String) : IO UInt32 := do
     return 1
 
 end CheckSource
-
-def main (args : List String) : IO UInt32 :=
-  CheckSource.run (args.headD "source")
