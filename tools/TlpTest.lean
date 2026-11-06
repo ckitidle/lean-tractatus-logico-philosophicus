@@ -184,12 +184,34 @@ def run (strict : Bool) : IO UInt32 := do
   -- correspondence records (docs/policy.md §6 level 3): every formalized proposition has a
   -- record `### <number>` in some correspondence/stage*.md, and every record is formalized
   let mut recorded : Array String := #[]
+  -- the text of each record, from its heading to the next heading
+  let mut recordText : Std.HashMap String String := {}
   if ← System.FilePath.pathExists "correspondence" then
     for entry in ← System.FilePath.readDir "correspondence" do
       if entry.fileName.startsWith "stage" && entry.fileName.endsWith ".md" then
+        let mut current : Option String := none
         for line in (← IO.FS.readFile entry.path).splitOn "\n" do
           if line.startsWith "### " then
-            recorded := recorded.push (line.drop 4).trimAscii.toString
+            let n := (line.drop 4).trimAscii.toString
+            recorded := recorded.push n
+            current := some n
+          else if line.startsWith "## " || line == "---" then
+            current := none
+          else if let some n := current then
+            recordText := recordText.insert n ((recordText.getD n "") ++ line ++ "\n")
+  -- every declaration named in a record (as `Tractatus.…`) exists, and every tagged
+  -- declaration is named in the record of its proposition
+  for (n, text) in recordText.toList do
+    let pieces := (text.splitOn "`").toArray
+    for i in [0:pieces.size] do
+      let w := pieces[i]!
+      if i % 2 == 1 && w.startsWith "Tractatus." && !w.contains '/' then
+        unless env.contains w.toName do
+          errors := errors.push s!"correspondence: record '{n}' names `{w}`, which does not exist"
+  for t in tags do
+    if let some text := recordText.get? t.number then
+      unless (text.splitOn s!"`{t.decl}`").length > 1 do
+        errors := errors.push s!"correspondence: record '{t.number}' does not name its tagged declaration `{t.decl}`"
   let tagged := statuses.filter (fun (_, s, _) => s == .formalized || s == .incomplete || s == .refuted)
   for (r, _, _) in tagged do
     unless recorded.contains r.number do
