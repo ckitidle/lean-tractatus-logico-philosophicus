@@ -5,7 +5,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project concept
 
 ウィトゲンシュタイン『論理哲学論考』を Lean 4 で形式化する。
-何をどこまで形式化するか(どの命題を定義・定理・公理として扱うか)はまだ調査中。
+進め方は `docs/roadmap.md`(フェーズ A〜F と整合性チェック)。
+何をどこまで形式化するかは、フェーズ D で `docs/policy.md` に決める。
+
+- 本文の出典はドイツ語原文と C. K. Ogden 英訳(1922)だけ。日本語訳・Pears/McGuinness 訳・Russell の序文は著作権があるので使わない
+- Lean の実装(コード・docstring・識別子)は英語。ドキュメントと会話は日本語
 
 ## Toolchain
 
