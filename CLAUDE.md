@@ -20,7 +20,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
     postinstall の `elan-init` で `~/.elan/bin` に `lean` / `lake` のプロキシを置いている
 - **Lean 本体の版は `lean-toolchain`** が決める。elan がこのファイルを読んで自動で取得する。
   版を上げるときはこのファイルだけを書き換える(Mathlib を入れたら Mathlib の版に揃える)
-- Mathlib はまだ入れていない。必要になったら `lakefile.toml` に `[[require]]` を足し、
+- Mathlib はまだ入れていない(パイロットで入れる)。`lakefile.toml` に `[[require]]` を足し、
+  `rev` には `lean-toolchain` に対応するリリース版のタグを指定する(master は Lean の開発版前提なので使わない)。
   `lake exe cache get` でビルド済みキャッシュを取る
 
 clone 直後:
