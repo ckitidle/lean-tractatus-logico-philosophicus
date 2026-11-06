@@ -148,32 +148,26 @@ def scannedFiles : IO (Array System.FilePath) := do
     if ← System.FilePath.pathExists f then files := files.push f
   return files
 
-/-- The text must not be put on GitHub (source/README.md): committed files must not
-contain a run of 6 or more words of the source text, nor the whole text of a proposition
-of 4 or more words. -/
+/-- The source text as a whole must not be put on GitHub (source/README.md): committed
+files must not contain a long verbatim passage, i.e. a run of `minRun` or more words of the
+source text. Short quotations (a phrase, a short proposition) are fine. -/
+def minRun : Nat := 15
+
 def checkNoVerbatim (texts : Array String) : IO (Array String) := do
-  let n := 6
+  let n := minRun
   let mut grams : Std.HashSet String := {}
-  let mut wholes : Std.HashSet String := {}
   for t in texts do
     let ws := textWords t
-    if ws.size ≥ 4 && ws.size < n then wholes := wholes.insert (" ".intercalate ws.toList)
     for i in [0:ws.size + 1 - n] do
       grams := grams.insert (" ".intercalate (ws.extract i (i + n)).toList)
   let mut errors := #[]
   for f in ← scannedFiles do
     let ws := textWords (← IO.FS.readFile f)
-    let mut hit : Option String := none
-    for i in [0:ws.size] do
-      if hit.isSome then break
-      for k in [4, 5, n] do
-        if i + k ≤ ws.size then
-          let g := " ".intercalate (ws.extract i (i + k)).toList
-          if (k == n && grams.contains g) || (k < n && wholes.contains g) then
-            hit := some g
-            break
-    if let some g := hit then
-      errors := errors.push s!"{f}: contains the source text verbatim (\"{g}\"); paraphrase it"
+    for i in [0:ws.size + 1 - n] do
+      let g := " ".intercalate (ws.extract i (i + n)).toList
+      if grams.contains g then
+        errors := errors.push s!"{f}: contains a long verbatim passage of the source text (\"{g}\"); shorten or paraphrase it"
+        break
   return errors
 
 def run (dir : String) : IO UInt32 := do

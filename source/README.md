@@ -17,9 +17,9 @@ lake test
 
 本文の扱いの線引き:
 
-- 命題の本文を丸ごと、または長く引用するものは commit しない(本文データ、Lean の docstring、対応記録)
+- 本文の全体や長い引用は commit しない(本文データを git 管理外にしているのはこのため)。Lean の docstring や対応記録に、短い命題や一句を引用するのはよい
 - 私たちが書く解説の中の短い断片(`~~p=p` のような式や、一語・一句の引用)は残してよい
-- `lake test` が機械的に検査する:commit するファイル(`Tractatus/`、`tools/`、`correspondence/`、`analysis/`、`docs/`、README・CLAUDE.md)に、本文と6語以上連続して一致する箇所、または4語以上の命題の全文があればエラー(1文字の語=式の記号は数えない)
+- `lake test` が機械的に検査する:commit するファイル(`Tractatus/`、`tools/`、`correspondence/`、`analysis/`、`docs/`、README・CLAUDE.md)に、本文と15語以上連続して一致する箇所があればエラー(1文字の語=式の記号は数えない)。短い命題や一句の引用はよい
 
 ## ファイル
 

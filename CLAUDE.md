@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 フェーズ・段階の区切りでは、`docs/roadmap.md` の「区切りの手順」(機械的検証、自己レビュー、ユーザーのレビュー、記録)を必ず行う。
 
 - 本文の出典はドイツ語原文と C. K. Ogden 英訳(1922)だけ。日本語訳・Pears/McGuinness 訳・Russell の序文は著作権があるので使わない
-- 本文は public domain だが GitHub に上げない。`source/tractatus.json` などの本文データは git 管理外で、`.cache/gutenberg/5740-t.tex` から手元で再生成する(`source/README.md`)。commit するファイル(Lean の docstring、対応記録など)にも本文を丸ごと・長く引用しない
+- 本文は public domain だが GitHub に上げない。`source/tractatus.json` などの本文データは git 管理外で、`.cache/gutenberg/5740-t.tex` から手元で再生成する(`source/README.md`)。commit するファイル(Lean の docstring、対応記録など)にも本文の全体や長い引用(15語以上)を入れない。短い命題や一句の引用はよい
 - Lean の実装(コード・docstring・識別子)は英語。ドキュメントと会話は日本語
 
 ## Toolchain

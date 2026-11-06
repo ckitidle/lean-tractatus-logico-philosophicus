@@ -132,9 +132,9 @@ def Independent (L : LogicalSpace Atom) : Prop := L.possible = Set.univ
 
 - 名前空間は `Tractatus`。識別子は内容を表す英語(例:`Tractatus.no_inference_between_atomic_facts`)。命題番号は名前に入れず、attribute で付ける(§6 レベル 1)
 - 概念の名前は `analysis/reading/README.md` の概念 ID に従う。Ogden 訳の訳語の揺れ(「state of affairs」が Sachlage と Sachverhalt の両方に使われるなど)を避けるため
-- docstring には**論考の本文を引用しない**(本文を GitHub に上げない方針、`source/README.md`)。命題番号は attribute で付け、docstring には Lean の言明が何を表すかを自分の言葉で書く。ドイツ語原文と英訳が食い違う箇所(4.1252 の式など)では、どちらに従ったかを書く(短い式の断片は引用してよい)
+- docstring には、Lean の言明が何を表すかを自分の言葉で書く。本文を**長く**引用しない(本文の全体を GitHub に上げない方針、`source/README.md`)。短い命題や一句の引用はよい。ドイツ語原文と英訳が食い違う箇所(4.1252 の式など)では、どちらに従ったかを書く
 - 本文は、命題番号から手元の `source/tractatus.json` で引く
-- 本文との一致は `lake test` が検査する(本文と6語以上連続して一致する箇所、または4語以上の命題の全文があればエラー。`source/README.md`)
+- 長い引用は `lake test` が検査する(本文と15語以上連続して一致する箇所があればエラー。`source/README.md`)
 - docstring とコメントは英語(CLAUDE.md の取り決め)
 
 ## 6. 整合性チェックの実装方式
@@ -196,7 +196,7 @@ $ lake test
 
 - この記録は、**Lean を読まない人が、形式化が論考に忠実かを判断するための主な窓口**になる。Lean の記号を使わず、日本語だけで読めるように書く
 - 段階ごとに `correspondence/stage<N>.md` を作り、形式化した命題ごとに次を書く
-  - 命題番号(原文は書かない。本文を GitHub に上げない方針のため)
+  - 命題番号(原文は書かない。原文は読む用の版で差し込む。短い引用はよい)
   - Lean の言明(宣言名)
   - 逆翻訳:Lean の言明を日本語で読み直したもの
   - ずれ:形式化で失われたもの、付け加わったもの
