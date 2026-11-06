@@ -38,6 +38,7 @@ lake build                          # ライブラリ全体をビルド(型検�
 lake env lean Tractatus/Basic.lean  # 1ファイルだけ検査
 lake test                           # 本文データ source/tractatus.json の検査(check-source)
 lake exe extract-source .cache/gutenberg/5740-t.tex source  # 本文データの再生成(git 管理外。source/README.md)
+lake exe render-review 1             # 段階 1 の分類のレビュー一覧を out/review/stage1.md に生成(原文入り、git 管理外)
 ```
 
 作成中に必要な検査は、ローカルの `lake build` と `lake test` だけで行う(CI は置いていない)。
@@ -49,7 +50,7 @@ Lake でハイフンを含む実行ファイル名を `testDriver` などから�
 - `lakefile.toml` — Lake の設定。ライブラリ名は `Tractatus`
 - `Tractatus.lean` — ライブラリのルート。新しいモジュールはここで import する
 - `Tractatus/` — 本体
-- `tools/` — 補助ツール(`extract-source`、`check-source`)。ライブラリとは別の実行ファイル
+- `tools/` — 補助ツール(`extract-source`、`check-source`、`render-review`)。ライブラリとは別の実行ファイル
 - `source/` — 論考の本文データ(英独対訳)。出典と変換の決まりは `source/README.md`
 - `docs/` — 方針だけ(`roadmap.md` 進め方、`policy.md` 形式化の方針)
 - `analysis/` — 読んで調べた結果。手書きで作り直せないので git で管理する(分類表、解釈の記録、本文の突き合わせ)

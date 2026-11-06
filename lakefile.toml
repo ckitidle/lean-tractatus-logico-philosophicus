@@ -17,3 +17,9 @@ root = "ExtractSource"
 name = "check-source"
 srcDir = "tools"
 root = "CheckSource"
+
+# Renders a review sheet of the classification for one stage into out/ (see docs/policy.md §10)
+[[lean_exe]]
+name = "render-review"
+srcDir = "tools"
+root = "RenderReview"
