@@ -1,0 +1,6 @@
+name = "Tractatus"
+version = "0.1.0"
+defaultTargets = ["Tractatus"]
+
+[[lean_lib]]
+name = "Tractatus"

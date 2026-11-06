@@ -1,0 +1,9 @@
+# elan(Lean のツールチェーン管理)だけを mise で固定する。
+# Lean 本体の版は lean-toolchain が決め、elan がそれを読んで入れる。
+# mise のレジストリに lean / elan は無いので github バックエンドを使う。
+# 配布物は elan-init だけなので、postinstall で ~/.elan に elan と lean / lake のプロキシを置く。
+[tools]
+"github:leanprover/elan" = { version = "4.2.4", postinstall = "elan-init -y --no-modify-path --default-toolchain none" }
+
+[env]
+_.path = ["{{env.HOME}}/.elan/bin"]

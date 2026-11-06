@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lake build:*)",
+      "Bash(lake env lean:*)",
+      "Bash(lean --version)",
+      "Bash(elan show:*)"
+    ]
+  }
+}
