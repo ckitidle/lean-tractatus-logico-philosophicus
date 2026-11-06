@@ -72,23 +72,41 @@ def deferredStages : List String := ["4c", "4d"]
 
 /-- Validates `analysis/reading/classification.tsv` against the proposition numbers:
 one row per proposition in the same order, 9 columns, known kind, stage and confidence,
-a reason for every formalizable proposition that is not formalized, and every contested
-topic listed in `analysis/reading/contested.tsv`. -/
+a reason for every formalizable proposition that is not formalized, existing numbers in
+`related`, and every contested topic listed in `analysis/reading/contested.tsv` together
+with the proposition (the list there may also name related propositions tagged otherwise,
+since a proposition carries only one topic). -/
 def checkClassification (numbers : List String) : IO (Array String) := do
   let path := "analysis/reading/classification.tsv"
   if !(← System.FilePath.pathExists path) then return #[]
   let rows ← readTsv path
   let topicsPath := "analysis/reading/contested.tsv"
-  let topics : List String ←
-    if ← System.FilePath.pathExists topicsPath then
-      pure <| (← readTsv topicsPath).map (·.headD "")
-    else pure []
+  let topicRows : List (List String) ←
+    if ← System.FilePath.pathExists topicsPath then readTsv topicsPath else pure []
+  let topics := topicRows.map (·.headD "")
   let mut errors : Array String := #[]
+  -- propositions listed for each topic in contested.tsv must exist
+  let listed : List (String × List String) := topicRows.map fun r =>
+    (r.headD "", ((r.getD 2 "").splitOn ",").map (·.trimAscii.toString) |>.filter (· ≠ ""))
+  for (topic, ps) in listed do
+    for p in ps do
+      if !numbers.contains p then
+        errors := errors.push s!"{topicsPath}: {topic}: unknown proposition '{p}'"
   if rows.map (·.headD "") != numbers then
     errors := errors.push s!"{path}: numbers differ from source/tractatus.json (must be one row per proposition, in order)"
   for row in rows do
     match row with
-    | [num, kind, stage, scopeNote, conf, contested, _concepts, _related, rationale] =>
+    | [num, kind, stage, scopeNote, conf, contested, _concepts, related, rationale] =>
+      for r in (related.splitOn ",").map (·.trimAscii.toString) do
+        -- `序文` refers to Wittgenstein's preface
+        if r != "" && r != "-" && r != "序文" && !numbers.contains r then
+          errors := errors.push s!"{path}: {num}: related proposition '{r}' does not exist"
+      if contested != "-" then
+        match listed.lookup contested with
+        | some ps =>
+          if !ps.contains num then
+            errors := errors.push s!"{path}: {num}: tagged '{contested}' but not listed under it in {topicsPath}"
+        | none => pure ()
       if !kinds.contains kind then errors := errors.push s!"{path}: {num}: unknown kind '{kind}'"
       if !stages.contains stage then errors := errors.push s!"{path}: {num}: unknown stage '{stage}'"
       if formalizableKinds.contains kind then
